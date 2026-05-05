@@ -2,6 +2,10 @@
 
 Timestamped log of events, decisions, learnings. Append-only.
 
+## 2026-05
+
+- 2026-05-06 [insight, work]: Highest-engagement Coach accounts (by session volume and/or sessions/turns per user): Jewish Board, PersonifyHealth, AKQA, VML, WPP, CRED, Collective Health. Follow-up questions to answer: which Coach module (General/Engage/Perform) drives most usage where avg sessions > threshold; which topics are most asked about (group by topic, rank). [work]
+
 ## 2026-04
 
 - 2026-04-28 [work, security, architecture]: Bindi's reactions to 3 Unified Sessions options — Option 1: no-go, too many new attack vectors, confusing, not worth considering. Option 2: adequate on security, good at preventing context window pollution. Option 3: no security concerns, but Bindi's concern is operational: context window pollution risk, and evals become very hard — evaluations across different profiles would start to look very different, making quality measurement inconsistent. Key signal: security is less the constraint; eval integrity and context hygiene are the real concerns for Option 3. [work, security, unified-sessions, bindi, evals]
