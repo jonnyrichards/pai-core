@@ -2,6 +2,28 @@
 
 Timestamped log of events, decisions, learnings. Append-only. Latest first.
 
+- 2026-05-05 [work, voice, rollout]: Voice remaining to-dos and release strategy snapshot.
+
+  **Remaining to-dos:**
+  - Convert remaining bugs to Jira tickets
+  - Move Eleven Labs token from BFF to BE
+  - Test how interruptions are working (e.g. reload interrupted session; Ro video); decide on fix
+  - Decide on storing the coach voice message interruptions in the BE
+  - OKTA implementation — kicked off with Div (need timing)
+  - Security review recommendations
+  - Instrumentation (Amplitude + Datadog)
+  - Beta features toggle
+  - Eleven Labs Account — J&J to advise Div's team on needing dev and production + set up a troubleshooting/consult channel; register new API tokens on Coach so Coach has permissions to talk to the new account
+  - CZ testing
+  - Evals — new start (18 May) to own the voice harness using Rash's proposal as a guide (consider: synthetic voice gen EL-powered as part of harness etc.)
+
+  **Release strategy:**
+  - Feature coupling: Release Dictation (All Coaches) + Conversation (General Coach only) _simultaneously_ (CZ + Beta)
+  - Timing:
+    - Early-mid May: bug fixes, EL account implementation, Security review items, instrumentation (Amplitude)
+    - Mid-late May: roll out to CZ + CZ testing, Beta features implementation (shouldn't block CZ or Beta), instrumentation (Datadog)
+    - Early June: switch on Beta (GA), test Conversation mode with other Coach modules (Perform, MSS, PCQ) / decide on wider Conversation mode release
+
 - 2026-05-04 [work, voice, uxr]: Darshana session on Voice testing approach. Plan: week-long test within a 2-week CZ window; Darsh to advise, R+A+J to run; Darsh will review script to check it fits in 30 mins. Mid-week voice ID swap to test preference anecdotally. Next: schedule the testing and build into roadmap. [work, voice, uxr, testing, darshana]
 
 - 2026-05-04 [work, voice, eleven-labs]: Dan + Jay sync on ElevenLabs post-contract. Key decisions and open items: (1) **Dictation everywhere, Conversation gated** — deploy both buttons platform-wide but FF for Conversation mode stays off; (2) **EL relationship** — need to build account relationship with EL AE (Kenny); (3) **Technical alignment** — need a walk-through call with EL on v2 vs. v3 API (which should we use?); (4) **Billing/invoicing** — how do we raise a ticket and who approves invoices on our side (Jo potentially, via her SaaS channel involvement); (5) **Observability** — open question whether Coach takes on EL observability. [work, voice, eleven-labs, architecture, billing]
