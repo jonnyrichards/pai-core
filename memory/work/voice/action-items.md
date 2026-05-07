@@ -13,6 +13,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 - [ ] Deploy dictation platform-wide — both buttons visible, Conversation FF stays off (added 2026-05-04)
 - [ ] Update go to market plan for Voice (added 2026-05-01)
 - [ ] Commence Customer Knowledge Base Discovery: Share DB/WPP CKB context with Kristina and tee up prompt help; check in with DB on how chat with Hiral went (added 2026-04-29)
+- [ ] Discuss with Jay: options for staged rollout (% base, week-by-week cadence; any objections? What options exist for account selection — Jay mentioned you may not be able to choose specific accounts, it's randomly selected?) (added 2026-05-07)
 - [ ] CZ rollout — ON HOLD. Sub-tasks: finalise pilot group + rollout plan ([[../../projects/voice/cz-rollout-plan]]), send pilot comms (opt-in, EL data processing, no sensitive use; cc Megan), re-engage ~10 testers, reschedule sessions (added 2026-03-09)
 
 ## Completed
