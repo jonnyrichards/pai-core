@@ -4,8 +4,8 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 
 ## Active (no fixed deadline)
 
-- [ ] Schedule Voice session: back end, streaming, interruptions, Dictation everywhere (Nate, Baps, Tabitha, Jonny) (added 2026-05-08)
-- [ ] Schedule Voice session: instrumentation deep dive (Baps, Jonny) (added 2026-05-08)
+- [x] Schedule Voice session: back end, streaming, interruptions, Dictation everywhere (Nate, Baps, Tabitha, Jonny) (done 2026-05-08)
+- [x] Schedule Voice session: instrumentation deep dive (Baps, Jonny) (done 2026-05-08)
 - [ ] Check in on consent and where Legal is at in terms of standardizing consent across the platform (added 2026-05-06)
 - [ ] Schedule CZ voice testing + build into roadmap (week-long test, 2-week CZ window, mid-week voice ID swap) (added 2026-05-04)
 - [ ] Reach out to Kenny (EL Account Exec) — build the relationship (added 2026-05-04)
