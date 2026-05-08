@@ -2,6 +2,8 @@
 
 Timestamped log of events, decisions, learnings. Append-only. Latest first.
 
+- 2026-05-08 [work, voice, architecture]: Interruption handling decision (Baps, Nate, Tabitha). Agreed: (1) No update to message list or checkpointer on interruption — back end does not know an interruption occurred; expected UX is Coach continues to render what it would have said, audio cuts off, Coach waits for new input. (2) Interruptions measured via Amplitude: fire event when user speaks while audio is still playing. This gives visibility into interruption rates without back-end storage.
+
 - 2026-05-05 [work, voice, rollout]: Voice remaining to-dos and release strategy snapshot.
 
   **Remaining to-dos:**
