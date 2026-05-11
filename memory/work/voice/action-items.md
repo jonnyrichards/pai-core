@@ -16,11 +16,13 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 - [ ] Resolve billing/invoicing flow — how do we raise a ticket with EL, and who approves on our side? (Jo via SaaS channel?) (added 2026-05-04)
 - [ ] Resolve observability question — does Coach take on EL observability? (added 2026-05-04)
 - [ ] Deploy dictation platform-wide — both buttons visible, Conversation FF stays off (added 2026-05-04)
-- [ ] Update go to market plan for Voice (added 2026-05-01)
-- [ ] Commence Customer Knowledge Base Discovery: Share DB/WPP CKB context with Kristina and tee up prompt help; check in with DB on how chat with Hiral went (added 2026-04-29)
-- [ ] Update voice docs off the back of new roadmap plan (added 2026-05-07): (1) one-pager (`projects/voice/coach-voice-one-pager.md`) — update the How/phases section and the Sales Enablement + GTM section to reflect new dates and scope decisions; remove stale phase milestones; (2) GTM doc (`projects/voice/voice-coach-go-to-market.md`) — update Executive Summary target dates, Release Strategy phases, Timeline at a Glance, and Open Questions; add tranche detail (Jun 2: 10%, Jun 9: 30%, Jun 16: 100%); add Sales Enablement session (w/c Jun 1); reflect Dictation/Conversation scope split throughout. New plan agreed in conversation on 2026-05-07 — refer to that thread for the at-a-glance table and framing decisions.
 - [ ] Discuss with Jay: options for staged rollout (% base, week-by-week cadence; any objections? What options exist for account selection — Jay mentioned you may not be able to choose specific accounts, it's randomly selected?) (added 2026-05-07)
-- [ ] CZ rollout — ON HOLD. Sub-tasks: finalise pilot group + rollout plan ([[../../projects/voice/cz-rollout-plan]]), send pilot comms (opt-in, EL data processing, no sensitive use; cc Megan), re-engage ~10 testers, reschedule sessions (added 2026-03-09)
+- [ ] Commence Customer Knowledge Base Discovery: Share DB/WPP CKB context with Kristina and tee up prompt help; check in with DB on how chat with Hiral went (added 2026-04-29)
+
+## Completed
+
+- [x] Update go to market plan for Voice (done 2026-05-08)
+- [x] Update voice docs off the back of new roadmap plan — one-pager + GTM doc updated and pushed to Confluence (done 2026-05-08)
 
 ## Completed
 
