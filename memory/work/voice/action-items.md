@@ -7,6 +7,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 - [x] Schedule Voice session: back end, streaming, interruptions, Dictation everywhere (Nate, Baps, Tabitha, Jonny) (done 2026-05-08)
 - [x] Schedule Voice session: instrumentation deep dive (Baps, Jonny) (done 2026-05-08)
 - [x] Check in on consent and where Legal is at in terms of standardizing consent across the platform (done 2026-05-08)
+- [ ] Involve Ally in copy for the voice admin toggle (added 2026-05-12)
 - [ ] Review Ben K's comment on Beta Features one-pager (segments proposal) with Coach Core: https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6128763265/Beta+Features+One-pager?focusedCommentId=6218350926 (added 2026-05-08)
 - [ ] Share CZ release plan with India; draft comms (added 2026-05-08)
 - [ ] CZ interviews — review plan with Darshana, schedule for w/c 19 May (decide which users get which voice) (added 2026-05-08)
