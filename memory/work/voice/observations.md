@@ -2,6 +2,22 @@
 
 Timestamped log of events, decisions, learnings. Append-only. Latest first.
 
+- 2026-05-12 [work, voice, comms, uxr]: Proposed Voice comms messaging for CZ testing (prepared with Kristina and Darsh ahead of India chat).
+
+  **Comms #1**
+  - Try out Voice!
+  - Voice will change mid-week; this is intentional; we're testing 2
+  - We'd love your thoughts on the voice; we'll send out a survey link later; let us know which one you preferred
+  - Let us know if you're happy to do a short interview to answer some more in-depth questions about your experience using our new Voice feature, sign up here
+
+  **Comms #2**
+  - Voice is switching!
+  - Reminder to try it out
+
+  **Comms #3**
+  - Thanks for trying it out
+  - Please take the time to fill out a short survey letting us know which voice you prefer!
+
 - 2026-05-08 [work, voice, architecture]: Interruption handling decision (Baps, Nate, Tabitha). Agreed: (1) No update to message list or checkpointer on interruption — back end does not know an interruption occurred; expected UX is Coach continues to render what it would have said, audio cuts off, Coach waits for new input. (2) Interruptions measured via Amplitude: fire event when user speaks while audio is still playing. This gives visibility into interruption rates without back-end storage.
 
 - 2026-05-05 [work, voice, rollout]: Voice remaining to-dos and release strategy snapshot.
