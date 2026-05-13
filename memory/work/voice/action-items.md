@@ -16,7 +16,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 - [x] Reach out to Kenny (EL Account Exec) — build the relationship (done 2026-05-13)
 - [x] Book technical walk-through call with EL — v2 vs. v3 API, which should we use? (done 2026-05-13)
 - [ ] Resolve billing/invoicing flow — how do we raise a ticket with EL, and who approves on our side? (Jo via SaaS channel?) (added 2026-05-04)
-- [ ] Resolve observability question — does Coach take on EL observability? (added 2026-05-04)
+- [x] Resolve observability question — does Coach take on EL observability? (done 2026-05-13)
 - [x] Deploy dictation platform-wide — both buttons visible, Conversation FF stays off (done 2026-05-13)
 - [x] Discuss with Jay: options for staged rollout (% base, week-by-week cadence; any objections? What options exist for account selection — Jay mentioned you may not be able to choose specific accounts, it's randomly selected?) (done 2026-05-13)
 - [ ] Commence Customer Knowledge Base Discovery: Share DB/WPP CKB context with Kristina and tee up prompt help; check in with DB on how chat with Hiral went (added 2026-04-29)
