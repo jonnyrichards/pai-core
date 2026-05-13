@@ -2,6 +2,8 @@
 
 Timestamped log of events, decisions, learnings. Append-only. Latest first.
 
+- 2026-05-13 [work, voice, billing, eleven-labs]: ElevenLabs billing resolved — EL emails accounts directly monthly with the invoice. Coach team won't see it; no internal approval flow needed.
+
 - 2026-05-13 [work, voice, security, standup]: Core Coach standup decisions on outstanding Voice items. No concerns raised about security review — decision: won't build any non-EL dashboards yet. Devs are looking at session timeout. BFF flag separation and account selection mechanics (for Beta rollout) are in hand. Guardrails ask is with Jakub / Security. EL observability question resolved — covered in standup, no action needed. CZ comms drafted and shared with India — now with her.
 
 - 2026-05-12 [work, voice, comms, uxr]: Proposed Voice comms messaging for CZ testing (prepared with Kristina and Darsh ahead of India chat).
