@@ -8,6 +8,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 - [x] Schedule Voice session: instrumentation deep dive (Baps, Jonny) (done 2026-05-08)
 - [x] Check in on consent and where Legal is at in terms of standardizing consent across the platform (done 2026-05-08)
 - [x] Raise at Core Coach standup: (1) account selection mechanics for beta rollout (10% etc. — how does random selection work?); (2) BFF change to enable dictation/TTS flag separation; (3) Bindi's guardrails ask (see core-coach/observations 2026-05-12 — fail closed, prompt injection); (4) security review ticket — ZRM, session timeout, front-end consumption monitoring (done 2026-05-13)
+- [ ] Continue Voice testing; check in with Voice team on remaining to dos (Fri 2026-05-16)
 - [ ] Involve Ally in copy for the voice admin toggle (added 2026-05-12)
 - [x] Review Ben K's comment on Beta Features one-pager (segments proposal) with Coach Core: https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6128763265/Beta+Features+One-pager?focusedCommentId=6218350926 (done 2026-05-13)
 - [x] Share CZ release plan with India; draft comms (done 2026-05-13)
