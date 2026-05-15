@@ -2,6 +2,8 @@
 
 Timestamped log of events, decisions, learnings. Append-only. Latest first.
 
+- 2026-05-15 [work, voice, sales-enablement, demo, tom-lewis]: Proposed SDE demo talk track shared with Tom Lewis (lead solutions engineer). Approach: Dictation is fully demo-able (show mic → transcript, don't send); Conversation mode is described rather than run live — avoids live session risk. Tom's response: (1) hasn't seen real demand for voice in sales conversations yet; (2) if it's reactive (as-and-when), the talk track works fine and may not even need live dictation demo; (3) suggested a pre-recorded video of someone doing a voice back-and-forth with Coach as an asset reps can use without demoing live. Key open question from Tom: what's the expected proactivity level — are sellers expected to lead with voice, or only raise it if a prospect asks?
+
 - 2026-05-13 [work, voice, billing, eleven-labs]: ElevenLabs billing resolved — EL emails accounts directly monthly with the invoice. Coach team won't see it; no internal approval flow needed.
 
 - 2026-05-13 [work, voice, security, standup]: Core Coach standup decisions on outstanding Voice items. No concerns raised about security review — decision: won't build any non-EL dashboards yet. Devs are looking at session timeout. BFF flag separation and account selection mechanics (for Beta rollout) are in hand. Guardrails ask is with Jakub / Security. EL observability question resolved — covered in standup, no action needed. CZ comms drafted and shared with India — now with her.
