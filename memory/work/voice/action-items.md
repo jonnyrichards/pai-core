@@ -29,7 +29,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 - [x] Resolve observability question — does Coach take on EL observability? (done 2026-05-13)
 - [x] Deploy dictation platform-wide — both buttons visible, Conversation FF stays off (done 2026-05-13)
 - [x] Discuss with Jay: options for staged rollout (% base, week-by-week cadence; any objections? What options exist for account selection — Jay mentioned you may not be able to choose specific accounts, it's randomly selected?) (done 2026-05-13)
-- [ ] Commence Customer Knowledge Base Discovery: Share DB/WPP CKB context with Kristina and tee up prompt help; check in with DB on how chat with Hiral went (added 2026-04-29)
+- [x] Commence Customer Knowledge Base Discovery: Share DB/WPP CKB context with Kristina and tee up prompt help; check in with DB on how chat with Hiral went (done 2026-05-19)
 
 ## Completed
 
