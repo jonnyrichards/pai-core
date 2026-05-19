@@ -13,7 +13,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 - [x] Check in with Sterling (Mon PM) about support article link for CZ — urgent (done 2026-05-19)
 - [x] Continue Voice testing; check in with Voice team on remaining to dos (done 2026-05-19)
 - [x] Share Sat voice switch plan with Core (already in cal) — make sure Baps is across (done 2026-05-19)
-- [ ] Raise SDE demo talk track + Tom Lewis feedback with GTM team — sales enablement discussion (Weds 2026-05-21)
+- [ ] Raise SDE demo talk track + Tom Lewis feedback with GTM team — sales enablement discussion (Wed 2026-05-21). Agenda: (1) rollout plan for customers + recommended messaging to accompany release; (2) Steph Brien's in-product video demo capability — any video or other content to raise awareness / encourage use of Voice
 - [ ] Formalise date to switch Voice on in SDEs (added 2026-05-15)
 - [ ] Decide whether to make a demo video of Voice conversation mode for sales use (added 2026-05-15)
 - [ ] Draft Gong post for Jun 2 first beta tranche (added 2026-05-15)
