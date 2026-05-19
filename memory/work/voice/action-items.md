@@ -22,7 +22,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 - [x] Share CZ release plan with India; draft comms (done 2026-05-13)
 - [x] CZ interviews — review plan with Darshana, schedule for w/c 19 May (decide which users get which voice) (done 2026-05-13)
 - [x] Schedule CZ voice testing + build into roadmap (in hand with India comms + Darsh docs) (done 2026-05-13)
-- [ ] Review Darsh's proposed voice testing survey (added 2026-05-13)
+- [x] Review Darsh's proposed voice testing survey (done 2026-05-19)
 - [x] Reach out to Kenny (EL Account Exec) — build the relationship (done 2026-05-13)
 - [x] Book technical walk-through call with EL — v2 vs. v3 API, which should we use? (done 2026-05-13)
 - [x] Resolve billing/invoicing flow — EL emails accounts directly monthly with invoice; Coach team won't see it (done 2026-05-13)
