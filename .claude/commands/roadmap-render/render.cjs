@@ -183,7 +183,7 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
 
     const x = TL_X + start * QW + 4;
     const w = span * QW - 8;
-    const y = row * SUBROW_H + 8;
+    const y = 8;
 
     const bg     = cardBg(t, accent);
     const border = cardBorder(t);
