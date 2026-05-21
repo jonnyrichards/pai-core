@@ -246,24 +246,30 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
       }
     }).join('');
 
-    return `<div style="
-      position:absolute;
-      left:${x.toFixed(1)}px; top:${y.toFixed(1)}px;
-      width:${w.toFixed(1)}px; height:${CARD_H.toFixed(1)}px;
-      background:${bg}; border:${border};
-      padding:8px 11px; box-sizing:border-box;
-      display:flex; flex-direction:column; justify-content:space-between;
-      overflow:hidden; color:${textColor};
-    ">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
-        <div style="font-size:13px;line-height:1.15;font-weight:${fontWeight};font-style:${fontStyle};letter-spacing:-0.1px;color:${textColor};">
-          ${escapeHtml(item.Initiative)}
+    const desc = item.Description && item.Description !== '—' ? escapeHtml(item.Description) : '';
+    const tooltipHtml = desc
+      ? `<div class="tooltip">${desc}</div>`
+      : '';
+
+    return `<div class="card-wrap" style="position:absolute;left:${x.toFixed(1)}px;top:${y.toFixed(1)}px;width:${w.toFixed(1)}px;height:${CARD_H.toFixed(1)}px;">
+      ${tooltipHtml}
+      <div style="
+        width:100%; height:100%;
+        background:${bg}; border:${border};
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:${textColor}; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="font-size:13px;line-height:1.15;font-weight:${fontWeight};font-style:${fontStyle};letter-spacing:-0.1px;color:${textColor};">
+            ${escapeHtml(item.Initiative)}
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;">${ticksHtml}</div>
         </div>
-        <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;">${ticksHtml}</div>
-      </div>
-      <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:${subColor};display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
-        <span>${escapeHtml(item.Start || '')}</span>
-        <span style="font-style:${t.kind === 'dotted' ? 'italic' : 'normal'};white-space:nowrap;">${t.tag}</span>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:${subColor};display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>${escapeHtml(item.Start || '')}</span>
+          <span style="font-style:${t.kind === 'dotted' ? 'italic' : 'normal'};white-space:nowrap;">${t.tag}</span>
+        </div>
       </div>
     </div>`;
   }
@@ -282,7 +288,7 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
 
     const cards = lane.items.map((it, idx) => {
       const row = rowAssign[idx];
-      return `<div style="position:absolute;top:${(laneTop + row * SUBROW_H).toFixed(1)}px;left:0;width:${ROADMAP_W}px;height:${SUBROW_H}px;pointer-events:none;">
+      return `<div style="position:absolute;top:${(laneTop + row * SUBROW_H).toFixed(1)}px;left:0;width:${ROADMAP_W}px;height:${SUBROW_H}px;">
         ${cardHtml(it, accent)}
       </div>`;
     }).join('');
@@ -346,6 +352,34 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
     -webkit-font-smoothing: antialiased;
   }
   .canvas-wrap { overflow-x: auto; }
+
+  .card-wrap { position: absolute; }
+  .card-wrap .tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    width: 260px;
+    background: ${ALMANAC.ink};
+    color: ${ALMANAC.paper};
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 10px 13px;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  }
+  .card-wrap .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 18px;
+    border: 6px solid transparent;
+    border-top-color: ${ALMANAC.ink};
+  }
+  .card-wrap:hover .tooltip { display: block; }
 </style>
 </head>
 <body>
