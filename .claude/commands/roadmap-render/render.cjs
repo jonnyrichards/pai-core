@@ -138,7 +138,7 @@ function cardBg(treatment, accent) {
 
 function cardBorder(treatment) {
   if (treatment.kind === 'block')  return `1.8px solid ${ALMANAC.ink}`;
-  if (treatment.kind === 'dotted') return `1.4px dotted ${ALMANAC.ink}`;
+  if (treatment.kind === 'dotted') return `1px dashed rgba(26,20,16,0.45)`;
   return `1px solid ${ALMANAC.ink}`;
 }
 
