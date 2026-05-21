@@ -64,27 +64,24 @@ Don't write descriptions yet. Get the shape right first.
 
 ### Phase 2.5 — Sequencing
 
-After agreeing the lane structure, assign a `Start` and `Row` for each initiative before writing descriptions.
+After agreeing the lane structure, assign a `Start` for each initiative before writing descriptions. Row assignment is handled automatically by the renderer — no need to specify it.
 
 **`Start` format:** `Q3.0` through `Q3.5`, `Q4.0` through `Q4.5`, or `TBD`.
 Each quarter has 6 positions (~2 weeks each): `Q3.0` = start of Q3, `Q3.3` = mid Q3, `Q3.5` = late Q3.
-
-**`Row`:** `0` = top sub-row, `1` = second sub-row. Use `1` when two items in the same lane would visually overlap (i.e. their time ranges cross).
 
 **Default approach — skill-led:**
 Propose start positions as a table. Apply these heuristics:
 - Committed items anchor earliest in their quarter
 - Items with stated dependencies start after their prerequisite's estimated end
   - Small ends ~0.5q after start, Medium ~1.0q, Large ~2.0q
-- Two items in the same lane with overlapping time ranges get `Row: 0` and `Row: 1`
 - TBD items get `Start: TBD`
 
 Show the proposed sequencing as a table:
 
-| Initiative | Lane | Start | Row | Notes |
-|---|---|---|---|---|
-| Routing — MSS slice | The Spine | Q3.0 | 0 | Committed, anchors first |
-| Unified Sessions | The Spine | Q3.0 | 1 | Concurrent with Routing |
+| Initiative | Lane | Start | Notes |
+|---|---|---|---|
+| Routing — MSS slice | The Spine | Q3.0 | Committed, anchors first |
+| Unified Sessions | The Spine | Q3.0 | Concurrent with Routing — renderer will stack them |
 
 Ask: *"Does this sequencing feel right? Adjust any start positions before we write descriptions."*
 
@@ -175,7 +172,7 @@ The file structure adapts to the swim lanes agreed in Phase 2. The fixed skeleto
 
 [1-sentence framing of this lane]
 
-| Initiative | Start | Row | Confidence | Effort | Drives | Description |
+| Initiative | Start | Confidence | Effort | Drives | Description |
 
 ---
 
@@ -183,7 +180,7 @@ The file structure adapts to the swim lanes agreed in Phase 2. The fixed skeleto
 
 [1-sentence framing]
 
-| Initiative | Start | Row | Confidence | Effort | Drives | Description |
+| Initiative | Start | Confidence | Effort | Drives | Description |
 
 ---
 
@@ -193,9 +190,9 @@ The file structure adapts to the swim lanes agreed in Phase 2. The fixed skeleto
 ```
 
 **Column reference:**
-- `Start`: `Q3.0`–`Q3.5`, `Q4.0`–`Q4.5`, or `TBD` (no `Quarter` column — position encodes it)
-- `Row`: `0` or `1` (sub-row within lane for concurrent items)
+- `Start`: `Q3.0`–`Q3.5`, `Q4.0`–`Q4.5`, or `TBD` — position on the timeline; no `Quarter` column needed
 - `Confidence`, `Effort`, `Drives`, `Description`: unchanged from previous format
+- Row assignment is automatic — the renderer packs concurrent items into rows via greedy interval scheduling
 
 **Reference example:** `projects/core-coach/h2-roadmap.md` uses a Spine + Bets structure. The renderer (`roadmap-render`) handles any number of lanes with any names — it reads section headings dynamically.
 

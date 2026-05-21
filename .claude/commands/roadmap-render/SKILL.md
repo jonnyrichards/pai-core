@@ -50,7 +50,7 @@ card positioning. Card width encodes duration; cards span quarter boundaries fre
 | Canvas | 1600px wide, height auto-scales with lane row count |
 | Background | Cream parchment (#f1e7d2) with subtle gradient |
 | Quarters | Column headers (Q1–Q4) with dotted internal gridlines |
-| Swim lanes | Variable height (based on `Row` count); labelled gutter left |
+| Swim lanes | Variable height (auto-scaled by row count); labelled gutter left |
 | Lane colors | Each lane has an accent ink color (assigned by position) |
 | Card width | Encodes duration: Small=0.5q, Medium=1.0q, Large=2.0q |
 | Card position | Absolute horizontal position from `Start` coordinate |
@@ -71,17 +71,18 @@ The renderer re-parses from scratch on every run — no state between runs.
 
 ## Markdown Format Expected
 
-Lane tables use this column format (no `Quarter` column — position is encoded in `Start`):
+Lane tables use this column format:
 
 ```markdown
-| Initiative | Start | Row | Confidence | Effort | Drives | Description |
+| Initiative | Start | Confidence | Effort | Drives | Description |
 ```
 
 **`Start`** values: `Q3.0` through `Q3.5`, `Q4.0` through `Q4.5` (or `TBD`)
-- Each quarter has 6 positions (step = ~2 weeks): `Q3.0`=start of Q3, `Q3.3`=mid Q3, `Q3.5`=late Q3
+- Each quarter has 6 positions (~2 weeks each): `Q3.0`=start of Q3, `Q3.3`=mid Q3, `Q3.5`=late Q3
 - `TBD` renders at Q4.0
+- The renderer auto-detects the earliest/latest quarters used and only renders those columns
 
-**`Row`**: `0` or `1` — which sub-row within the lane (for concurrent items that would overlap)
+**Row assignment** is fully automatic — greedy interval packing per lane, no `Row` column needed.
 
 **`Confidence`** values: `Committed`, `High confidence`, `Early signal`, `Hypothesis`, `Placeholder`
 

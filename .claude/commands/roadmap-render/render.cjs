@@ -142,6 +142,33 @@ function cardBorder(treatment) {
   return `1px solid ${ALMANAC.ink}`;
 }
 
+// ─── Row packing ─────────────────────────────────────────────────────────────
+// Greedy interval packing: assign each item the first row where it doesn't
+// overlap any already-placed item. Items are sorted by start time first.
+// Returns an array of row indices parallel to the input items array.
+function packRows(items) {
+  // Build sortable list with computed start + span
+  const sorted = items.map((it, idx) => ({
+    idx,
+    start: parseStart(it.Start),
+    span:  EFFORT_SPAN[it.Effort] || 1.0,
+  })).sort((a, b) => a.start - b.start);
+
+  const rowEnds = []; // rowEnds[r] = earliest time row r is free again
+  const result  = new Array(items.length);
+
+  for (const { idx, start, span } of sorted) {
+    const end = start + span;
+    // Find first row that's free at `start`
+    let row = rowEnds.findIndex(e => e <= start);
+    if (row === -1) row = rowEnds.length; // need a new row
+    rowEnds[row] = end;
+    result[idx] = row;
+  }
+
+  return result;
+}
+
 // ─── HTML generator ───────────────────────────────────────────────────────────
 
 function renderHtml({ title, subtitle, lanes, notH2 }) {
@@ -152,11 +179,32 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
   const ROADMAP_W = 1600;
   const TL_X = PAD_X + LABEL_W;
   const TL_W = ROADMAP_W - TL_X - PAD_X;
-  const QW   = TL_W / 4;
 
-  const laneRows = lanes.map(lane =>
-    Math.max(1, ...lane.items.map(it => (parseInt(it.Row, 10) || 0) + 1))
+  // ── Dynamic quarter range ──────────────────────────────────────────────────
+  // Detect which quarters are actually used and only render those columns.
+  const ALL_QUARTERS = ['Q1', 'Q2', 'Q3', 'Q4'];
+  const quarterMonths = { Q1: 'Jan — Mar', Q2: 'Apr — Jun', Q3: 'Jul — Sep', Q4: 'Oct — Dec' };
+
+  const allItems = lanes.flatMap(l => l.items);
+  let minQ = 3, maxQ = 3; // default to Q4 if no items
+  for (const it of allItems) {
+    const s = parseStart(it.Start);
+    const e = s + (EFFORT_SPAN[it.Effort] || 1.0);
+    minQ = Math.min(minQ, Math.floor(s));
+    maxQ = Math.max(maxQ, Math.ceil(e) - 1);
+  }
+  minQ = Math.max(0, minQ);
+  maxQ = Math.min(3, maxQ);
+  const quarters = ALL_QUARTERS.slice(minQ, maxQ + 1);
+  const numQ = quarters.length;
+  const QW = TL_W / numQ;
+
+  // ── Auto row packing per lane ──────────────────────────────────────────────
+  const laneRowAssignments = lanes.map(lane => packRows(lane.items));
+  const laneRows = laneRowAssignments.map(rows =>
+    rows.length === 0 ? 1 : Math.max(...rows) + 1
   );
+
   const totalRows = laneRows.reduce((s, r) => s + r, 0);
   const LANES_H  = Math.max(600, totalRows * 100);
   const SUBROW_H = LANES_H / totalRows;
@@ -170,16 +218,12 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
     cur += rows * SUBROW_H;
   }
 
-  const quarters = ['Q1', 'Q2', 'Q3', 'Q4'];
-  const quarterMonths = { Q1: 'Jan — Mar', Q2: 'Apr — Jun', Q3: 'Jul — Sep', Q4: 'Oct — Dec' };
-
   function cardHtml(item, accent) {
     const t = CONF_TREATMENT[item.Confidence] || CONF_TREATMENT['Placeholder'];
-    const start = parseStart(item.Start);
+    const start = parseStart(item.Start) - minQ; // offset to visible range
     const effort = item.Effort || 'Medium';
     const span  = EFFORT_SPAN[effort]  || 1.0;
     const ticks = EFFORT_TICKS[effort] || 3;
-    const row   = parseInt(item.Row, 10) || 0;
 
     const x = TL_X + start * QW + 4;
     const w = span * QW - 8;
@@ -225,17 +269,19 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
   }
 
   function laneHtml(lane, li) {
-    const accent   = LANE_PALETTE[li % LANE_PALETTE.length];
-    const laneTop  = laneTops[li];
-    const laneH    = laneRows[li] * SUBROW_H;
-    const bandBg   = li % 2 === 0 ? 'rgba(180,140,80,0.08)' : 'transparent';
+    const accent      = LANE_PALETTE[li % LANE_PALETTE.length];
+    const laneTop     = laneTops[li];
+    const laneH       = laneRows[li] * SUBROW_H;
+    const bandBg      = li % 2 === 0 ? 'rgba(180,140,80,0.08)' : 'transparent';
+    const rowAssign   = laneRowAssignments[li];
 
-    const gridlines = [1,2,3].map(i => `
-      <div style="position:absolute;top:${laneTop + 4}px;height:${laneH - 8}px;left:${(TL_X + i * QW).toFixed(1)}px;border-left:1px dotted ${ALMANAC.inkFaint};"></div>
+    // Gridlines between visible quarters only
+    const gridlines = Array.from({ length: numQ - 1 }, (_, i) => `
+      <div style="position:absolute;top:${laneTop + 4}px;height:${laneH - 8}px;left:${(TL_X + (i + 1) * QW).toFixed(1)}px;border-left:1px dotted ${ALMANAC.inkFaint};"></div>
     `).join('');
 
-    const cards = lane.items.map(it => {
-      const row = parseInt(it.Row, 10) || 0;
+    const cards = lane.items.map((it, idx) => {
+      const row = rowAssign[idx];
       return `<div style="position:absolute;top:${(laneTop + row * SUBROW_H).toFixed(1)}px;left:0;width:${ROADMAP_W}px;height:${SUBROW_H}px;pointer-events:none;">
         ${cardHtml(it, accent)}
       </div>`;
@@ -278,7 +324,7 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
   const quarterHeads = quarters.map((q, i) => `
     <div style="position:absolute;left:${(i * QW).toFixed(1)}px;width:${QW.toFixed(1)}px;display:flex;align-items:baseline;gap:10px;padding:0 14px;">
       <span style="font-size:22px;font-style:italic;">${q}</span>
-      <span style="font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:${ALMANAC.inkSoft};font-family:ui-monospace,monospace;">${quarterMonths[q]}</span>
+      <span style="font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:${ALMANAC.inkSoft};font-family:ui-monospace,monospace;">${quarterMonths[q] || ''}</span>
     </div>`).join('');
 
   const laneBlocks = lanes.map((lane, li) => laneHtml(lane, li)).join('');
