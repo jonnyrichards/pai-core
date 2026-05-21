@@ -218,7 +218,7 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
     cur += rows * SUBROW_H;
   }
 
-  function cardHtml(item, accent) {
+  function cardHtml(item, accent, laneRowTop) {
     const t = CONF_TREATMENT[item.Confidence] || CONF_TREATMENT['Placeholder'];
     const start = parseStart(item.Start) - minQ; // offset to visible range
     const effort = item.Effort || 'Medium';
@@ -227,7 +227,7 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
 
     const x = TL_X + start * QW + 4;
     const w = span * QW - 8;
-    const y = 8;
+    const y = laneRowTop + 8;
 
     const bg     = cardBg(t, accent);
     const border = cardBorder(t);
@@ -251,7 +251,7 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
       ? `<div class="tooltip">${desc}</div>`
       : '';
 
-    return `<div class="card-wrap" style="position:absolute;left:${x.toFixed(1)}px;top:${y.toFixed(1)}px;width:${w.toFixed(1)}px;height:${CARD_H.toFixed(1)}px;">
+    return `<div class="card-wrap" style="position:absolute;left:${x.toFixed(1)}px;top:${y.toFixed(1)}px;width:${w.toFixed(1)}px;height:${CARD_H.toFixed(1)}px;z-index:10;">
       ${tooltipHtml}
       <div style="
         width:100%; height:100%;
@@ -288,9 +288,7 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
 
     const cards = lane.items.map((it, idx) => {
       const row = rowAssign[idx];
-      return `<div style="position:absolute;top:${(laneTop + row * SUBROW_H).toFixed(1)}px;left:0;width:${ROADMAP_W}px;height:${SUBROW_H}px;">
-        ${cardHtml(it, accent)}
-      </div>`;
+      return cardHtml(it, accent, laneTop + row * SUBROW_H);
     }).join('');
 
     const nameParts = lane.heading.split(':');
