@@ -315,7 +315,7 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
         <div style="font-size:11px;color:#bbb;line-height:1.45;">${escapeHtml(i.Reason)}</div>
       </div>`).join('');
     return `
-      <div style="margin-top:24px;background:#fff;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+      <div style="margin-top:24px;width:${ROADMAP_W}px;background:#fff;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
         <div style="padding:10px 16px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:#888;background:#f8f9fa;border-bottom:1px solid #e0e0e0;">Not in H2</div>
         <div style="display:flex;flex-wrap:wrap;">${items}</div>
       </div>`;
@@ -392,13 +392,18 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
         <div style="margin-bottom:6px;">Card width = duration</div>
         <div style="display:flex;align-items:center;gap:6px;">
           <div style="width:60px;height:14px;border:1px solid ${ALMANAC.ink};background:transparent;"></div>
-          <span style="font-family:serif;text-transform:none;letter-spacing:0;font-size:11px;color:${ALMANAC.ink};">= span</span>
         </div>
       </div>
       <div>
         <div style="margin-bottom:6px;">Confidence</div>
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-          ${Object.entries(CONF_TREATMENT).map(([key, t]) => {
+          ${[
+            { key: 'Committed',       id: 'Committed'       },
+            { key: 'High confidence', id: 'High confidence' },
+            { key: 'Early signal',    id: 'Early signal'    },
+            { key: 'Hypothesis / Placeholder', id: 'Hypothesis' },
+          ].map(({ key, id }) => {
+            const t = CONF_TREATMENT[id];
             const sampleAccent = '#8a4a2a';
             const bg = cardBg(t, sampleAccent);
             const border = cardBorder(t);
