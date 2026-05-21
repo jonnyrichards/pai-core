@@ -7,6 +7,12 @@ description: Renders the Coach H2 roadmap markdown file into a self-contained HT
 
 Converts `projects/core-coach/h2-roadmap.md` (the source of truth) into a self-contained HTML file ready for Confluence embedding.
 
+> **For future agents:** If you need to understand the geometry or modify the renderer, read `.claude/commands/roadmap-render/render.cjs` top-to-bottom. Key sections:
+> - `parseStart()` — how `Q3.2` notation converts to a float coordinate
+> - `packRows()` — greedy interval packing that assigns cards to rows without overlap
+> - `renderHtml()` — dynamic quarter range detection, canvas geometry constants, card/lane positioning
+> - `cardHtml()` — confidence treatments, effort ticks, tooltip injection
+
 ## When to Use
 
 Trigger this skill when the user says:
