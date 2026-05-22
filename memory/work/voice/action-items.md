@@ -17,7 +17,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 - [x] Core Coach standup: voice bug tactical options — sensitivity in conversation mode (STT triggering too easily), interruption handling (done 2026-05-22)
 - [x] Raise SDE demo talk track + Tom Lewis feedback with GTM team — sales enablement discussion (Wed 2026-05-21). Agenda: (1) rollout plan for customers + recommended messaging to accompany release; (2) Steph Brien's in-product video demo capability — any video or other content to raise awareness / encourage use of Voice (done 2026-05-22)
 - [ ] Formalise date to switch Voice on in SDEs (added 2026-05-15)
-- [ ] Decide whether to make a demo video of Voice conversation mode for sales use (added 2026-05-15)
+- [x] Decide whether to make a demo video of Voice conversation mode for sales use (done 2026-05-22)
 - [ ] Draft Gong post for Jun 2 first beta tranche (added 2026-05-15)
 - [ ] Involve Ally in copy for the voice admin toggle (added 2026-05-12)
 - [x] Review Ben K's comment on Beta Features one-pager (segments proposal) with Coach Core: https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6128763265/Beta+Features+One-pager?focusedCommentId=6218350926 (done 2026-05-13)
