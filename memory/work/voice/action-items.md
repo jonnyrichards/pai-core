@@ -8,7 +8,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 - [x] Schedule Voice session: instrumentation deep dive (Baps, Jonny) (done 2026-05-08)
 - [x] Check in on consent and where Legal is at in terms of standardizing consent across the platform (done 2026-05-08)
 - [x] Raise at Core Coach standup: (1) account selection mechanics for beta rollout (10% etc. — how does random selection work?); (2) BFF change to enable dictation/TTS flag separation; (3) Bindi's guardrails ask (see core-coach/observations 2026-05-12 — fail closed, prompt injection); (4) security review ticket — ZRM, session timeout, front-end consumption monitoring (done 2026-05-13)
-- [ ] Investigate options for reducing how often Coach interrupts — e.g. STT sensitivity tuning, VAD threshold, prompt-level changes to response length, push-to-talk UX — with a view to acting on CZ feedback (added 2026-05-20)
+- [x] Investigate options for reducing how often Coach interrupts — e.g. STT sensitivity tuning, VAD threshold, prompt-level changes to response length, push-to-talk UX — with a view to acting on CZ feedback (done 2026-05-22)
 - [ ] Check in with Kristina about Voice testing in Perform / Engage (added 2026-05-19)
 - [ ] Raise launch bugs / feedback with Baps — sensitivity in conversation mode (added 2026-05-19)
 - [x] Check in with Sterling (Mon PM) about support article link for CZ — urgent (done 2026-05-19)
