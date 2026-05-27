@@ -4,6 +4,8 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 
 ## Active (no fixed deadline)
 
+- [ ] Pick up with Kristina and Rachael around how to signal non-voice text differently in the Coach response (added 2026-05-27)
+
 - [x] Schedule Voice session: back end, streaming, interruptions, Dictation everywhere (Nate, Baps, Tabitha, Jonny) (done 2026-05-08)
 - [x] Schedule Voice session: instrumentation deep dive (Baps, Jonny) (done 2026-05-08)
 - [x] Check in on consent and where Legal is at in terms of standardizing consent across the platform (done 2026-05-08)
