@@ -2,6 +2,8 @@
 
 Timestamped log of events, decisions, learnings. Append-only. Latest first.
 
+- 2026-05-27 [work, voice, uxr, links]: CZ Voice research links — Research plan: https://docs.google.com/document/d/1Mdw0QMZiaKFCEArYgL3Zjig3MkliSekX2FGU89Onu2s/edit?tab=t.0; CZ survey: https://docs.google.com/forms/d/e/1FAIpQLSf4x91Sgr7XiA-o8J1CNDI2BV6_T6uUUHBmzbNw_t7BJxCvsQ/viewform; Interview sign-ups: https://docs.google.com/forms/d/e/1FAIpQLSfqlCMRzWAUBCNRU8hAtI_ZL-r-GtDtNOsuiwMeDwkfLmRAuw/viewform
+
 - 2026-05-22 [work, voice, architecture, compatibility]: Voice doesn't work in Insights and Comments Report pages of surveys — these pages haven't been migrated to Next yet. Decision taken: Voice will not be made backwards compatible with these pages.
 
 - 2026-05-15 [work, voice, sales-enablement, demo, tom-lewis]: Proposed SDE demo talk track shared with Tom Lewis (lead solutions engineer). Approach: Dictation is fully demo-able (show mic → transcript, don't send); Conversation mode is described rather than run live — avoids live session risk. Tom's response: (1) hasn't seen real demand for voice in sales conversations yet; (2) if it's reactive (as-and-when), the talk track works fine and may not even need live dictation demo; (3) suggested a pre-recorded video of someone doing a voice back-and-forth with Coach as an asset reps can use without demoing live. Key open question from Tom: what's the expected proactivity level — are sellers expected to lead with voice, or only raise it if a prospect asks?
