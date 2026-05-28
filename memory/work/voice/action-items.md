@@ -4,6 +4,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 
 ## Active (no fixed deadline)
 
+- [ ] Test Baps' latest voice changes in prod (added 2026-05-28)
 - [ ] Pick up with Kristina and Rachael around how to signal non-voice text differently in the Coach response (added 2026-05-27)
 
 - [x] Schedule Voice session: back end, streaming, interruptions, Dictation everywhere (Nate, Baps, Tabitha, Jonny) (done 2026-05-08)
