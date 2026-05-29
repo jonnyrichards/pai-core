@@ -4,6 +4,7 @@ Tasks for the Unified Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `
 
 ## Active
 
+- [ ] Check with Boni about MSS needs re. session history display (added 2026-05-29)
 - [x] Continue Unified Sessions work with Rach (done 2026-05-13)
 - [x] Cancel the product review (done 2026-05-13)
 - [x] Rach + Jonny to explain the routing solve for MSS (done 2026-05-13)
