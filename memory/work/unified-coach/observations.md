@@ -4,6 +4,8 @@ Timestamped log of events, decisions, learnings. Append-only.
 
 ## 2026-05
 
+- 2026-05-29 [work, unified-coach, unified-sessions, design, rach, enoch]: Rach reviewing Unified Sessions designs ahead of a show and tell with Enoch planned for end of next week (w/c 2 Jun). Coach Trio session to precede it.
+
 - 2026-05-06 [insight, work]: Highest-engagement Coach accounts (by session volume and/or sessions/turns per user): Jewish Board, PersonifyHealth, AKQA, VML, WPP, CRED, Collective Health. Follow-up questions to answer: which Coach module (General/Engage/Perform) drives most usage where avg sessions > threshold; which topics are most asked about (group by topic, rank). [work]
 
 ## 2026-04
