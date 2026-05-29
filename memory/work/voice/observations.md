@@ -2,6 +2,8 @@
 
 Timestamped log of events, decisions, learnings. Append-only. Latest first.
 
+- 2026-05-29 [work, voice, architecture, compatibility, kristina]: Decision taken with Kristina to not pursue Voice testing in Perform / Engage — long response times make latency unworkable in those contexts.
+
 - 2026-05-29 [work, voice, testing, beta-rollout, darsh]: Keep Paul (Coach voice #2) live until end of Tuesday to complete testing — Darsh's request. Beta rollout moves to Wednesday at the earliest.
 
 - 2026-05-27 [work, voice, uxr, links]: CZ Voice research links — Research plan: https://docs.google.com/document/d/1Mdw0QMZiaKFCEArYgL3Zjig3MkliSekX2FGU89Onu2s/edit?tab=t.0; CZ survey: https://docs.google.com/forms/d/e/1FAIpQLSf4x91Sgr7XiA-o8J1CNDI2BV6_T6uUUHBmzbNw_t7BJxCvsQ/viewform; Interview sign-ups: https://docs.google.com/forms/d/e/1FAIpQLSfqlCMRzWAUBCNRU8hAtI_ZL-r-GtDtNOsuiwMeDwkfLmRAuw/viewform
