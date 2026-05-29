@@ -9,7 +9,7 @@ Tasks for the Unified Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `
 - [x] Cancel the product review (done 2026-05-13)
 - [x] Rach + Jonny to explain the routing solve for MSS (done 2026-05-13)
 - [x] Share async note with Coach team on new scope: MSS-only initially (done 2026-05-22)
-- [ ] Discuss vertical alignment regression with Eng — suggested prompts/welcome message in Side Panel (Engage + Perform) are top-aligned, should be middle-aligned per Figma designs (added 2026-04-15)
+- [x] Discuss vertical alignment regression with Eng — suggested prompts/welcome message in Side Panel (Engage + Perform) are top-aligned, should be middle-aligned per Figma designs (done 2026-05-29)
 
 ## Completed
 
