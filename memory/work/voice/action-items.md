@@ -4,8 +4,15 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 
 ## Active (no fixed deadline)
 
-- [ ] Test Baps' latest voice changes in prod (added 2026-05-28)
-- [ ] Pick up with Kristina and Rachael around how to signal non-voice text differently in the Coach response (added 2026-05-27)
+- [ ] Draft Gong post for Jun 2 first beta tranche (added 2026-05-15)
+- [ ] Review 'non-voice text' display with Rachael (w/c 2026-06-02, around 4 Jun) (added 2026-05-29)
+- [ ] Check with Boni on how to turn on Voice in SDEs, then add Eng ticket (added 2026-05-29)
+- [ ] Create design for new Beta features toggle (admin); run past Ally (added 2026-05-29)
+- [x] Test Baps' latest voice changes in prod (done 2026-05-29)
+- [x] Pick up with Kristina and Rachael around how to signal non-voice text differently in the Coach response (done 2026-05-29)
+- [x] Check in with Kristina about Voice testing in Perform / Engage (done 2026-05-29)
+- [x] Formalise date to switch Voice on in SDEs (done 2026-05-29)
+- [x] Involve Ally in copy for the voice admin toggle (done 2026-05-29)
 
 - [x] Schedule Voice session: back end, streaming, interruptions, Dictation everywhere (Nate, Baps, Tabitha, Jonny) (done 2026-05-08)
 - [x] Schedule Voice session: instrumentation deep dive (Baps, Jonny) (done 2026-05-08)
