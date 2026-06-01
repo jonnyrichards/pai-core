@@ -14,6 +14,7 @@
 - After exec/team meetings: observations first → action items → new project docs; summarise, don't transcribe
 - Owner uses PAI to think out loud mid-meeting — answer concisely, correct wrong mental models directly
 - **Observation shorthand** ⚠️ ALWAYS EXECUTE: `O: {text}` (or message starting with "observation") → immediately write to the correct `observations.md`, confirm with "→ domain/observations". Do NOT treat as context or commentary — treat as a write command.
+- **Action item shorthand** ⚠️ ALWAYS EXECUTE: `AI: {text}` → immediately append to the correct `action-items.md`, confirm with "→ domain/action-items". Infer domain from content; default to `work/core-coach` if unclear. Format: `- [ ] {text} (added YYYY-MM-DD)`. Do NOT treat as context — treat as a write command.
 
 ## Technical Conversations
 
