@@ -4,6 +4,8 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 
 ## Active
 
+- [ ] Review Darsh's CZ voice testing analysis (Miro) (added 2026-06-03)
+
 - [ ] Update Martin with name changes (e.g. voice labels) post CZ feedback synthesis (added 2026-06-02)
 - [ ] Draft Gong post for Jun 2 first beta tranche (added 2026-05-15)
 - [ ] Review 'non-voice text' display with Rachael (w/c 2026-06-02, around 4 Jun) (added 2026-05-29)
