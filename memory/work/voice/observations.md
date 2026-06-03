@@ -2,6 +2,8 @@
 
 Timestamped log of events, decisions, learnings. Append-only. Latest first.
 
+- 2026-06-02 [work, voice, beta, rollout, eleven-labs]: New Beta features segments set up in all environments; FF configured for staged rollout (10% → 30% → 100% over 2 weeks). Paul (ElevenLabs voice) retired based on CZ testing feedback — Nova Westbrook selected going forward.
+
 - 2026-06-02 [work, voice, uxr, cz, mads, adoption]: Mads (CZ) feedback on Coach Voice: uses it in the flow of work, doesn't think of it as a 'Coach' in the same way as a sit-down session. Key quote: "If it knew all these things — my work, my relationship with my manager, my development goals...then I would make the time, but because it doesn't, I don't." She'd never considered proactively doing this herself. Biggest barrier to adoption: finding a rhythm for using Voice in the flow of work.
 - 2026-05-29 [work, voice, architecture, compatibility, kristina]: Decision taken with Kristina to not pursue Voice testing in Perform / Engage — long response times make latency unworkable in those contexts.
 
