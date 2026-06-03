@@ -4,12 +4,14 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 
 ## Active
 
-- [ ] Review Darsh's CZ voice testing analysis (Miro) (added 2026-06-03)
+- [ ] Share GTM recs with Martin post CZ voice testing (added 2026-06-02)
+- [ ] Draft Gong post for Jun 11 ahead of 100% tranche (added 2026-05-15)
+- [ ] Source audio cue for 'Voice mode is now recording...' (added 2026-05-29)
+- [ ] Design new Beta features toggle page, share with Ally / Nate (added 2026-05-29)
 
-- [ ] Update Martin with name changes (e.g. voice labels) post CZ feedback synthesis (added 2026-06-02)
-- [ ] Draft Gong post for Jun 2 first beta tranche (added 2026-05-15)
-- [ ] Review 'non-voice text' display with Rachael (w/c 2026-06-02, around 4 Jun) (added 2026-05-29)
-- [ ] Check with Boni on how to turn on Voice in SDEs, then add Eng ticket (added 2026-05-29)
-- [ ] Create design for new Beta features toggle (admin); run past Ally (added 2026-05-29)
+## Completed
+
+- [x] Review Darsh's CZ voice testing analysis (Miro) (done 2026-06-03)
+- [x] Check with Boni on how to turn on Voice in SDEs, then add Eng ticket (done 2026-06-03)
 
 <!-- Completed items archived to memory/glacier/work/voice/action-items-done.md (2026-05-29) -->
