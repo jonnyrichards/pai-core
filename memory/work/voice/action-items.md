@@ -4,6 +4,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 
 ## Active
 
+- [ ] Triage Louie van Senden's voice feedback with Darshana — sound wave icon sync, initial icon state confusion, coach only speaking first paragraph, coach still picking up own speech as input on 4th turn (added 2026-06-04)
 - [ ] Share GTM recs with Martin post CZ voice testing (added 2026-06-02)
 - [ ] Draft Gong post for Jun 11 ahead of 100% tranche (added 2026-05-15)
 - [ ] Source audio cue for 'Voice mode is now recording...' (added 2026-05-29)
