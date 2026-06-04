@@ -4,6 +4,10 @@ Tasks for the Unified Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `
 
 ## Active
 
+- [ ] Recruit 5-10 CZ testers for unified sessions experiment (added 2026-06-04) — target next week
+- [ ] Rach to vibe-code a version of unified sessions options 2/3 (added 2026-06-04)
+- [ ] Darshana to map out mental model-based testing approach (added 2026-06-04)
+- [ ] Run CZ testing session on unified sessions ~Jun 15 (added 2026-06-04)
 - [ ] Decide whether vibe-coding a version of Unified Sessions / Routing in Design Sandbox is an option (added 2026-06-03)
 
 ## Completed
