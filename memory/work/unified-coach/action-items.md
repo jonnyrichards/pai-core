@@ -4,6 +4,7 @@ Tasks for the Unified Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `
 
 ## Active
 
+- [ ] Schedule CZ interviews for unified sessions w/c 15 Jun (added 2026-06-04)
 - [ ] Recruit 5-10 CZ testers for unified sessions experiment (added 2026-06-04) — target next week
 - [ ] Rach to vibe-code a version of unified sessions options 2/3 (added 2026-06-04)
 - [ ] Darshana to map out mental model-based testing approach (added 2026-06-04)
