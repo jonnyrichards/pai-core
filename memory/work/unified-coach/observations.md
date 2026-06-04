@@ -2,6 +2,10 @@
 
 Timestamped log of events, decisions, learnings. Append-only.
 
+## 2026-06
+
+- 2026-06-04 [milestone, work]: Jonny, Rach, and Darshana created a loose plan to build confidence in the unified sessions solution (Enoch ask). Plan: (1) Rach vibe-codes a version of options 2/3, (2) Jonny recruits 5-10 CZ testers, (3) by ~Jun 15 test with CZ using a mental model-based approach that Darshana will map out. [[work/unified-coach/action-items]]
+
 ## 2026-05
 
 - 2026-05-29 [work, unified-coach, unified-sessions, design, rach, enoch]: Rach reviewing Unified Sessions designs ahead of a show and tell with Enoch planned for end of next week (w/c 2 Jun). Coach Trio session to precede it.
