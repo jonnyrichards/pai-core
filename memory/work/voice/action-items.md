@@ -10,6 +10,8 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 
 ## Completed
 
+- [x] Share GTM recs with Martin post CZ voice testing (done 2026-06-04)
+- [x] Source audio cue for 'Voice mode is now recording...' (done 2026-06-04)
 - [x] Review Darsh's CZ voice testing analysis (Miro) (done 2026-06-03)
 - [x] Check with Boni on how to turn on Voice in SDEs, then add Eng ticket (done 2026-06-03)
 
