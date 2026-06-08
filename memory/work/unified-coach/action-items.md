@@ -4,6 +4,7 @@ Tasks for the Unified Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `
 
 ## Active
 
+- [ ] Speak to Dane and Amanda about 'business logic' re. Unified Sessions — what can/can't we display; take a user + business + tech approach to this research (added 2026-06-09)
 - [ ] Recruit 5-10 CZ testers (w/c 8 Jun) and schedule interviews (w/c 15 Jun) for unified sessions mental model testing (added 2026-06-04)
 - [ ] Vibe-code a Unified Sessions prototype in Design Sandbox (added 2026-06-04)
 
