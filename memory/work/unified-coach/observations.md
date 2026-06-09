@@ -4,6 +4,8 @@ Timestamped log of events, decisions, learnings. Append-only.
 
 ## 2026-06
 
+- 2026-06-09 [milestone, work, uxr, darshana]: Research plan agreed with Darshana for Unified Sessions. W/c 8 Jun: Jonny recruits CZ testers. W/c 15 Jun: run testing, synthesise and share back with CZ. Running in parallel: recruit customers for CKB (Jonny to prioritise getting comms and consent forms to CS coaches on return next week, to give enough lead time for scheduling). Research questions for CKB to be refined this week — time may already be booked with Darshana for next week. W/c 22 Jun: CKB customer testing runs. [[work/customer-knowledge-base/observations]]
+
 - 2026-06-04 [milestone, work]: Jonny, Rach, and Darshana created a loose plan to build confidence in the unified sessions solution (Enoch ask). Plan: (1) Rach vibe-codes a version of options 2/3, (2) Jonny recruits 5-10 CZ testers, (3) by ~Jun 15 test with CZ using a mental model-based approach that Darshana will map out. [[work/unified-coach/action-items]]
 
 ## 2026-05
