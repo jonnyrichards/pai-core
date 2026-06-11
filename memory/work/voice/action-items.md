@@ -4,6 +4,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 
 ## Active
 
+- [ ] Make a plan for the next stage of Voice — cover: latency options (UI display, additional endpoint), other modules (Engage / Perform), smaller models, testing / evals, usage data (added 2026-06-11)
 - [ ] Triage Louie van Senden's voice feedback with Darshana — sound wave icon sync, initial icon state confusion, coach only speaking first paragraph, coach still picking up own speech as input on 4th turn (added 2026-06-04)
 - [ ] Draft Gong post for Jun 11 ahead of 100% tranche (added 2026-05-15)
 - [ ] Design new Beta features toggle page, share with Ally / Nate (added 2026-05-29)
