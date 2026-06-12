@@ -4,6 +4,7 @@ Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] ta
 
 ## Active
 
+- [ ] Finalise voice-next-stage-plan.md: (1) flesh out surfaces/response times table — add MSI TTFT data point once available from Nate/Baps; (2) review all surface rows for accuracy (added 2026-06-12)
 - [ ] Make a plan for the next stage of Voice — cover: latency options (UI display, additional endpoint), other modules (Engage / Perform), smaller models, testing / evals, usage data (added 2026-06-11)
 - [ ] Triage Louie van Senden's voice feedback with Darshana — sound wave icon sync, initial icon state confusion, coach only speaking first paragraph, coach still picking up own speech as input on 4th turn (added 2026-06-04)
 - [ ] Draft Gong post for Jun 11 ahead of 100% tranche (added 2026-05-15)
