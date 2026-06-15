@@ -3,6 +3,7 @@
 Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] task (done YYYY-MM-DD)`
 
 ## Active
+- [ ] Review voice in MSI using Falcon per Michael's suggestion — https://cultureamp.slack.com/archives/D0AJGG8T2Q4/p1781487492844119 (added 2026-06-15)
 
 - [ ] Pick up with Nate + Michael about getting a benchmark for MSI Coach TTFT — https://cultureamp.slack.com/archives/C0A3XEA1FDK (added 2026-06-12)
 - [ ] Finalise voice-next-stage-plan.md: (1) flesh out surfaces/response times table — add MSI TTFT data point once available from Nate/Baps; (2) review all surface rows for accuracy (added 2026-06-12)
