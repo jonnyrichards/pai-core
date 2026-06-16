@@ -4,6 +4,25 @@
 
 ## Feature Ideas
 
+### Planning skill pipeline (built 2026-06-16)
+
+Three skills that form a sequenced pipeline for quarterly product planning:
+
+1. **`/quarterly-priorities`** — synthesis skill. Ingests multiple sources (Confluence, Slack canvas, JPD CSV, CX spreadsheet, local .md). Back-and-forth conversation to produce `projects/{product}/quarterly-priorities.md` — a Confluence-ready table with columns: Stream | Initiative | Work Item | Description | Stage | When? | Estimate. This is the **source of truth**.
+
+2. **`/quarterly-roadmap`** — translation skill. Reads `quarterly-priorities.md` and adds the rendering layer: Start (Q3.x positions), Confidence, Deliverables (Work Items → card milestones), Drives. Lean — 2 rounds max. Outputs `projects/{product}/roadmap.md`. Lane summaries must be ≤60 chars (renderer constraint).
+
+3. **`/roadmap-render`** — visualisation skill. Reads `roadmap.md`, outputs `roadmap.html`. No conversation. Run whenever you want to refresh the visual.
+
+**Key design decisions:**
+- `quarterly-priorities.md` is human-readable and Confluence-syncable via `/confluence-sync`
+- `roadmap.md` is a derived artefact — regenerable from priorities, not independently maintained
+- Description in roadmap.md = hover tooltip only (not shown on card face)
+- Work Items in priorities = Deliverables on the card face in the renderer
+- `/roadmap-create` still exists for blank-slate situations (no priorities doc)
+
+**Confluence sync note:** Live Docs always return ADF on pull regardless of formatting style. Plain text cells survive the ADF→markdown conversion cleanly; native Confluence formatting (status lozenges, coloured cells) gets stripped. Treat Confluence as a push/share layer; edit locally and push.
+
 ## Bug Fixes
 
 ## Optimization Ideas
