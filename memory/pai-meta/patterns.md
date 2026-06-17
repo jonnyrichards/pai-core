@@ -15,6 +15,7 @@
 - Owner uses PAI to think out loud mid-meeting — answer concisely, correct wrong mental models directly
 - **Observation shorthand** ⚠️ ALWAYS EXECUTE: `O: {text}` (or message starting with "observation") → immediately write to the correct `observations.md`, confirm with "→ domain/observations". Do NOT treat as context or commentary — treat as a write command.
 - **Action item shorthand** ⚠️ ALWAYS EXECUTE: `AI: {text}` → immediately append to the correct `action-items.md`, confirm with "→ domain/action-items". Infer domain from content; default to `work/core-coach` if unclear. Format: `- [ ] {text} (added YYYY-MM-DD)`. Do NOT treat as context — treat as a write command.
+- **Discuss shorthand** ⚠️ ALWAYS EXECUTE: `D: {text} (with: name)` → immediately append to `## Open` in the correct `discuss.md`, confirm with "→ domain/discuss". Infer domain from content; default to `work/core-coach` if unclear. Format: `- [ ] {text} (with: {name} | {optional context}) (added YYYY-MM-DD)`. When an item has been raised/discussed, move it to `## Done`.
 
 ## Technical Conversations
 
