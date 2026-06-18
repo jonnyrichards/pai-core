@@ -3,7 +3,7 @@
 Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] task (done YYYY-MM-DD)`
 
 ## Active
-- [ ] Share voice-next-stage-plan.md with Simon (Fri) ahead of Mindy meeting (Mon) (added 2026-06-18)
+- [ ] Share voice-next-stage-plan.md with Simon (Fri) + Eng team for feedback, ahead of Mindy meeting (Mon) — https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6335890058/Voice+Next+Stage+Plan (added 2026-06-18)
 - [ ] Review voice in MSI using Falcon per Michael's suggestion — https://cultureamp.slack.com/archives/D0AJGG8T2Q4/p1781487492844119 (added 2026-06-15)
 
 - [ ] Pick up with Nate + Michael about getting a benchmark for MSI Coach TTFT — https://cultureamp.slack.com/archives/C0A3XEA1FDK (added 2026-06-12)
