@@ -1,6 +1,6 @@
 # Observations: Core Coach
 
-- 2026-06-19 [work, core-coach, tooling, workflow]: Discovered a workflow for uploading HTML content to a GitHub Pages — useful for sharing roadmap visuals externally (e.g. projects/core-coach/roadmap.html). See also: hotel lobby pattern.
+- 2026-06-19 [work, core-coach, tooling, workflow]: Discovered a workflow for uploading HTML content to GitHub Pages via the `hotel lobby add {my-page.html}` CLI command — useful for sharing roadmap visuals externally.
 
 - 2026-06-19 [work, core-coach, planning, q3, stakeholders]: Q3 planning session with DAIF leads. Simon wants: (1) more detail on each initiative in the roadmap — clear user benefit; (2) explanation of why CKB is not deliverable in Q3 and what would need to budge to make it deliverable. Dan and Jonny to explain this; time already booked with Dan to discuss.
 
