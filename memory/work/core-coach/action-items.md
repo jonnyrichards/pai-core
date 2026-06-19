@@ -4,6 +4,7 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 
 ## Active (deadline)
 
+- [ ] Check the translation rules for Coach and remove it from translation list in the nav (added 2026-06-19)
 - [ ] Decide who owns synthetic data for demo environments (SDE): market layer team or Coach Foundations? Clarify whether testing new Coach features in the SDE creates dependencies on Coach. (added 2026-06-16)
 
 - [ ] Discuss Coach Playbook with Kristina — particularly the 'Foundational Ingredients of a Prompt' page (https://cultureamp.atlassian.net/wiki/spaces/CP1/pages/6248202459/2.5.1+Foundational+Ingredients+of+a+Prompt): build out recommended prompt template? 'Langfuse injection pattern': should we link to an example? How do we guide towards dynamic prompting? (added 2026-06-11)
