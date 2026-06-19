@@ -5,7 +5,7 @@ Tasks for the Enablement stream. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x
 ## Active
 
 
-- [ ] Connect with Michael about what the Evals process should ideally look like (added 2026-06-09)
+- [x] Connect with Michael about what the Evals process should ideally look like (done 2026-06-19)
 
 ## Completed
 
