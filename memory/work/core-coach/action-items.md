@@ -4,7 +4,7 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 
 ## Active (deadline)
 
-- [ ] Create sample roadmap HTML page and share with Nisha (added 2026-06-19)
+- [ ] Make a sample HTML roadmap page for Nisha and figure out how to share it via Cowork (added 2026-06-19)
 - [ ] Roadmap: split Conversation Dashboard out from Improved Observability and place it in Q3 as its own initiative (added 2026-06-19)
 - [ ] Check the translation rules for Coach and remove it from translation list in the nav (added 2026-06-19)
 
