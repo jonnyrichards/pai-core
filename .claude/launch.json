@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "customer-knowledge-base",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "3333", "projects/customer-knowledge-base"],
+      "port": 3333
+    }
+  ]
+}

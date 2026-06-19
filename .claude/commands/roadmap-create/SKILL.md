@@ -98,6 +98,12 @@ Work through each initiative. The pattern:
 3. **Confirm confidence level.** Use the key below. Don't over-inflate. `Committed` means scoped, resourced, in delivery — not "we really want to do this."
 4. **Confirm what it drives.** Reach / Engagement / Foundation. Foundation is valid for observability, instrumentation, infrastructure that enables the others.
 
+**For each initiative, also ask:**
+- **Deliverables** — 2–4 milestones separated by `>` that appear permanently on the card, e.g. `First cut live > Full rollout`. These should be 3–5 words each — concrete checkpoints, not descriptions. Use `—` if none. (Pipes can't be used inside markdown table cells.)
+
+**For each lane, also confirm:**
+- **Lane summary** — one sentence placed directly below the `##` heading (before the table). This is the narrative for the lane: what it's driving towards. Rendered in the gutter below the lane title.
+
 **Description principles (from the session that produced `h2-roadmap.md`):**
 - One sentence does two jobs: what it is + why it matters for adoption
 - If the "what" is obvious from the name, lean into the "why"
@@ -136,8 +142,7 @@ Only after sign-off: write the markdown file.
 | Committed | Scoped, resourced, in delivery |
 | High confidence | Strong intent, clear path |
 | Early signal | Directionally right, needs validation |
-| Hypothesis | Worth exploring, low signal so far |
-| Placeholder | Not yet defined |
+| Discovery | Planned but not yet scoped or resourced |
 
 ## Effort Key
 
@@ -172,7 +177,7 @@ The file structure adapts to the swim lanes agreed in Phase 2. The fixed skeleto
 
 [1-sentence framing of this lane]
 
-| Initiative | Start | Confidence | Effort | Drives | Description |
+| Initiative | Start | Confidence | Effort | Drives | Deliverables | Description |
 
 ---
 
@@ -180,7 +185,7 @@ The file structure adapts to the swim lanes agreed in Phase 2. The fixed skeleto
 
 [1-sentence framing]
 
-| Initiative | Start | Confidence | Effort | Drives | Description |
+| Initiative | Start | Confidence | Effort | Drives | Deliverables | Description |
 
 ---
 
@@ -191,12 +196,31 @@ The file structure adapts to the swim lanes agreed in Phase 2. The fixed skeleto
 
 **Column reference:**
 - `Start`: `Q3.0`–`Q3.5`, `Q4.0`–`Q4.5`, or `TBD` — position on the timeline; no `Quarter` column needed
+- `Deliverables`: `>`-separated milestones shown on the card face, e.g. `First cut live > Full rollout`. Use `—` if none.
 - `Confidence`, `Effort`, `Drives`, `Description`: unchanged from previous format
+
+**Lane summary:** write a single sentence directly below the `##` heading (before the table). Rendered in the left gutter below the lane name.
 - Row assignment is automatic — the renderer packs concurrent items into rows via greedy interval scheduling
 
 **Reference example:** `projects/core-coach/h2-roadmap.md` uses a Spine + Bets structure. The renderer (`roadmap-render`) handles any number of lanes with any names — it reads section headings dynamically.
 
-Default output path: `projects/[product-name]/h2-roadmap.md`
+Every output file must include this comment block immediately after the `# Title` line and before the thesis sentence:
+
+```markdown
+<!--
+TIMELINE SCALE
+Each quarter has 6 positions (Q3.0 – Q3.5), each ~2 weeks apart.
+"A month forward" = +2 positions. "A month back" = -2 positions.
+Q3.5 → Q4.0 is a valid boundary crossing.
+
+EFFORT (card width)
+Small = 1/6q (~2 weeks) | Medium = 2/6q (~1 month) | Large = 4/6q (~8 weeks)
+-->
+```
+
+This is the in-file reference for anyone editing the markdown directly. The renderer ignores it.
+
+Default output path: `projects/[product-name]/roadmap.md`
 
 ---
 

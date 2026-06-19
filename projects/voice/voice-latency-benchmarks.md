@@ -1,6 +1,9 @@
 ---
 title: Voice AI Latency — Industry Benchmarks
 status: draft
+confluence_page_id: 6127682827
+confluence_url: "https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6127682827/Voice+AI+Latency+Industry+Benchmarks"
+last_synced: "2026-04-13T01:51:14.953Z"
 ---
 
 ## Overview

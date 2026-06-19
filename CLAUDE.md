@@ -93,6 +93,7 @@ memory/
    - **Ordering**: latest entry at the top — prepend new observations, don't append
    - **File selection**: choose the most specific observations file for the domain (e.g. `memory/work/voice/observations.md` for Voice topics, `memory/personal/observations.md` for personal topics). When in doubt, prefer specificity over the generic file.
 4. **Action items**: `- [ ] task (added YYYY-MM-DD)` / `- [x] task (done YYYY-MM-DD)`
+4a. **Discuss items**: `- [ ] topic (with: name | context) (added YYYY-MM-DD)` / move to `## Done` when raised. Lives in `discuss.md` per domain.
 5. **Entities**: Edit in place, never delete
 6. **Hot memory <50 lines**: Prune aggressively, move detail to observations
 7. **Self-improvement**: After notable interactions, append to `pai-meta/self-observations.md`. Periodically distill patterns into `pai-meta/patterns.md`
@@ -127,6 +128,7 @@ system prompt guides file selection. For terminal sessions, follow the same logi
 | `hot-memory.md` | Rewrite freely |
 | `observations.md` | Append only |
 | `action-items.md` | Append new, check off done |
+| `discuss.md` | Append new under `## Open`, move to `## Done` when raised |
 | `entities.md` | Edit in place by `### Name` header |
 | `calendar.md` | Edit in place |
 | `health.md` | Edit `## Current State`, append to `## History` |

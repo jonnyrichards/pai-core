@@ -1,11 +1,11 @@
 ---
 name: roadmap-render
-description: Renders the Coach H2 roadmap markdown file into a self-contained HTML visual for Confluence embedding. Trigger when the user asks to render, generate, refresh, or export the roadmap visual, or says "update the roadmap HTML".
+description: Renders a roadmap markdown file into a self-contained HTML visual for Confluence embedding. Trigger when the user asks to render, generate, refresh, or export the roadmap visual, or says "update the roadmap HTML".
 ---
 
 # Roadmap Renderer
 
-Converts `projects/core-coach/h2-roadmap.md` (the source of truth) into a self-contained HTML file ready for Confluence embedding.
+Converts a roadmap markdown file (default: `projects/roadmap.md`) into a self-contained HTML file ready for Confluence embedding.
 
 > **For future agents:** If you need to understand the geometry or modify the renderer, read `.claude/commands/roadmap-render/render.cjs` top-to-bottom. Key sections:
 > - `parseStart()` — how `Q3.2` notation converts to a float coordinate
@@ -27,16 +27,22 @@ Trigger this skill when the user says:
 Run the renderer script from the repo root:
 
 ```bash
-node .claude/commands/roadmap-render/render.cjs [input-file] [output-file]
+node .claude/commands/roadmap-render/render.cjs [input-file] [output-file] [--png]
 ```
 
 **Defaults:**
-- Input:  `projects/core-coach/h2-roadmap.md`
-- Output: `projects/core-coach/h2-roadmap.html` (same path as input, `.html` extension)
+- Input:  `projects/roadmap.md`
+- Output: `projects/roadmap.html` (same path as input, `.html` extension)
+
+**Export PNG** (for Confluence embedding — requires Chrome):
+```bash
+node .claude/commands/roadmap-render/render.cjs --png
+```
+Outputs a `@2x` PNG alongside the HTML (e.g. `h2-roadmap.png`). Uses the local Chrome install via `puppeteer-core`.
 
 **Custom paths:**
 ```bash
-node .claude/commands/roadmap-render/render.cjs projects/core-coach/h2-roadmap.md /tmp/roadmap-preview.html
+node .claude/commands/roadmap-render/render.cjs projects/roadmap.md /tmp/roadmap-preview.html
 ```
 
 ## Workflow
@@ -44,7 +50,8 @@ node .claude/commands/roadmap-render/render.cjs projects/core-coach/h2-roadmap.m
 1. Run the render command (above)
 2. Confirm success output: `✅ Rendered N initiatives → <output-path>`
 3. Tell the user where the HTML file was written
-4. Optionally offer to open it in the browser: `open projects/core-coach/h2-roadmap.html`
+4. Optionally offer to open it in the browser: `open projects/core-coach/roadmap.html`
+5. If the user wants to embed in Confluence, use `--png` and upload the PNG as an image
 
 ## Visual Design
 
@@ -63,14 +70,14 @@ card positioning. Card width encodes duration; cards span quarter boundaries fre
 | Confidence — Committed | Full accent color fill, cream text, heavy border |
 | Confidence — High confidence | 18% accent tint background, hairline border |
 | Confidence — Early signal | Paper background, hairline border |
-| Confidence — Hypothesis/Placeholder | Paper background, dotted border, italic title |
-| Effort ticks | 5-tick indicator top-right of card (Small=2, Medium=3, Large=5) |
-| Not in H2 | Rendered below canvas as a strikethrough list |
+| Confidence — Discovery | Paper background, dotted border |
+| Card width | Encodes duration: Small=1/6q (~2 weeks), Medium=2/6q (~1 month), Large=4/6q (~8 weeks) |
+| Not in scope | Rendered below canvas as a strikethrough list |
 
 ## Updating the Roadmap
 
 The markdown file is the source of truth. To update the visual:
-1. Edit `projects/core-coach/h2-roadmap.md`
+1. Edit `projects/roadmap.md`
 2. Re-run this skill
 
 The renderer re-parses from scratch on every run — no state between runs.
@@ -80,7 +87,7 @@ The renderer re-parses from scratch on every run — no state between runs.
 Lane tables use this column format:
 
 ```markdown
-| Initiative | Start | Confidence | Effort | Drives | Description |
+| Initiative | Start | Confidence | Effort | Drives | Deliverables | People | Description |
 ```
 
 **`Start`** values: `Q3.0` through `Q3.5`, `Q4.0` through `Q4.5` (or `TBD`)
@@ -90,8 +97,12 @@ Lane tables use this column format:
 
 **Row assignment** is fully automatic — greedy interval packing per lane, no `Row` column needed.
 
-**`Confidence`** values: `Committed`, `High confidence`, `Early signal`, `Hypothesis`, `Placeholder`
+**`Confidence`** values: `Committed`, `High confidence`, `Early signal`, `Discovery`
 
-**`Effort`** values: `Small` (0.5q), `Medium` (1.0q), `Large` (2.0q)
+**`Effort`** values: `Small` (~2 weeks, 1/6q), `Medium` (~1 month, 2/6q), `Large` (~8 weeks, 4/6q)
 
-The `Not in H2` table format is unchanged: `| Initiative | Reason |`
+**`Deliverables`** (optional): `>`-separated milestones shown below the card title, e.g. `First milestone > Second milestone`. Use `—` to leave blank. (Pipes can't be used inside markdown table cells.)
+
+**`People`** (optional): comma-separated names shown on the card below deliverables, e.g. `Alice, Bob`. Use `—` to leave blank. 2–3 names max.
+
+The `Not in scope` table format is unchanged: `| Initiative | Reason |`

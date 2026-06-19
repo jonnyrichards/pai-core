@@ -318,9 +318,13 @@ function completeCreate(filePath, mcpResponse) {
   const { metadata, body } = parseFrontmatter(content);
 
   // Update metadata with Confluence info
+  const createWebui = (mcpResponse.links || mcpResponse._links || {}).webui || '';
   metadata.confluence_page_id = mcpResponse.id;
-  metadata.confluence_url = `https://${CONFIG.cloudId}/wiki${mcpResponse._links.webui}`;
-  metadata.last_synced = mcpResponse.version.createdAt;
+  metadata.confluence_url = createWebui
+    ? `https://${CONFIG.cloudId}/wiki${createWebui}`
+    : `https://${CONFIG.cloudId}/wiki/spaces/pages/${mcpResponse.id}`;
+  metadata.last_synced = (mcpResponse.version && mcpResponse.version.createdAt)
+    || new Date().toISOString();
 
   // Write back to file
   fs.writeFileSync(filePath, serializeFrontmatter(metadata, body));
@@ -334,24 +338,49 @@ function completeCreate(filePath, mcpResponse) {
 }
 
 /**
+ * Normalise a getConfluencePage MCP response to a consistent shape.
+ * Handles both the old `content.nodes[0]` format and the current flat format.
+ */
+function normalisePageResponse(mcpResponse) {
+  // Old format: { content: { nodes: [ { id, title, body, webUrl, ... } ] } }
+  if (mcpResponse.content && mcpResponse.content.nodes && mcpResponse.content.nodes[0]) {
+    const node = mcpResponse.content.nodes[0];
+    return {
+      id: node.id,
+      title: node.title,
+      body: node.body,
+      url: node.webUrl,
+      versionCreatedAt: node.version && node.version.createdAt,
+    };
+  }
+
+  // Current flat format: { id, title, body, version: { createdAt }, spaceId, ... }
+  const url = mcpResponse.confluence_url ||
+    `https://${CONFIG.cloudId}/wiki/spaces/pages/${mcpResponse.id}`;
+  return {
+    id: mcpResponse.id,
+    title: mcpResponse.title,
+    body: mcpResponse.body,
+    url,
+    versionCreatedAt: mcpResponse.version && mcpResponse.version.createdAt,
+  };
+}
+
+/**
  * Check for conflicts before push
  */
 function checkConflict(localLastSynced, remoteResponse) {
-  const remoteModified = remoteResponse.content.nodes[0].lastModified;
-  const remoteVersion = remoteModified; // Could parse this properly if needed
+  const page = normalisePageResponse(remoteResponse);
+  const remoteModified = page.versionCreatedAt;
 
-  // If we have a last_synced timestamp and remote was modified after that
-  if (localLastSynced) {
+  if (localLastSynced && remoteModified) {
     const localDate = new Date(localLastSynced);
-    // Remote's lastModified is a human-readable string, so we need to check the API response
-    // The version.createdAt from the previous response would be more accurate
-    // For now, we'll rely on the user to handle this manually
+    const remoteDate = new Date(remoteModified);
 
-    // Return a warning if there's any indication of recent changes
-    if (remoteModified.includes('minute') || remoteModified.includes('hour') || remoteModified.includes('today')) {
+    if (remoteDate > localDate) {
       return {
         hasConflict: true,
-        message: `Remote page was modified ${remoteModified}. Your last sync was ${localLastSynced}. Consider pulling first.`
+        message: `Remote page was modified at ${remoteModified}. Your last sync was ${localLastSynced}. Consider pulling first.`
       };
     }
   }
@@ -383,15 +412,23 @@ function completePush(filePath, mcpResponse, conflictCheck = null) {
   const content = fs.readFileSync(filePath, 'utf8');
   const { metadata, body } = parseFrontmatter(content);
 
-  metadata.last_synced = mcpResponse.version.createdAt;
+  // version.createdAt is the authoritative sync timestamp; fall back to now
+  metadata.last_synced = (mcpResponse.version && mcpResponse.version.createdAt)
+    || new Date().toISOString();
 
   fs.writeFileSync(filePath, serializeFrontmatter(metadata, body));
+
+  // links may come back as _links (older API) or links (current API)
+  const webui = (mcpResponse.links || mcpResponse._links || {}).webui || '';
+  const url = webui
+    ? `https://${CONFIG.cloudId}/wiki${webui}`
+    : `https://${CONFIG.cloudId}/wiki/spaces/pages/${mcpResponse.id}`;
 
   return {
     success: true,
     pageId: mcpResponse.id,
-    url: `https://${CONFIG.cloudId}/wiki${mcpResponse._links.webui}`,
-    version: mcpResponse.version.number
+    url,
+    version: mcpResponse.version && mcpResponse.version.number
   };
 }
 
@@ -402,12 +439,12 @@ function completePull(filePath, mcpResponse) {
   const currentContent = fs.readFileSync(filePath, 'utf8');
   const { metadata } = parseFrontmatter(currentContent);
 
-  const pageData = mcpResponse.content.nodes[0];
+  const pageData = normalisePageResponse(mcpResponse);
 
   // Update metadata
   metadata.title = pageData.title;
-  metadata.last_synced = new Date().toISOString();
-  metadata.confluence_url = pageData.webUrl;
+  metadata.last_synced = pageData.versionCreatedAt || new Date().toISOString();
+  metadata.confluence_url = pageData.url;
 
   // Write back with new content
   fs.writeFileSync(filePath, serializeFrontmatter(metadata, pageData.body));
@@ -415,7 +452,7 @@ function completePull(filePath, mcpResponse) {
   return {
     success: true,
     pageId: pageData.id,
-    url: pageData.webUrl,
+    url: pageData.url,
     title: pageData.title
   };
 }
@@ -427,11 +464,11 @@ function completeInit(filePath, mcpResponse) {
   const content = fs.readFileSync(filePath, 'utf8');
   const { metadata, body } = parseFrontmatter(content);
 
-  const pageData = mcpResponse.content.nodes[0];
+  const pageData = normalisePageResponse(mcpResponse);
 
   // Update metadata
   metadata.confluence_page_id = pageData.id;
-  metadata.confluence_url = pageData.webUrl;
+  metadata.confluence_url = pageData.url;
   metadata.last_synced = null; // Not synced yet, just linked
 
   if (!metadata.title) {
@@ -443,7 +480,7 @@ function completeInit(filePath, mcpResponse) {
   return {
     success: true,
     pageId: pageData.id,
-    url: pageData.webUrl,
+    url: pageData.url,
     title: pageData.title
   };
 }

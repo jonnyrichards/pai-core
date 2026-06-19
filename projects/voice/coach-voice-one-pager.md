@@ -2,7 +2,7 @@
 title: Coach | Voice | One-pager
 confluence_page_id: 5840339196
 confluence_url: "https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/5840339196/Coach+Voice+One-pager"
-last_synced: "2026-03-26T05:41:01.223Z"
+last_synced: "2026-05-08T06:08:01.883Z"
 ---
 
 ## Description
@@ -92,6 +92,18 @@ In priority order:
 
 ---
 
+## Voice Selection
+
+**Near-term: one voice, no user choice.** We're launching with a single voice selected from a PSX-shortlisted set of two candidates (Nova Westbrook and Paul). The CZ qualitative panel will test both; the better-performing voice ships. No additional engineering or design work required.
+
+**Longer-term: two credible paths, decision deferred.** Once Voice is live and we have usage data, we'll decide between:
+- **User-selectable catalogue** — let users choose from a curated set; accommodates individual, cultural, and geographic preferences (PSX-recommended long-term model)
+- **Custom/cloned Coach voice** — a bespoke voice built for Coach via ElevenLabs voice cloning; supported by Brand as the most scalable path to a distinctive Coach identity
+
+Both have merit. The right call depends on signals we don't yet have: how much voice identity matters to users, and what demand looks like post-launch. Full options paper: [The Voice of Coach — Options](https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6117687617)
+
+---
+
 ## What
 
 _Roughly, what does this look like in the product? Link to designs if available._
@@ -102,67 +114,63 @@ _Roughly, what does this look like in the product? Link to designs if available.
 
 ## How
 
-We're proposing a three-phase approach to introducing Voice to General Coach, moving from internal testing (Customer Zero) through Limited Beta to full Beta release. The Perform use case (V2) is not currently scheduled for Q2 though Discovery has been promising.
+Two phases: Customer Zero (remaining build + controlled testing) followed by Beta (graduated rollout to all customers).
 
-### Phase 1: Build V1 + Customer Zero Release
+### Phase 1: Remaining Build + Customer Zero (May 19 →)
 
-_Duration_: Feb 16 - Apr 17
+_Goal_: Complete outstanding build work and validate Voice with Customer Zero before any customer release.
 
-_Goal_: Build core voice functionality for General Coach and release to Customer Zero
+**Remaining build items:**
 
-_Milestones_:
+- Instrumentation and analytics (in hand; separate session planned with Baps to review what’s implemented and what’s outstanding)
+- Remaining Security review items
+- OKTA implementation
+- Error/fallback behaviour
+- Enable in Sales Demo Environments [Proposal is with Tom Lewis for feedback]
 
-**Feb 16 - Mar 16:** Build core voice functionality (STT + TTS) with P0 features
-**Feb 16 - Mar 16:** Work through legal requirements (3P provider decision, DPIA + AICA, security risk assessment, consent flow)
-**Mar 23 - Mar 30:** Internal (Coach Camp) testing + refinement
-**Mar 30:** Ready for Customer Zero (Still in progress: 3P provider implementation, analytics + monitoring, security assessement response, consent)
-**Mar 30 - Apr 17:** Customer Zero release, CZ testing + bug fixing, complete: analytics implementation, security assessment response
+**Feature scope:**
 
-_Rationale_:
+- Dictation: available across all Coaches
+- Conversation mode: General Coach only
 
-* Low-risk validation with internal users first
-* Technical stability confirmed before customer release
+**Customer Zero testing:**
 
+Two tracks running in parallel:
+- **Company-wide:** Voice will be enabled for all of Customer Zero — broad internal exposure and feedback via existing channels (#help-coach-feedback, Coach Camp)
+- **Focused qualitative panel:** A panel of ~10 Campers, guided by UXR (Darshana), split across two shortlisted voice options. One week of testing, one week to implement feedback before Beta release.
 
-### Phase 2: V1 (General Coach) Limited Beta rollout
+**Gate to Phase 2:**
 
-_Duration_: Mid April - early May
+The following must be true before proceeding to Beta:
 
-_Goal_: Release Voice to C1+ customers for initial validation and feedback
-
-_Milestones_:
-
-**April 20:** Release to Limited Beta - C1+, any customer who requests
-**April 20 onwards:** Collect and analyze usage data
-**April 20 onwards:** Continued bug fixes and improvements
-
-_Rationale_:
-
-* Phased rollout reduces risk before full launch
-* More quantitative feedback from broader user base than small tester pool
-* ‘Universal feature’ appropriate for new input modality; no admin opt-in friction
-* Preserves pricing/packaging flexibility
+- Voice comparison complete and final voice selected
+- Session completion rate at an acceptable level (no widespread abandons or errors)
+- No P0/P1 bugs outstanding
+- Security review items implemented
+- Consent flow finalised
+- Analytics instrumentation live
+- OKTA implemented
 
 
-### Phase 3: V1 (General Coach) Beta (roll out to all customers)
+### Phase 2: Voice Beta — Graduated Rollout (Jun 2 →)
 
-_Duration_: Mid May ->
+_Goal_: Release Voice to all customers in a controlled, graduated rollout, labeled as Beta.
 
-_Goal_: Release Voice to all customers (100% rollout)
+**Feature scope:**
 
-_Milestones_:
+- Dictation: available across all Coaches
+- Conversation mode: General Coach only at launch
+- Admin toggle in Account Settings (desirable but not a blocker for release — rollout will be managed via flags until the toggle is shipped)
 
-**Early May:** Enable SDEs
-**Early May:** Update customer materials
-**Mid May:** Release to Beta - All customers (100% rollout, labeled as "Beta")
-**Late May:** Sales Enablement to coincide with upgrade to Coach in Perform
-**Late May:** Light-touch marketing activities
+**Rollout:**
 
-_Rationale_:
+- Week 1: 10% of accounts (random)
+- Week 2: 30% of accounts
+- Week 3: 100% of accounts
 
-* SDEs precede Beta release
-* 'End May' enablement push coincides with CiP activities (Coach in SR / PAUF etc.)
-* Beta positioning preserves flexibility
+**Scope expansion:**
+
+Product and PSX to evaluate whether Conversation mode can extend beyond General Coach. This requires further testing and analysis of beta data; timing TBD based on findings.
 
 ---
 
@@ -170,26 +178,11 @@ _Rationale_:
 
 | Date | Milestone |
 |------|-----------|
-| **Feb 16 - Mar 16** | Build + legal completion |
-| **Mar 23 - Mar 30** | Internal (Coach Camp) testing + refinement |
-| **Mar 30** | Customer Zero launch (internal) |
-| **Mar 30 - Apr 17** | CZ testing + bug fixing |
-| **April 20** | Limited Beta (C1+ customers) |
-| **Early May** | SDEs enabled + customer materials updated |
-| **Mid May** | Beta (all customers, 100% rollout) |
-| **Late May** | Sales Enablement push + light-touch marketing |
-
-
-## Sales Enablement + GTM
-
-Given that the primary business case for Voice is competitive positioning and sales enablement, we are coordinating early Sales Enablement:
-- Sales enablement strategy and materials
-- Beta customer outreach list
-- Battle cards and competitive positioning
-- Deal tracking and success metrics
-
-**GTM Document:** [Voice Coach - Go-to-Market Document](https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/5951226056/Voice+Coach+-+Go-to-Market+Document)
-
+| **Mon May 4** | ElevenLabs deal signed |
+| **Tue May 19** | Customer Zero release (Dictation: all Coaches; Conversation mode: General Coach only) |
+| **Tue Jun 2** | Voice Beta begins — Week 1: 10% rollout |
+| **Tue Jun 9** | Voice Beta — Week 2: 30% rollout |
+| **Tue Jun 16** | Voice Beta — Week 3: 100% rollout |
 
 ---
 

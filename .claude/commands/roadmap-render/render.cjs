@@ -6,8 +6,9 @@ const path = require('path');
 
 // ─── CLI Args ────────────────────────────────────────────────────────────────
 
-const args = process.argv.slice(2);
-const inputFile  = args[0] || 'projects/core-coach/h2-roadmap.md';
+const args = process.argv.slice(2).filter(a => a !== '--png');
+const exportPng  = process.argv.slice(2).includes('--png');
+const inputFile  = args[0] || 'projects/roadmap.md';
 const outputFile = args[1] || inputFile.replace(/\.md$/, '.html');
 
 // ─── Coordinate helpers ──────────────────────────────────────────────────────
@@ -24,7 +25,7 @@ function parseStart(s) {
   return qi + step / 6;
 }
 
-const EFFORT_SPAN  = { Small: 0.5, Medium: 1.0, Large: 2.0 };
+const EFFORT_SPAN  = { Small: 1/6, Medium: 2/6, Large: 4/6 };
 const EFFORT_TICKS = { Small: 2,   Medium: 3,   Large: 5   };
 
 // ─── Markdown parser ─────────────────────────────────────────────────────────
@@ -58,18 +59,22 @@ function parseRoadmap(md) {
   const titleLine = lines.find(l => l.startsWith('# '));
   const title = titleLine ? titleLine.replace(/^#\s+/, '').trim() : 'Roadmap';
 
-  // Subtitle: first non-empty paragraph after h1
+  // Subtitle: first non-empty paragraph after h1 (skip HTML comments)
   let subtitle = '';
   let pastH1 = false;
+  let inComment = false;
   for (const l of lines) {
     if (l.startsWith('# ')) { pastH1 = true; continue; }
-    if (pastH1 && l.trim() && !l.startsWith('#') && !l.startsWith('---')) {
+    if (!pastH1) continue;
+    if (l.trim().startsWith('<!--')) { inComment = true; }
+    if (inComment) { if (l.includes('-->')) inComment = false; continue; }
+    if (l.trim() && !l.startsWith('#') && !l.startsWith('---')) {
       subtitle = l.trim(); break;
     }
   }
 
   // Find all ## section headings (excluding known non-lane sections)
-  const SKIP = ['Confidence key', 'Effort key', 'Not in H2'];
+  const SKIP = ['Confidence key', 'Effort key', 'Not in'];
   const laneSections = lines
     .map((l, i) => ({ l, i }))
     .filter(({ l }) => l.startsWith('## ') && !SKIP.some(s => l.includes(s)));
@@ -80,10 +85,19 @@ function parseRoadmap(md) {
     const nextSectionIdx = laneSections[si + 1] ? laneSections[si + 1].i : lines.length;
     const sectionLines = lines.slice(i, nextSectionIdx);
     const items = extractSection(sectionLines, heading.split(':')[0].trim());
-    return { heading, items };
+    // Lane summary: first non-empty, non-heading, non-table, non-hr line after the ## heading
+    let summary = '';
+    for (let j = 1; j < sectionLines.length; j++) {
+      const line = sectionLines[j].trim();
+      if (!line || line.startsWith('#') || line.startsWith('|') || line.startsWith('---')) continue;
+      summary = line;
+      break;
+    }
+    return { heading, summary, items };
   });
 
-  const notH2 = extractSection(lines, 'Not in H2');
+  const notH2Section = lines.find(l => l.startsWith('## ') && l.includes('Not in'));
+  const notH2 = notH2Section ? extractSection(lines, notH2Section.replace(/^##\s+/, '').trim()) : [];
 
   return { title, subtitle, lanes, notH2 };
 }
@@ -111,8 +125,7 @@ const CONF_TREATMENT = {
   'Committed':       { kind: 'block',  fill: 'accent', textClass: 'cream', italic: false, tag: '★ committed'    },
   'High confidence': { kind: 'solid',  fill: 'tint',   textClass: 'ink',   italic: false, tag: '● high'         },
   'Early signal':    { kind: 'plain',  fill: 'paper',  textClass: 'ink',   italic: false, tag: '◇ early signal' },
-  'Hypothesis':      { kind: 'dotted', fill: 'paper',  textClass: 'ink',   italic: true,  tag: '? hypothesis'   },
-  'Placeholder':     { kind: 'dotted', fill: 'paper',  textClass: 'ink',   italic: true,  tag: '? placeholder'  },
+  'Discovery':       { kind: 'dotted', fill: 'paper',  textClass: 'ink',   italic: false, tag: '◎ discovery'    },
 };
 
 function escapeHtml(s) {
@@ -206,7 +219,7 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
   );
 
   const totalRows = laneRows.reduce((s, r) => s + r, 0);
-  const LANES_H  = Math.max(600, totalRows * 100);
+  const LANES_H  = Math.max(720, totalRows * 120);
   const SUBROW_H = LANES_H / totalRows;
   const CARD_H   = SUBROW_H - 16;
   const ROADMAP_H = HEADER_H + LANES_H + FOOTER_H;
@@ -233,18 +246,10 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
     const border = cardBorder(t);
     const textColor  = t.textClass === 'cream' ? ALMANAC.paper : ALMANAC.ink;
     const subColor   = t.textClass === 'cream' ? 'rgba(241,231,210,0.75)' : ALMANAC.inkSoft;
-    const tickColor  = t.textClass === 'cream' ? ALMANAC.paper : ALMANAC.ink;
-    const tickFaint  = t.textClass === 'cream' ? 'rgba(241,231,210,0.35)' : ALMANAC.inkFaint;
     const fontStyle  = t.italic ? 'italic' : 'normal';
     const fontWeight = t.kind === 'block' ? '600' : '500';
 
-    const ticksHtml = [1,2,3,4,5].map(n => {
-      if (n <= ticks) {
-        return `<div style="width:2px;height:9px;background:${tickColor};display:inline-block;margin-right:2px;"></div>`;
-      } else {
-        return `<div style="width:2px;height:9px;border-left:1px solid ${tickFaint};display:inline-block;margin-right:1px;margin-left:-1px;"></div>`;
-      }
-    }).join('');
+    const ticksHtml = '';
 
     const desc = item.Description && item.Description !== '—' ? escapeHtml(item.Description) : '';
     const tooltipHtml = desc
@@ -261,8 +266,10 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
         overflow:hidden; color:${textColor}; cursor:default;
       ">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
-          <div style="font-size:13px;line-height:1.15;font-weight:${fontWeight};font-style:${fontStyle};letter-spacing:-0.1px;color:${textColor};">
-            ${escapeHtml(item.Initiative)}
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:${fontWeight};font-style:${fontStyle};letter-spacing:-0.1px;color:${textColor};">${escapeHtml(item.Initiative)}</div>
+            ${item.Deliverables && item.Deliverables !== '—' ? `<div style="margin-top:3px;font-size:10px;line-height:1.3;color:${subColor};font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">${escapeHtml(item.Deliverables)}</div>` : ''}
+            ${item.People && item.People !== '—' ? `<div style="margin-top:4px;font-size:9.5px;line-height:1.2;color:${subColor};font-weight:400;font-style:normal;letter-spacing:0.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:ui-monospace,monospace;">◈ ${escapeHtml(item.People)}</div>` : ''}
           </div>
           <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;">${ticksHtml}</div>
         </div>
@@ -305,6 +312,7 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
         <div style="font-size:26px;line-height:1.05;margin-top:6px;letter-spacing:-0.4px;color:${accent};">
           ${escapeHtml(laneName)}
         </div>
+        ${lane.summary ? `<div style="font-size:10px;line-height:1.4;margin-top:7px;color:${ALMANAC.inkSoft};font-style:italic;">${escapeHtml(lane.summary)}</div>` : ''}
       </div>
       ${gridlines}
       ${cards}
@@ -320,7 +328,7 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
       </div>`).join('');
     return `
       <div style="margin-top:24px;width:${ROADMAP_W}px;background:#fff;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
-        <div style="padding:10px 16px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:#888;background:#f8f9fa;border-bottom:1px solid #e0e0e0;">Not in H2</div>
+        <div style="padding:10px 16px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:#888;background:#f8f9fa;border-bottom:1px solid #e0e0e0;">Not in scope</div>
         <div style="display:flex;flex-wrap:wrap;">${items}</div>
       </div>`;
   }
@@ -421,19 +429,13 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
   <div style="position:absolute;bottom:18px;left:${PAD_X}px;right:${PAD_X}px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:${ALMANAC.inkSoft};font-family:ui-monospace,monospace;">
     <div style="display:flex;gap:32px;align-items:flex-end;">
       <div>
-        <div style="margin-bottom:6px;">Card width = duration</div>
-        <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:60px;height:14px;border:1px solid ${ALMANAC.ink};background:transparent;"></div>
-        </div>
-      </div>
-      <div>
         <div style="margin-bottom:6px;">Confidence</div>
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
           ${[
             { key: 'Committed',       id: 'Committed'       },
             { key: 'High confidence', id: 'High confidence' },
             { key: 'Early signal',    id: 'Early signal'    },
-            { key: 'Hypothesis / Placeholder', id: 'Hypothesis' },
+            { key: 'Discovery', id: 'Discovery' },
           ].map(({ key, id }) => {
             const t = CONF_TREATMENT[id];
             const sampleAccent = '#8a4a2a';
@@ -470,9 +472,27 @@ function toRoman(n) {
   return r;
 }
 
+// ─── PNG export ───────────────────────────────────────────────────────────────
+
+async function exportToPng(htmlFile, pngFile) {
+  const puppeteer = require('puppeteer-core');
+  const browser = await puppeteer.launch({
+    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    args: ['--no-sandbox'],
+  });
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1800, height: 900, deviceScaleFactor: 2 });
+  await page.goto(`file://${path.resolve(htmlFile)}`);
+  // Wait for fonts and layout
+  await new Promise(r => setTimeout(r, 500));
+  const body = await page.$('body');
+  await body.screenshot({ path: pngFile });
+  await browser.close();
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
-function main() {
+async function main() {
   if (!fs.existsSync(inputFile)) {
     console.error(`Error: input file not found: ${inputFile}`);
     process.exit(1);
@@ -483,6 +503,13 @@ function main() {
   const html = renderHtml(data);
   fs.writeFileSync(outputFile, html, 'utf8');
   console.log(`✅ Rendered ${totalItems} initiatives → ${outputFile}`);
+
+  if (exportPng) {
+    const pngFile = outputFile.replace(/\.html$/, '.png');
+    process.stdout.write(`   Exporting PNG…`);
+    await exportToPng(outputFile, pngFile);
+    console.log(` → ${pngFile}`);
+  }
 }
 
 main();

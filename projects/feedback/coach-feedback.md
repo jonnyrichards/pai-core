@@ -1,0 +1,16 @@
+# Coach Feedback Log
+
+Parsed from `#feedback-product` and `#help-coach-feedback`. Updated weekly (Monday AM).
+
+| Date | Handle | Account | Channel | Theme | Feedback | Status |
+|------|--------|---------|---------|-------|----------|--------|
+| 2026-06-03 | @emilysafier | Personify Health | feedback-product | AI Competition / Integrations | CPO Brooke Cardarella already loads company context into Claude Enterprise and Copilot. Suggests a secure plug-in to one of these systems may be more valuable than building context directly into Coach. Open to chatting with the dev team. | new |
+| 2026-06-03 | @fayssal | | help-coach-feedback | Bug / Issue | Coach told a user their demographic data was suppressed due to confidentiality thresholds, when it was actually a question branching issue. Asks whether Coach will get more contextual awareness of survey logic/configuration. | new |
+| 2026-05-29 | @joanneglad | | help-coach-feedback | Bug / Issue | Coach lacks statistical nuance with numbers — e.g. flagging a -6pt decline in a group of 100 as "more dangerous" than a -5pt decline in a group of 1,000, ignoring variance in smaller samples. Also misreads benchmark context, calling scores "lowest by far" when they're on-par with industry benchmarks. | new |
+| 2026-05-28 | @shantadey | | help-coach-feedback | Bug / Issue | Coach confuses which survey to use for historical comparisons when a customer has both a 2024 survey (as benchmark) and a 2026 survey; keeps referencing "historical declines" against the wrong one. | new |
+| 2026-05-28 | @georgiecameron | | help-coach-feedback | Feature Request | Asks whether customers can nominate which internal survey Coach uses for comparisons when they have more than one. | new |
+| 2026-05-28 | @rhone | CivicPlus | help-coach-feedback | Feature Request | CivicPlus customer excited about Coach in Perform and asking if Goals and 1-on-1s content will be integrated — couldn't find a clear answer on the roadmap. | new |
+| 2026-05-27 | @katiegrave | Playlist (FKA Mindbody/ClassPass) | help-coach-feedback | Bug / Issue | CHRO experiencing incorrect info from Coach AI — not registering a "Department" demographic (P&C Business Partners Dept) that is visible in the report. Flagged as trust issue: "can we fix this to build trust in the tool?" | new |
+| 2026-05-27 | @gabyprado | | help-coach-feedback | Bug / Issue | Customer gave neutral NPS citing Coach experience: Coach misread a negatively-worded question, then accused the user of trying to manipulate data ("STOP"), causing panic. Raised concern about the tool's "forceful nature" when it encounters edge cases. | new |
+| 2026-05-20 | @ada | OLX | feedback-product | Integrations / Adoption | Managers reluctant to adopt Coach despite internal promotion. OLX is Slack-first — they want to "clone" Coach capabilities into Slack. Blocked by API being outbound-only (no data ingestion). Target adoption: 200–250 active manager users. | new |
+| 2026-05-20 | @katyg | ANS | feedback-product | AI Competition / Feature Request | $100k customer at risk on engage — de-values reporting, prioritises Microsoft Copilot. Key asks: action plans from Coach directly to Goals; org context in Coach. Suggested as good product discovery candidate. | new |

@@ -1,3 +1,10 @@
+---
+title: Voice Latency — Options & Pathways Forward
+confluence_page_id: 6127684239
+confluence_url: "https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6127684239/Voice+Latency+Options+Pathways+Forward"
+last_synced: "2026-04-14T04:28:55.578Z"
+---
+
 # Voice Latency — Options & Pathways Forward
 
 _Draft for discussion — Monday review_

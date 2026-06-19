@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach Foundations - H2</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    background: #e8e4dd;
+    padding: 32px;
+    color: #1a1410;
+    -webkit-font-smoothing: antialiased;
+  }
+  .canvas-wrap { overflow-x: auto; }
+
+  .card-wrap { position: absolute; }
+  .card-wrap .tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    width: 260px;
+    background: #1a1410;
+    color: #f1e7d2;
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 10px 13px;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  }
+  .card-wrap .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 18px;
+    border: 6px solid transparent;
+    border-top-color: #1a1410;
+  }
+  .card-wrap:hover .tooltip { display: block; }
+</style>
+</head>
+<body>
+<div class="canvas-wrap">
+<div style="
+  width:1600px; height:1160px; position:relative;
+  background:#f1e7d2;
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(120,80,30,0.05), transparent 45%),
+    radial-gradient(circle at 82% 78%, rgba(80,40,10,0.06), transparent 50%);
+">
+
+  <!-- Masthead -->
+  <div style="position:absolute;top:34px;left:56px;right:56px;display:flex;align-items:baseline;justify-content:space-between;gap:24px;">
+    <div style="font-size:32px;line-height:1;letter-spacing:-0.4px;white-space:nowrap;">
+      Coach Foundations - H2
+    </div>
+    <div style="font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(26,20,16,0.55);text-align:right;white-space:nowrap;font-family:ui-monospace,monospace;">
+      Make Coach available everywhere in Culture Amp — every item here should be moving us toward 50% of monthly active platform users using Coach.
+    </div>
+  </div>
+
+  <!-- Double rule -->
+  <div style="position:absolute;top:80px;left:56px;right:56px;border-top:2px solid #1a1410;"></div>
+  <div style="position:absolute;top:84px;left:56px;right:56px;border-top:0.5px solid #1a1410;"></div>
+
+  <!-- Quarter heads -->
+  <div style="position:absolute;top:90px;left:252px;height:30px;">
+    
+    <div style="position:absolute;left:0.0px;width:646.0px;display:flex;align-items:baseline;gap:10px;padding:0 14px;">
+      <span style="font-size:22px;font-style:italic;">Q3</span>
+      <span style="font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(26,20,16,0.55);font-family:ui-monospace,monospace;">Jul — Sep</span>
+    </div>
+    <div style="position:absolute;left:646.0px;width:646.0px;display:flex;align-items:baseline;gap:10px;padding:0 14px;">
+      <span style="font-size:22px;font-style:italic;">Q4</span>
+      <span style="font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(26,20,16,0.55);font-family:ui-monospace,monospace;">Oct — Dec</span>
+    </div>
+  </div>
+  <div style="position:absolute;top:120px;left:56px;right:56px;border-top:0.5px solid #1a1410;"></div>
+
+  <!-- Lanes -->
+  
+      <div style="position:absolute;top:124px;left:56px;right:56px;height:360px;background:rgba(180,140,80,0.08);"></div>
+      <div style="position:absolute;top:124px;left:56px;right:56px;border-top:0.5px solid #1a1410;"></div>
+      <div style="position:absolute;top:138px;left:56px;width:180px;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,20,16,0.55);font-family:ui-monospace,monospace;">
+          <span style="color:#8a4a2a;font-weight:600;">§ I</span>
+          <span style="margin-left:8px;">— 3 tracks</span>
+        </div>
+        <div style="font-size:26px;line-height:1.05;margin-top:6px;letter-spacing:-0.4px;color:#8a4a2a;">
+          Unified
+        </div>
+        <div style="font-size:10px;line-height:1.4;margin-top:7px;color:rgba(26,20,16,0.55);font-style:italic;">Make Coach accessible platform-wide.</div>
+      </div>
+      
+      <div style="position:absolute;top:128px;height:352px;left:898.0px;border-left:1px dotted rgba(26,20,16,0.18);"></div>
+    
+      <div class="card-wrap" style="position:absolute;left:256.0px;top:132.0px;width:422.7px;height:104.0px;z-index:10;">
+      <div class="tooltip">Users can see all Coach sessions in one place and navigate between Coach-enabled pages without losing context — making Coach feel like one product.</div>
+      <div style="
+        width:100%; height:100%;
+        background:#8a4a2a; border:1.8px solid #1a1410;
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#f1e7d2; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:600;font-style:normal;letter-spacing:-0.1px;color:#f1e7d2;">Unified Sessions</div>
+            <div style="margin-top:3px;font-size:10px;line-height:1.3;color:rgba(241,231,210,0.75);font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">Single session history &gt; Site navigation</div>
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(241,231,210,0.75);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q3.0</span>
+          <span style="font-style:normal;white-space:nowrap;">★ committed</span>
+        </div>
+      </div>
+    </div><div class="card-wrap" style="position:absolute;left:256.0px;top:252.0px;width:207.3px;height:104.0px;z-index:10;">
+      <div class="tooltip">A question asked in Engage Coach can be routed to the Perform agent when appropriate — removing the seam between Coach contexts.</div>
+      <div style="
+        width:100%; height:100%;
+        background:#8a4a2a; border:1.8px solid #1a1410;
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#f1e7d2; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:600;font-style:normal;letter-spacing:-0.1px;color:#f1e7d2;">Routing</div>
+            <div style="margin-top:3px;font-size:10px;line-height:1.3;color:rgba(241,231,210,0.75);font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">Cross-agent routing &gt; Full agent handoff</div>
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(241,231,210,0.75);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q3.0</span>
+          <span style="font-style:normal;white-space:nowrap;">★ committed</span>
+        </div>
+      </div>
+    </div><div class="card-wrap" style="position:absolute;left:256.0px;top:372.0px;width:422.7px;height:104.0px;z-index:10;">
+      <div class="tooltip">Equip teams building on Coach with updated playbook, control plane, and prompt library — Coach-first from day one, not bolted on later.</div>
+      <div style="
+        width:100%; height:100%;
+        background:#8a4a2a; border:1.8px solid #1a1410;
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#f1e7d2; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:600;font-style:normal;letter-spacing:-0.1px;color:#f1e7d2;">Enablement</div>
+            <div style="margin-top:3px;font-size:10px;line-height:1.3;color:rgba(241,231,210,0.75);font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">Write Goals with Coach &gt; Coach in [x] &gt; Playbook + control plane &gt; End-to-end evals</div>
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(241,231,210,0.75);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q3.0</span>
+          <span style="font-style:normal;white-space:nowrap;">★ committed</span>
+        </div>
+      </div>
+    </div>
+    
+      <div style="position:absolute;top:484px;left:56px;right:56px;height:120px;background:transparent;"></div>
+      <div style="position:absolute;top:484px;left:56px;right:56px;border-top:0.5px solid #1a1410;"></div>
+      <div style="position:absolute;top:498px;left:56px;width:180px;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,20,16,0.55);font-family:ui-monospace,monospace;">
+          <span style="color:#4a6a3a;font-weight:600;">§ II</span>
+          <span style="margin-left:8px;">— 1 track</span>
+        </div>
+        <div style="font-size:26px;line-height:1.05;margin-top:6px;letter-spacing:-0.4px;color:#4a6a3a;">
+          Context-Aware
+        </div>
+        <div style="font-size:10px;line-height:1.4;margin-top:7px;color:rgba(26,20,16,0.55);font-style:italic;">Equip Coach with organisational and personal context.</div>
+      </div>
+      
+      <div style="position:absolute;top:488px;height:112px;left:898.0px;border-left:1px dotted rgba(26,20,16,0.18);"></div>
+    
+      <div class="card-wrap" style="position:absolute;left:256.0px;top:492.0px;width:422.7px;height:104.0px;z-index:10;">
+      <div class="tooltip">Admins can upload company context to Coach to make Coach's responses more tailored and company-specific.</div>
+      <div style="
+        width:100%; height:100%;
+        background:#4a6a3a; border:1.8px solid #1a1410;
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#f1e7d2; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:600;font-style:normal;letter-spacing:-0.1px;color:#f1e7d2;">Customer Knowledge Base</div>
+            <div style="margin-top:3px;font-size:10px;line-height:1.3;color:rgba(241,231,210,0.75);font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">CKB in CZ &gt; CKB EAP</div>
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(241,231,210,0.75);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q3.0</span>
+          <span style="font-style:normal;white-space:nowrap;">★ committed</span>
+        </div>
+      </div>
+    </div><div class="card-wrap" style="position:absolute;left:1332.7px;top:492.0px;width:207.3px;height:104.0px;z-index:10;">
+      <div class="tooltip">Coach can store and serve user-level settings and text-based memory across sessions — making replies more personally relevant over time.</div>
+      <div style="
+        width:100%; height:100%;
+        background:transparent; border:1px dashed rgba(26,20,16,0.45);
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#1a1410; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:500;font-style:normal;letter-spacing:-0.1px;color:#1a1410;">Memory</div>
+            <div style="margin-top:3px;font-size:10px;line-height:1.3;color:rgba(26,20,16,0.55);font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">User memory layer &gt; User-facing CRUD</div>
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(26,20,16,0.55);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q4.4</span>
+          <span style="font-style:italic;white-space:nowrap;">◎ discovery</span>
+        </div>
+      </div>
+    </div>
+    
+      <div style="position:absolute;top:604px;left:56px;right:56px;height:120px;background:rgba(180,140,80,0.08);"></div>
+      <div style="position:absolute;top:604px;left:56px;right:56px;border-top:0.5px solid #1a1410;"></div>
+      <div style="position:absolute;top:618px;left:56px;width:180px;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,20,16,0.55);font-family:ui-monospace,monospace;">
+          <span style="color:#3a4e7a;font-weight:600;">§ III</span>
+          <span style="margin-left:8px;">— 1 track</span>
+        </div>
+        <div style="font-size:26px;line-height:1.05;margin-top:6px;letter-spacing:-0.4px;color:#3a4e7a;">
+          MSI
+        </div>
+        <div style="font-size:10px;line-height:1.4;margin-top:7px;color:rgba(26,20,16,0.55);font-style:italic;">Premium insights for high-value leaders-of-scale and admins.</div>
+      </div>
+      
+      <div style="position:absolute;top:608px;height:112px;left:898.0px;border-left:1px dotted rgba(26,20,16,0.18);"></div>
+    
+      <div class="card-wrap" style="position:absolute;left:256.0px;top:612.0px;width:422.7px;height:104.0px;z-index:10;">
+      <div class="tooltip">Captures premium insights for high-value leaders-of-scale and admins — improving explainability, surfacing tailored prompts, and enabling in-platform action-taking.</div>
+      <div style="
+        width:100%; height:100%;
+        background:#3a4e7a; border:1.8px solid #1a1410;
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#f1e7d2; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:600;font-style:normal;letter-spacing:-0.1px;color:#f1e7d2;">MSI Slice 2</div>
+            <div style="margin-top:3px;font-size:10px;line-height:1.3;color:rgba(241,231,210,0.75);font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">Explainability + prompts &gt; Exec summaries &gt; Charts &amp; graphs &gt; Actions into 1:1s</div>
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(241,231,210,0.75);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q3.0</span>
+          <span style="font-style:normal;white-space:nowrap;">★ committed</span>
+        </div>
+      </div>
+    </div>
+    
+      <div style="position:absolute;top:724px;left:56px;right:56px;height:120px;background:transparent;"></div>
+      <div style="position:absolute;top:724px;left:56px;right:56px;border-top:0.5px solid #1a1410;"></div>
+      <div style="position:absolute;top:738px;left:56px;width:180px;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,20,16,0.55);font-family:ui-monospace,monospace;">
+          <span style="color:#6a3a5a;font-weight:600;">§ IV</span>
+          <span style="margin-left:8px;">— 1 track</span>
+        </div>
+        <div style="font-size:26px;line-height:1.05;margin-top:6px;letter-spacing:-0.4px;color:#6a3a5a;">
+          Observable
+        </div>
+        <div style="font-size:10px;line-height:1.4;margin-top:7px;color:rgba(26,20,16,0.55);font-style:italic;">Build the signal layer to evaluate and improve Coach.</div>
+      </div>
+      
+      <div style="position:absolute;top:728px;height:112px;left:898.0px;border-left:1px dotted rgba(26,20,16,0.18);"></div>
+    
+      <div class="card-wrap" style="position:absolute;left:902.0px;top:732.0px;width:207.3px;height:104.0px;z-index:10;">
+      <div class="tooltip">Create an at-a-glance view of popular Coach topics; enable inspection of de-identified traces; turn thumbs up/down into actionable signal.</div>
+      <div style="
+        width:100%; height:100%;
+        background:rgb(217,200,188); border:1px solid #1a1410;
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#1a1410; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:500;font-style:normal;letter-spacing:-0.1px;color:#1a1410;">Improved Observability</div>
+            <div style="margin-top:3px;font-size:10px;line-height:1.3;color:rgba(26,20,16,0.55);font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">Conversation dashboard &gt; Feedback 2.0</div>
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(26,20,16,0.55);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q4.0</span>
+          <span style="font-style:normal;white-space:nowrap;">● high</span>
+        </div>
+      </div>
+    </div>
+    
+      <div style="position:absolute;top:844px;left:56px;right:56px;height:240px;background:rgba(180,140,80,0.08);"></div>
+      <div style="position:absolute;top:844px;left:56px;right:56px;border-top:0.5px solid #1a1410;"></div>
+      <div style="position:absolute;top:858px;left:56px;width:180px;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,20,16,0.55);font-family:ui-monospace,monospace;">
+          <span style="color:#7a5a2a;font-weight:600;">§ V</span>
+          <span style="margin-left:8px;">— 2 tracks</span>
+        </div>
+        <div style="font-size:26px;line-height:1.05;margin-top:6px;letter-spacing:-0.4px;color:#7a5a2a;">
+          Trusted &amp; Insightful
+        </div>
+        <div style="font-size:10px;line-height:1.4;margin-top:7px;color:rgba(26,20,16,0.55);font-style:italic;">Keep the core Coach experience sharp.</div>
+      </div>
+      
+      <div style="position:absolute;top:848px;height:232px;left:898.0px;border-left:1px dotted rgba(26,20,16,0.18);"></div>
+    
+      <div class="card-wrap" style="position:absolute;left:686.7px;top:852.0px;width:422.7px;height:104.0px;z-index:10;">
+      <div class="tooltip">Enable Voice for Engage/Perform, improve UX for high latency interactions.</div>
+      <div style="
+        width:100%; height:100%;
+        background:rgb(220,206,180); border:1px solid #1a1410;
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#1a1410; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:500;font-style:normal;letter-spacing:-0.1px;color:#1a1410;">Coach Voice</div>
+            <div style="margin-top:3px;font-size:10px;line-height:1.3;color:rgba(26,20,16,0.55);font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">Latency optimisation &gt; UX improvements &gt; Module expansion</div>
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(26,20,16,0.55);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q3.4</span>
+          <span style="font-style:normal;white-space:nowrap;">● high</span>
+        </div>
+      </div>
+    </div><div class="card-wrap" style="position:absolute;left:686.7px;top:972.0px;width:207.3px;height:104.0px;z-index:10;">
+      <div class="tooltip">Context pillow shows what Coach is using, unified disclaimer, secondary nav displayed in Coach tap in main nav.</div>
+      <div style="
+        width:100%; height:100%;
+        background:rgb(220,206,180); border:1px solid #1a1410;
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#1a1410; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:500;font-style:normal;letter-spacing:-0.1px;color:#1a1410;">FE Improvements</div>
+            <div style="margin-top:3px;font-size:10px;line-height:1.3;color:rgba(26,20,16,0.55);font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">Context pillow &gt; Unified disclaimer &gt; Navigation &gt; Untitled UI</div>
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(26,20,16,0.55);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q3.4</span>
+          <span style="font-style:normal;white-space:nowrap;">● high</span>
+        </div>
+      </div>
+    </div><div class="card-wrap" style="position:absolute;left:1117.3px;top:852.0px;width:422.7px;height:104.0px;z-index:10;">
+      <div class="tooltip">GDPR automation, OCSF audit log compliance, Datadog spike.</div>
+      <div style="
+        width:100%; height:100%;
+        background:rgb(220,206,180); border:1px solid #1a1410;
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#1a1410; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:500;font-style:normal;letter-spacing:-0.1px;color:#1a1410;">BE Improvements</div>
+            <div style="margin-top:3px;font-size:10px;line-height:1.3;color:rgba(26,20,16,0.55);font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">GDPR automation &gt; Audit logging &gt; Datadog spike</div>
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(26,20,16,0.55);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q4.2</span>
+          <span style="font-style:normal;white-space:nowrap;">● high</span>
+        </div>
+      </div>
+    </div><div class="card-wrap" style="position:absolute;left:902.0px;top:972.0px;width:207.3px;height:104.0px;z-index:10;">
+      <div class="tooltip">Ensure web sockets is properly supported across Coach instances.</div>
+      <div style="
+        width:100%; height:100%;
+        background:rgb(220,206,180); border:1px solid #1a1410;
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#1a1410; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:500;font-style:normal;letter-spacing:-0.1px;color:#1a1410;">Web sockets clean up</div>
+            
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(26,20,16,0.55);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q4.0</span>
+          <span style="font-style:normal;white-space:nowrap;">● high</span>
+        </div>
+      </div>
+    </div><div class="card-wrap" style="position:absolute;left:1117.3px;top:972.0px;width:207.3px;height:104.0px;z-index:10;">
+      <div class="tooltip">Shared context between Coach and the page; Coach can make in-page edits — lays the foundation for Coach-first workflow experiences.</div>
+      <div style="
+        width:100%; height:100%;
+        background:transparent; border:1px dashed rgba(26,20,16,0.45);
+        padding:8px 11px; box-sizing:border-box;
+        display:flex; flex-direction:column; justify-content:space-between;
+        overflow:hidden; color:#1a1410; cursor:default;
+      ">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="min-width:0;">
+            <div style="font-size:13px;line-height:1.15;font-weight:500;font-style:normal;letter-spacing:-0.1px;color:#1a1410;">Page Fluency</div>
+            <div style="margin-top:3px;font-size:10px;line-height:1.3;color:rgba(26,20,16,0.55);font-weight:400;font-style:normal;letter-spacing:0;overflow:hidden;white-space:normal;word-break:break-word;">Shared page context &gt; In-page writes</div>
+            
+          </div>
+          <div style="display:flex;align-items:center;flex-shrink:0;margin-top:3px;"></div>
+        </div>
+        <div style="font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(26,20,16,0.55);display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:ui-monospace,monospace;">
+          <span>Q4.2</span>
+          <span style="font-style:italic;white-space:nowrap;">◎ discovery</span>
+        </div>
+      </div>
+    </div>
+    
+
+  <!-- Bottom double rule -->
+  <div style="position:absolute;top:1084px;left:56px;right:56px;border-top:0.5px solid #1a1410;"></div>
+  <div style="position:absolute;top:1088px;left:56px;right:56px;border-top:2px solid #1a1410;"></div>
+
+  <!-- Footer legend -->
+  <div style="position:absolute;bottom:18px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(26,20,16,0.55);font-family:ui-monospace,monospace;">
+    <div style="display:flex;gap:32px;align-items:flex-end;">
+      <div>
+        <div style="margin-bottom:6px;">Confidence</div>
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:6px;">
+              <div style="width:28px;height:16px;background:#8a4a2a;border:1.8px solid #1a1410;"></div>
+              <span style="font-family:serif;text-transform:none;letter-spacing:0;font-size:10px;color:#1a1410;">Committed</span>
+            </div><div style="display:flex;align-items:center;gap:6px;">
+              <div style="width:28px;height:16px;background:rgb(222,203,180);border:1px solid #1a1410;"></div>
+              <span style="font-family:serif;text-transform:none;letter-spacing:0;font-size:10px;color:#1a1410;">High confidence</span>
+            </div><div style="display:flex;align-items:center;gap:6px;">
+              <div style="width:28px;height:16px;background:transparent;border:1px solid #1a1410;"></div>
+              <span style="font-family:serif;text-transform:none;letter-spacing:0;font-size:10px;color:#1a1410;">Early signal</span>
+            </div><div style="display:flex;align-items:center;gap:6px;">
+              <div style="width:28px;height:16px;background:transparent;border:1px dashed rgba(26,20,16,0.45);"></div>
+              <span style="font-family:serif;text-transform:none;letter-spacing:0;font-size:10px;color:#1a1410;">Discovery</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:right;font-style:italic;font-family:serif;text-transform:none;letter-spacing:0;font-size:12px;color:rgba(26,20,16,0.55);max-width:220px;line-height:1.3;">
+      Each lane has its own ink.<br>Confidence sets how much ink shows.
+    </div>
+  </div>
+</div>
+</div>
+
+
+      <div style="margin-top:24px;width:1600px;background:#fff;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+        <div style="padding:10px 16px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:#888;background:#f8f9fa;border-bottom:1px solid #e0e0e0;">Not in scope</div>
+        <div style="display:flex;flex-wrap:wrap;">
+      <div style="padding:10px 16px;flex:1;min-width:180px;border-right:1px solid #f0f0f0;">
+        <div style="font-weight:600;font-size:12px;color:#aaa;margin-bottom:3px;text-decoration:line-through;text-decoration-color:#ccc;">Survey results exploration</div>
+        <div style="font-size:11px;color:#bbb;line-height:1.45;">CX signal exists but no clear owner or initiative shape yet — worth a discovery spike in Q4.</div>
+      </div>
+      <div style="padding:10px 16px;flex:1;min-width:180px;border-right:1px solid #f0f0f0;">
+        <div style="font-weight:600;font-size:12px;color:#aaa;margin-bottom:3px;text-decoration:line-through;text-decoration-color:#ccc;">Proactive Coach Events</div>
+        <div style="font-size:11px;color:#bbb;line-height:1.45;">In Discovery in Perform (Q3); depends on memory + 1:1 integrations maturing.</div>
+      </div>
+      <div style="padding:10px 16px;flex:1;min-width:180px;border-right:1px solid #f0f0f0;">
+        <div style="font-weight:600;font-size:12px;color:#aaa;margin-bottom:3px;text-decoration:line-through;text-decoration-color:#ccc;">CA Connector in Claude</div>
+        <div style="font-size:11px;color:#bbb;line-height:1.45;">Requires strategic commitment; with PGLT.</div>
+      </div>
+      <div style="padding:10px 16px;flex:1;min-width:180px;border-right:1px solid #f0f0f0;">
+        <div style="font-weight:600;font-size:12px;color:#aaa;margin-bottom:3px;text-decoration:line-through;text-decoration-color:#ccc;">External data sources</div>
+        <div style="font-size:11px;color:#bbb;line-height:1.45;">Frontier team is working on this; deprioritised for Coach Foundations.</div>
+      </div></div>
+      </div>
+
+</body>
+</html>

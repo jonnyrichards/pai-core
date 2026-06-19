@@ -115,6 +115,53 @@ Hi all, sharing that after recent discussions, we've aligned on a **three-phase 
 Hope this makes sense. Shout with any questions! :yay:
 ```
 
+### Gong / Release Announcement
+
+**Use when:** Announcing a feature release or GA to the #product-announcements / #eng-releases channel (or similar). These are Slack-native, celebratory, and structured for skimmability.
+
+**Tone:** Proud but grounded. Credit the team. Make it easy for non-technical readers to understand the "so what."
+
+**Structure:**
+- `:gong: Gong - [Feature name] - [short outcome] :gong:` as the opening line (no separate title)
+- `:raised_hands: What's new?` — 2-3 sentence plain-language summary
+- `:lovedata: The Details` (or `:package: What's included?`) — bullet list of specifics; use sub-bullets for technical detail
+- `:dart: Why this matters?` — 2-4 bullets, customer/user value focus
+- `:pray: Who can we thank?` — @mention contributors; brief, warm
+- Support/more info line — link to support article + feedback channel + DM offer
+
+**Template:**
+```
+:gong: Gong - [Feature] - [short outcome line] :gong:
+
+:raised_hands: What's new?
+[2-3 sentence plain summary of what shipped and what it does.]
+
+:lovedata: The Details
+[Bullet list of specifics — what data/config/behaviour changed]
+- Item 1
+- Item 2
+
+:dart: Why this matters?
+- [Customer benefit 1]
+- [Customer benefit 2]
+- [Privacy/trust/existing model preserved — if relevant]
+
+:pray: Who can we thank?
+@name for [contribution]. @name for [contribution].
+[#team tags for collaborating teams]
+
+Where can I find out more?
+[Support article link]. Share questions in #[channel] or DM me :slightly_smiling_face:
+```
+
+**Notes from examples:**
+- "Mini-Gong" prefix is fine for smaller fast-follow releases (`:tada:` instead of `:gong:`)
+- `:warning: Gotchas` section is optional — use when there's a non-obvious constraint or edge case
+- Keep "Why this matters" customer-facing even in internal posts — avoids inside-baseball framing
+- The `:lovedata:` / `:package:` heading swap is intentional — use `:lovedata:` for data/AI features, `:package:` for config/UI features
+
+**Reference examples:** see bottom of this file (`## Gong Examples`)
+
 ---
 
 ## Amazon 6-Pager Style (For Deep Analysis)
@@ -245,4 +292,85 @@ Hope this makes sense. Shout with any questions! :yay:
 
 **On Executive Writing:**
 > "If you can't summarize it in 2 sentences, you don't understand it well enough."
+
+## Gong Examples
+
+<!-- Reference examples — do not edit. Used as source material for the Gong template above. -->
+
+###
+:gong: Gong - Coach in Perform - Anytime Feedback V2 is now a new data source available in Manager Reviews | Live in GA :gong:
+
+:raised_hands: What’s new?
+AI Coach in Performance now uses Anytime Feedback v2 as an additional data source when managers use Coach to draft Manager Reviews. This strengthens Coach’s ability to synthesise continuous feedback alongside existing sources (self‑reflections, peer & upward feedback, past manager reviews, Shoutouts) to produce more complete, evidence‑based summaries.
+
+This also includes anytime feedback as a datasource in Highlights and Opportunities as well.
+
+:lovedata: The Details
+Anytime Feedback (v2) is used in AI Coach in Performance (Manager Reviews), only where visible to the manager. Screenshots of the experience below.
+
+The following list is the detail on what Anytime Feedback data is used by Coach:
+
+Feedback message text – full free‑text content of the Anytime Feedback entry.
+Feedback giver and recipient – who wrote the feedback and who it’s about (used to link feedback to the direct report in Coach).
+Requested vs unrequested feedback – whether the feedback was provided in response to a request (manager‑ or peer‑requested) or shared proactively.
+Visibility / sharing – whether the feedback was shared with the recipient only or also with their manager (Coach only uses entries already visible to the manager).
+Date of feedback – submission date used in Coach’s timeframe filter (e.g. last 3/6/9/12 months).
+
+
+:dart: Why this matters ?
+
+Gives Coach a richer picture of day‑to‑day performance by including continuous feedback captured in Anytime Feedback v2.
+Reduces manager effort collecting input outside the platform (email, docs, 1:1 notes).
+Keeps the existing Anytime Feedback privacy model intact – Coach only analyses entries the manager can already see.
+
+
+:pray: Who can we thank? 
+
+@Prasanna who kicked off this work and did a bulk of the work late last year :raised_hands::skin-tone-3: Really appreciate your contribution here! 
+@rachel.ellena for leading this initiative and for @ben.crow to coming in and smashing out the remaining implementation. 
+@Kristina @ally.glavin for working on the prompt, design and content of this new data source.
+@Rashmika for helping make CiP super robust with evals.
+@jas and Suyin for pulling the project together!
+#team_anytime_feedback for collaborating with us on bringing this to life.
+
+
+Where can I find out more?
+Customer facing support article is here. Share your questions and/or feedback with us in #help_coach_feedback or drop me a DM :slightly_smiling_face:
+
+###
+:pcq: Mini-Gong : PCQ Config in Shared Reports now in GA  ! :tada:
+
+:star2: What is it?
+Performance Culture Quadrant™ (PCQ) is now configurable per shared report via a new :tickticktick:checkbox. Admins still always see PCQ in their own admin report and can decide when (and if) to roll it out to each shared report audience.
+
+:dart: Who is this for and why?
+
+Customers who are excited about PCQ but want more controlled and staggered change management instead of an “all-or-nothing” rollout.
+HR admins who need time to align with execs before rolling-out the PCQ broadly.
+
+
+:package: What's included?
+
+:white_medium_small_square: Performance Culture Quadrant checkbox in Standard and Advanced shared report config (default state: :tickety-boo:)
+Checkbox controls PCQ report visibility and PCQ mode in Coach for shared report viewers
+PCQ checkbox only appears in Shared Report Config if the two PCQ factors have been configured in Survey Design
+:camera_with_flash: See screenshots!
+
+
+:warning: Gotchas 
+
+PCQ checkbox only appears in Shared Report Config if the two PCQ factors have been configured in Survey Design
+
+
+
+
+:bulb: Support and Help
+
+Customer-facing support article
+#temp_pcq_feedback_help 
+:glean: PCQ Glean Agent
+
+
+:clap: Thanks
+@nancy @david.hauser @stephanie.renata @Vicky @Marcus @chris @bling @Lisa Vandertogt @michael.schimko @jas @Jessie @pip, MHFA @mirna.nasr @amyb for your teamwork in getting this final fast-follow out the door! :tada: (edited)
 

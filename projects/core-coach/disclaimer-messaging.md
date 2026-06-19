@@ -1,3 +1,10 @@
+---
+title: Disclaimer Messaging — Coach
+confluence_page_id: 6163234985
+confluence_url: "https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6163234985/Disclaimer+Messaging+Coach"
+last_synced: "2026-04-22T01:28:33.621Z"
+---
+
 # Disclaimer Messaging — Coach
 
 **Status:** DECISION SIGNED OFF (Feb 2026)

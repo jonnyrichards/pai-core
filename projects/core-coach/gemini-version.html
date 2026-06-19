@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach H2 Roadmap</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #242433;
+    background: #fdfdfb; /* Softer, premium warm base */
+    padding: 40px;
+    letter-spacing: -0.1px;
+  }
+
+  h1 { font-size: 22px; font-weight: 700; color: #11111a; margin-bottom: 6px; letter-spacing: -0.3px; }
+  .subtitle { font-size: 13.5px; color: #6e6e7a; margin-bottom: 32px; line-height: 1.5; max-width: 800px; }
+
+  /* Legend System */
+  .legend { display: flex; gap: 32px; margin-bottom: 32px; flex-wrap: wrap; align-items: center; }
+  .legend-group { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .legend-label { font-size: 10px; font-weight: 700; color: #8a8a99; text-transform: uppercase; letter-spacing: 0.8px; margin-right: 6px; }
+  
+  /* Unified Visual Tokens (Legend & Cards) */
+  .conf-committed, .card-committed     { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
+  .conf-high, .card-high               { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; }
+  .conf-early, .card-early             { background: #fffbeb; border: 1px solid #fef08a; color: #854d0e; }
+  .conf-hypothesis, .card-hypothesis   { background: #f5f3ff; border: 1px solid #ddd6fe; color: #5b21b6; }
+  .conf-placeholder, .card-placeholder { background: #fafafa; border: 1px dashed #e4e4e7; color: #71717a; }
+
+  .legend-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 600; }
+  .chip-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .dot-committed    { background: #22c55e; }
+  .dot-high         { background: #3b82f6; }
+  .dot-early        { background: #eab308; }
+  .dot-hypothesis   { background: #a78bfa; }
+  .dot-placeholder  { border: 1px dashed #a1a1aa; background: transparent; }
+
+  /* Effort Chips */
+  .legend-chip-effort { background: #f4f4f5; color: #44444f; border: 1px solid #e4e4e7; font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 500; }
+
+  /* Timeline Structural Grid */
+  .timeline {
+    display: grid;
+    grid-template-columns: 140px 1fr 1fr; /* Slightly broader lane width */
+    border: 1px solid #e4e4e7;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  }
+
+  /* Quarter Headers */
+  .th-cell {
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #52525b;
+    background: #f4f4f5;
+    border-bottom: 1px solid #e4e4e7;
+  }
+  .th-cell:not(:last-child) { border-right: 1px solid #e4e4e7; }
+  .th-lane { background: #ededf0; }
+
+  /* Elegant Lane Left-Accents */
+  .lane-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 24px 12px;
+    background: #fff;
+    border-right: 1px solid #e4e4e7;
+  }
+  .lane-spine { border-left: 5px solid #6d28d9; color: #5b21b6; }
+  .lane-bets  { border-left: 5px solid #ea580c; color: #c2410c; }
+
+  /* Lane Grid Cells */
+  .lane-cell { padding: 18px; border-bottom: 1px solid #e4e4e7; vertical-align: top; }
+  .lane-cell:not(:last-child) { border-right: 1px solid #e4e4e7; }
+
+  /* Sophisticated, ultra-soft tint overlays to group rows natively */
+  .lane-spine ~ .lane-cell, .lane-spine + .lane-cell { background: #faf9ff; }
+  .lane-bets ~ .lane-cell, .lane-bets + .lane-cell   { background: #fffbf9; }
+
+  /* Card Display Engine */
+  .card {
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.01);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+  }
+  .card:last-child { margin-bottom: 0; }
+
+  .card-title { font-weight: 700; font-size: 12.5px; margin-bottom: 6px; line-height: 1.4; color: #111118; }
+  .card-desc  { font-size: 11.5px; opacity: 0.85; line-height: 1.55; margin-bottom: 12px; }
+  .card-footer { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+  /* Meta Tokens inside Cards */
+  .tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .tag-drives { background: rgba(0,0,0,0.04); color: currentColor; font-weight: 700; }
+  .tag-effort { background: #fff; color: #52525b; border: 1px solid rgba(0,0,0,0.08); }
+
+  .span-indicator { font-size: 10px; opacity: 0.5; font-style: normal; font-weight: 600; text-transform: uppercase; margin-left: 2px; }
+  .empty-cell { color: #d4d4d8; font-style: italic; font-size: 11px; padding: 4px 0; }
+
+  /* Deferred/Not-in-H2 Container */
+  .not-h2 {
+    background: #fff;
+    border: 1px solid #e4e4e7;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.01);
+  }
+  .not-h2-header {
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #71717a;
+    background: #f4f4f5;
+    border-bottom: 1px solid #e4e4e7;
+  }
+  .not-h2-items { display: flex; flex-wrap: wrap; }
+  .not-h2-item { padding: 18px 20px; flex: 1; min-width: 240px; border-right: 1px solid #e4e4e7; }
+  .not-h2-item:last-child { border-right: none; }
+  .not-h2-name   { font-weight: 700; font-size: 12px; color: #a1a1aa; margin-bottom: 4px; text-decoration: line-through; }
+  .not-h2-reason { font-size: 11.5px; color: #71717a; line-height: 1.55; }
+</style>
+</head>
+<body>
+
+<h1>Coach H2 Roadmap</h1>
+<p class="subtitle">H2 is about expanding Coach across Culture Amp — with our proposed Coach Playbook supplemented by foundational initiatives that focus on large-scale adoption.</p>
+
+<div class="legend">
+  <div class="legend-group">
+    <span class="legend-label">Confidence</span>
+    <span class="legend-chip conf-committed"><span class="chip-dot dot-committed"></span>Committed</span>
+    <span class="legend-chip conf-high"><span class="chip-dot dot-high"></span>High confidence</span>
+    <span class="legend-chip conf-early"><span class="chip-dot dot-early"></span>Early signal</span>
+    <span class="legend-chip conf-hypothesis"><span class="chip-dot dot-hypothesis"></span>Hypothesis</span>
+    <span class="legend-chip conf-placeholder"><span class="chip-dot dot-placeholder"></span>Placeholder</span>
+  </div>
+  <div class="legend-group">
+    <span class="legend-label">Effort</span>
+    <span class="legend-chip" style="background:#f8f8f8;color:#555;border:1px solid #ddd;">S = ~2 weeks</span>
+    <span class="legend-chip" style="background:#f8f8f8;color:#555;border:1px solid #ddd;">M = ~1 month</span>
+    <span class="legend-chip" style="background:#f8f8f8;color:#555;border:1px solid #ddd;">L = ~3 months</span>
+  </div>
+</div>
+
+<div class="timeline">
+  <div class="th-cell th-lane"></div>
+  <div class="th-cell">Q3</div>
+  <div class="th-cell">Q4</div>
+  
+  <div class="lane-header lane-spine">The Spine</div>
+  <div class="lane-cell">
+    <div class="card card-committed">
+      <div class="card-title">Routing — MSS slice </div>
+      <div class="card-desc">Captures premium insights for our high-value leaders-of-scale and admin segment. Initial focus: retention insights.</div>
+      <div class="card-footer">
+        <span class="tag tag-drives">↑ Engagement</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div>
+    <div class="card card-committed">
+      <div class="card-title">Unified Sessions + Routing </div>
+      <div class="card-desc">Consolidates Coach sessions into a single history view — making Coach feel like one product; solves navigation when Coach is open and lays the foundation for CA-wide Coach.</div>
+      <div class="card-footer">
+        <span class="tag tag-drives">↑ Reach</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div>
+    <div class="card card-early">
+      <div class="card-title">Page Fluency <span class="span-indicator">→ Q3/Q4</span></div>
+      <div class="card-desc">Makes Coach native to the page — aware of what's on screen, able to write directly into forms, and responsive to what the user is doing. Drives engagement by replacing copy-paste with in-page action.</div>
+      <div class="card-footer">
+        <span class="tag tag-drives">↑ Engagement</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div></div>
+  <div class="lane-cell">
+    <div class="card card-early" style="opacity:0.55; border-style: dashed;">
+      <div class="card-title">Page Fluency <span class="span-indicator">← cont.</span></div>
+      <div class="card-desc">Continued from previous quarter.</div>
+      <div class="card-footer">
+        <span class="tag tag-drives">↑ Engagement</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div>
+    <div class="card card-high">
+      <div class="card-title">CA-wide Coach </div>
+      <div class="card-desc">Extends Coach beyond its current pages to a persistent, platform-wide presence — increasing reach by putting Coach in front of users wherever they are in Culture Amp.</div>
+      <div class="card-footer">
+        <span class="tag tag-drives">↑ Reach</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div></div>
+  
+  <div class="lane-header lane-bets">The Bets</div>
+  <div class="lane-cell">
+    <div class="card card-high">
+      <div class="card-title">Improved Observability </div>
+      <div class="card-desc">Builds the signal layer Coach currently lacks — understanding what users ask, how conversations resolve, and what they think. Creates new feedback channels and drives better product decisions.</div>
+      <div class="card-footer">
+        <span class="tag tag-drives">↑ Foundation</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div>
+    <div class="card card-early">
+      <div class="card-title">Customer Knowledge Base <span class="span-indicator">→ Q3/Q4</span></div>
+      <div class="card-desc">Gives admins the ability to ground Coach in their organisation's values, priorities and frameworks — with the hypothesis that greater admin control drives internal advocacy and, in turn, usage.</div>
+      <div class="card-footer">
+        <span class="tag tag-drives">↑ Engagement</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div></div>
+  <div class="lane-cell">
+    <div class="card card-early" style="opacity:0.55; border-style: dashed;">
+      <div class="card-title">Customer Knowledge Base <span class="span-indicator">← cont.</span></div>
+      <div class="card-desc">Continued from previous quarter.</div>
+      <div class="card-footer">
+        <span class="tag tag-drives">↑ Engagement</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div>
+    <div class="card card-hypothesis">
+      <div class="card-title">Memory </div>
+      <div class="card-desc">Gives Coach the ability to retain and build on what it knows about a user across sessions — making replies more personally relevant over time and increasing the reason to return.</div>
+      <div class="card-footer">
+        <span class="tag tag-drives">↑ Engagement</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div>
+    <div class="card card-early">
+      <div class="card-title">Coach via MCP </div>
+      <div class="card-desc">Makes Coach — and CA data — accessible to other assistants via MCP, enabling customers to query CA externally with the safety of Coach as an interpretive layer. Drives reach by meeting users where they already work, off-platform.</div>
+      <div class="card-footer">
+        <span class="tag tag-drives">↑ Reach (off-platform)</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div>
+    <div class="card card-placeholder">
+      <div class="card-title">Charts &amp; Graphs </div>
+      
+      <div class="card-footer">
+        <span class="tag tag-drives">TBD</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div>
+    <div class="card card-placeholder">
+      <div class="card-title">Extending Explainability </div>
+      
+      <div class="card-footer">
+        <span class="tag tag-drives">TBD</span>
+        <span class="tag tag-effort">M</span>
+      </div>
+    </div></div>
+</div>
+
+<div class="not-h2">
+  <div class="not-h2-header">Not in H2</div>
+  <div class="not-h2-items">
+    
+    <div class="not-h2-item">
+      <div class="not-h2-name">Vector Storage &amp; Search</div>
+      <div class="not-h2-reason">Core infrastructure work that doesn't directly unlock user-facing value in H2 — will be revisited when retrieval quality becomes a bottleneck.</div>
+    </div>
+    <div class="not-h2-item">
+      <div class="not-h2-name">Performance &amp; Cost Optimisation</div>
+      <div class="not-h2-reason">Important, but unlikely to move adoption metrics at current scale — and cost is not yet prohibitive. Deferred in favour of higher-impact initiatives.</div>
+    </div>
+    <div class="not-h2-item">
+      <div class="not-h2-name">Subgraph Evolution</div>
+      <div class="not-h2-reason">Insufficiently defined to commit to — needs scoping before it can be prioritised.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
