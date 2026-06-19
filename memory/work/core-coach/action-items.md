@@ -5,7 +5,7 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 ## Active (deadline)
 
 - [ ] Check the translation rules for Coach and remove it from translation list in the nav (added 2026-06-19)
-- [ ] Decide who owns synthetic data for demo environments (SDE): market layer team or Coach Foundations? Clarify whether testing new Coach features in the SDE creates dependencies on Coach. (added 2026-06-16)
+- [ ] Coach Playbook: include detail about how Market Layer teams should enable Coach features in SDE (added 2026-06-16)
 
 - [ ] Discuss Coach Playbook with Kristina — particularly the 'Foundational Ingredients of a Prompt' page (https://cultureamp.atlassian.net/wiki/spaces/CP1/pages/6248202459/2.5.1+Foundational+Ingredients+of+a+Prompt): build out recommended prompt template? 'Langfuse injection pattern': should we link to an example? How do we guide towards dynamic prompting? (added 2026-06-11)
 - [ ] Add 'Control Plane' section to Coach Playbook — covering ownership of Coach admin settings: are Market layer teams responsible for updating them? How would this work? What rules should they adhere to? Context: Coach in Develop has already opted to add their own toggle to Coach controls (https://home.atlassian.com/o/2b8f0fee-4328-4294-b0a0-982274d19100/s/5b094b66-6935-4e1b-86b0-d4722bcafaf4/project/CULTU1-1311/decisions/afb42378-6777-4f94-8406-0811e2be9e60) — this is exactly the scenario the guidelines need to address. (added 2026-06-09)
