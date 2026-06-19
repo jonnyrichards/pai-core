@@ -3,12 +3,11 @@
 Tasks for the Voice project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] task (done YYYY-MM-DD)`
 
 ## Active
-- [ ] Share voice-next-stage-plan.md with Simon (Fri) + Eng team for feedback, ahead of Mindy meeting (Mon) — https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6335890058/Voice+Next+Stage+Plan (added 2026-06-18)
-- [ ] Review voice in MSI using Falcon per Michael's suggestion — https://cultureamp.slack.com/archives/D0AJGG8T2Q4/p1781487492844119 (added 2026-06-15)
-
-- [ ] Pick up with Nate + Michael about getting a benchmark for MSI Coach TTFT — https://cultureamp.slack.com/archives/C0A3XEA1FDK (added 2026-06-12)
-- [ ] Finalise voice-next-stage-plan.md: (1) flesh out surfaces/response times table — add MSI TTFT data point once available from Nate/Baps; (2) review all surface rows for accuracy (added 2026-06-12)
-- [ ] Draft and send Gong post for 100% Beta (added 2026-06-12)
+- [x] Share voice-next-stage-plan.md with Simon (Fri) + Eng team for feedback, ahead of Mindy meeting (Mon) (done 2026-06-19)
+- [x] Review voice in MSI using Falcon per Michael's suggestion (done 2026-06-19)
+- [x] Pick up with Nate + Michael about getting a benchmark for MSI Coach TTFT (done 2026-06-19)
+- [x] Finalise voice-next-stage-plan.md: surfaces/response times table + accuracy review (done 2026-06-19)
+- [x] Draft and send Gong post for 100% Beta (done 2026-06-19)
 - [ ] Design new Beta features toggle page, share with Ally / Nate (added 2026-05-29)
 
 ## Completed
