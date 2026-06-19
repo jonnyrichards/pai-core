@@ -14,6 +14,7 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 
 ## Active (no fixed deadline)
 
+- [ ] Review Google's Open Knowledge Format and consider upgrading PAI — https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md (added 2026-06-19)
 - [ ] Stretch: research Open Brain as alternative memory harness (added 2026-05-29)
 
 ## Completed
