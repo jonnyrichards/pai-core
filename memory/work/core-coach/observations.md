@@ -1,5 +1,7 @@
 # Observations: Core Coach
 
+- 2026-06-19 [work, core-coach, enablement, ai-learning-loop]: AI Learning Loop talk structure idea — 3 sections: (1) Document editing via Confluence flow, (2) Shared markdown using roadmap as example, (3) HTML roadmaps.
+
 - 2026-06-19 [work, core-coach, tooling, workflow]: Discovered a workflow for uploading HTML content to GitHub Pages via the `hotel lobby add {my-page.html}` CLI command — useful for sharing roadmap visuals externally.
 
 - 2026-06-19 [work, core-coach, planning, q3, stakeholders]: Q3 planning session with DAIF leads. Simon wants: (1) more detail on each initiative in the roadmap — clear user benefit; (2) explanation of why CKB is not deliverable in Q3 and what would need to budge to make it deliverable. Dan and Jonny to explain this; time already booked with Dan to discuss.
