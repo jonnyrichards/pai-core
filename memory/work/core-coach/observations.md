@@ -1,5 +1,7 @@
 # Observations: Core Coach
 
+- 2026-06-22 [work, voice, decision, mindy]: Voice session with Mindy (+ Bec Paton, Paul). Decision: turn conversation mode OFF for MSI-enabled accounts; leave as-is for non-MSI accounts. Review decision once (a) there is more of a plan for Unified Coach and (b) we have more voice usage data. Bec flagged that inconsistent input modalities across product surfaces is not ideal UX. Paul wants a waterfall breakdown of timings in a voice request (GC vs. MSI) — leading up to first token.
+
 - 2026-06-19 [work, core-coach, enablement, ai-learning-loop]: AI Learning Loop talk structure idea — 3 sections: (1) Document editing via Confluence flow, (2) Shared markdown using roadmap as example, (3) HTML roadmaps.
 
 - 2026-06-19 [work, core-coach, tooling, workflow]: Discovered a workflow for uploading HTML content to GitHub Pages via the `hotel lobby add {my-page.html}` CLI command — useful for sharing roadmap visuals externally.
