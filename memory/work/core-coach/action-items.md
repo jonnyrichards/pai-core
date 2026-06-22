@@ -8,6 +8,9 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 - [ ] Roadmap: split Conversation Dashboard out from Improved Observability and place it in Q3 as its own initiative (added 2026-06-19)
 - [ ] Check the translation rules for Coach and remove it from translation list in the nav (added 2026-06-19)
 
+- [ ] Write note to Amanda + Dane sharing Enablement session plan post Enoch meeting (Miro: https://miro.com/app/board/uXjVHZtzsa4=/?share_link_id=192414456809) (added 2026-06-22)
+- [ ] Share plan with Jay + Ally — flag they need to attend the Enablement session (added 2026-06-22)
+
 ## Active (no fixed deadline)
 
 - [ ] Review Google's Open Knowledge Format and consider upgrading PAI — https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md (added 2026-06-19)
