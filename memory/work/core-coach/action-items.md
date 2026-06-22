@@ -8,6 +8,8 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 - [ ] Roadmap: split Conversation Dashboard out from Improved Observability and place it in Q3 as its own initiative (added 2026-06-19)
 - [ ] Check the translation rules for Coach and remove it from translation list in the nav (added 2026-06-19)
 
+- [ ] Pull voice request waterfall timings (GC vs. MSI) for Paul — breakdown of what happens and when leading up to first token (added 2026-06-22)
+- [ ] Prepare product review for w/c 6 July: CKB fast findings from CZ research — for Mindy (added 2026-06-22)
 - [ ] Write note to Amanda + Dane sharing Enablement session plan post Enoch meeting (Miro: https://miro.com/app/board/uXjVHZtzsa4=/?share_link_id=192414456809) (added 2026-06-22)
 - [ ] Share plan with Jay + Ally — flag they need to attend the Enablement session (added 2026-06-22)
 
