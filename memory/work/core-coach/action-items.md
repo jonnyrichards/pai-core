@@ -13,6 +13,7 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 - [ ] Write note to Amanda + Dane sharing Enablement session plan post Enoch meeting (Miro: https://miro.com/app/board/uXjVHZtzsa4=/?share_link_id=192414456809) (added 2026-06-22)
 - [ ] Share plan with Jay + Ally — flag they need to attend the Enablement session (added 2026-06-22)
 - [ ] Set up a retrospective with Coach <-> Develop (Dipan suggestion) (added 2026-06-23)
+- [ ] Complete remaining one-pagers and add links to projects/core-coach/initiative-view.md (added 2026-06-23)
 
 ## Active (no fixed deadline)
 
