@@ -33,7 +33,7 @@ This file is the source of truth. It should be Confluence-pasteable as-is, and i
 
 ## Table Schema
 
-| Stream | Initiative | Work Item | Description | Stage | When? | Estimate |
+| Stream | Initiative | Work Item | Description | Confidence | When? | Estimate |
 |---|---|---|---|---|---|---|
 
 **Column definitions:**
@@ -42,8 +42,8 @@ This file is the source of truth. It should be Confluence-pasteable as-is, and i
 - **Initiative** — the parent initiative this work item belongs to (e.g. MSS, Customer Knowledge Base, Routing).
 - **Work Item** — the specific deliverable or feature. Aim for row-weight equality: group very small items together under a single work item rather than creating micro-rows.
 - **Description** — one sentence. Problem-first: what user or business need does this address? No hype. If the work item name is self-explanatory, lead with why it matters.
-- **Stage** — one of: `Discovery`, `Discovery → Build`, `Build`
-- **When?** — relative timing within the quarter. `Now` = in-flight or starting immediately; `Next` = second half; `Later` = end of quarter or likely slipping to next.
+- **Confidence** — one of: `Committed` (scoped, resourced, in delivery), `High confidence` (strong intent, clear path), `Discovery` (planned but not yet scoped or resourced). Use `Committed` for work in active build; `High confidence` for work with a clear plan but not yet started; `Discovery` for work still being defined.
+- **When?** — timing expressed as `[Early|Mid|Late] Q{N}` (e.g. `Early Q3`, `Late Q3`, `Early Q4`). Use the quarter being planned as the reference. `Early` = in-flight or starting in the first third; `Mid` = middle third; `Late` = final third or likely slipping to next quarter (use next quarter label in that case).
 - **Estimate** — rough effort (e.g. `Small`, `Medium`, `Large`). Use `?` if unknown. Don't fabricate.
 
 ---
@@ -129,7 +129,7 @@ Rows should feel roughly equal in scope. Rules:
 
 ## Priorities
 
-| Stream | Initiative | Work Item | Description | Stage | When? | Estimate |
+| Stream | Initiative | Work Item | Description | Confidence | When? | Estimate |
 |---|---|---|---|---|---|---|
 [rows grouped by Stream, with a blank row between each Stream block]
 

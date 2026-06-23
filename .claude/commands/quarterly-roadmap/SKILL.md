@@ -9,14 +9,16 @@ Translates `quarterly-priorities.md` into `roadmap.md` — the input for `/roadm
 
 ## What this skill adds
 
-`quarterly-priorities.md` already has: Stream, Initiative, Work Item, Description, Stage, When?, Estimate.
+`quarterly-priorities.md` already has: Stream, Initiative, Work Item, Description, Confidence, When?, Estimate.
 
 This skill adds:
 - **Start** — precise quarter position (e.g. `Q3.0`, `Q3.2`) for the timeline renderer
-- **Confidence** — Committed / High confidence / Early signal / Hypothesis / Placeholder
-- **Deliverables** — 2–4 `>`-separated milestones shown on the card face
+- **Deliverables** — 2–4 `>`-separated milestones shown on the card face (Work Item names, `>`-separated)
+- **WorkItems** — `;;`-separated `Work Item: Description` pairs copied directly from `quarterly-priorities.md` — shown as a bulleted tooltip on hover. Never paraphrase; copy verbatim. Use `;;` not `|` (pipes break markdown table parsing).
 - **Drives** — Reach / Engagement / Foundation
 - **People** — optional comma-separated list of 2–3 names shown on the card (first names or initials)
+
+Confidence is passed through directly from `quarterly-priorities.md` — do not rederive it.
 
 That's it. No re-structuring, no re-writing descriptions, no new swim lane negotiation.
 
@@ -40,20 +42,20 @@ Read `quarterly-priorities.md`. Then:
 1. Map Streams → Lanes (1:1 by default; flag if any Stream is too broad or too narrow to be a useful lane)
 2. Map Work Items → Initiatives, grouping where appropriate (multiple Work Items under one Initiative become one card with Deliverables)
 3. Propose Start positions based on When? + Estimate:
-   - `Now` + Small → early in quarter (e.g. Q3.0)
-   - `Now` + Large → Q3.0, will span into mid-quarter
-   - `Next` → mid-quarter (e.g. Q3.2–Q3.3)
-   - `Later` → late quarter (e.g. Q3.4–Q3.5)
+   - `Early Q{N}` + Small → Q{N}.0
+   - `Early Q{N}` + Large → Q{N}.0, will span into mid-quarter
+   - `Mid Q{N}` → Q{N}.2–Q{N}.3
+   - `Late Q{N}` → Q{N}.4–Q{N}.5
+   - `Early Q{N+1}` → Q{N+1}.0
    - Honour dependencies where visible (e.g. if A must precede B, don't overlap them)
-4. Assign default Confidence based on Stage:
-   - `Build` → `Committed`
-   - `Discovery → Build` → `High confidence`
-   - `Discovery` → `Discovery`
+4. Pass Confidence through directly from `quarterly-priorities.md` — do not rederive or override unless the user explicitly asks.
 
 Present this as a single table:
 
 | Initiative | Lane | Start | Confidence | Effort | Drives | Deliverables |
 |---|---|---|---|---|---|---|
+
+(WorkItems will be populated automatically in Phase 2 — no need to show them here.)
 
 Ask: *"Does this mapping look right? Adjust any Start positions or Confidence levels before I fill in Deliverables and People."*
 
@@ -61,15 +63,14 @@ Keep this round tight — most of it should be right first time.
 
 ---
 
-### Phase 2 — Deliverables pass
+### Phase 2 — Deliverables + WorkItems pass
 
-Work through initiatives that don't yet have Deliverables (i.e. weren't carried over from the priorities file). For each:
+For each Initiative, pull the Work Items directly from `quarterly-priorities.md`:
 
-> "[Initiative name] — what are the 2–4 milestones on the card? E.g. `First cut live > Full rollout`"
+- **Deliverables** — Work Item names joined with ` > ` (e.g. `Cross-agent routing > Full agent handoff`). Use `—` for initiatives where a sequence isn't meaningful.
+- **WorkItems** — `Work Item: Description` pairs joined with ` ;; `, copied verbatim from quarterly-priorities.md (e.g. `Cross-agent routing: A question asked in Engage Coach can be routed to the Perform agent ;; Full agent handoff: Completes the handoff UX end-to-end`). Never paraphrase descriptions.
 
-If the Work Items in quarterly-priorities.md already describe a natural sequence, propose them as Deliverables and ask for confirmation rather than asking from scratch.
-
-Use `—` for initiatives where milestones aren't meaningful (e.g. ongoing infra work).
+Do this silently — no need to ask the user to confirm Deliverables or WorkItems unless something looks ambiguous (e.g. an Initiative with 6+ Work Items that should be pruned for the card face).
 
 Once Deliverables are confirmed, ask once:
 
@@ -106,7 +107,7 @@ EFFORT (card width)
 Small = 1/6q (~2 weeks) | Medium = 2/6q (~1 month) | Large = 4/6q (~8 weeks)
 -->
 
-{Thesis from quarterly-priorities preamble — 1 sentence}
+{Thesis from quarterly-priorities preamble — 1 sentence, max 10 words. Trim aggressively: the renderer displays this as a subtitle below the product name in a narrow space.}
 
 ---
 
@@ -134,7 +135,7 @@ Small = 1/6q (~2 weeks) | Medium = 2/6q (~1 month) | Large = 4/6q (~8 weeks)
 
 {Lane summary — 1 sentence}
 
-| Initiative | Start | Confidence | Effort | Drives | Deliverables | People | Description |
+| Initiative | Start | Confidence | Effort | Drives | Deliverables | WorkItems | People |
 |---|---|---|---|---|---|---|---|
 [rows]
 
@@ -150,7 +151,8 @@ Small = 1/6q (~2 weeks) | Medium = 2/6q (~1 month) | Large = 4/6q (~8 weeks)
 **Key rules:**
 - Lane name comes from Stream in quarterly-priorities
 - Description comes verbatim from quarterly-priorities — don't rewrite
-- Deliverables: `>`-separated, 3–5 words each, no pipes
+- Deliverables: Work Item names `>`-separated, no pipes
+- WorkItems: `Work Item: Description` pairs `;;`-separated, copied verbatim from quarterly-priorities.md. Use `—` if none.
 - People: comma-separated first names or initials (e.g. `Alice, Bob`), or `—` if none
 - Not in {Half} section comes directly from the Deferred section of quarterly-priorities
 - **Lane summary: max ~60 characters, one line.** The renderer renders it in a narrow left gutter — longer summaries overflow into the card area. Keep it tight: a noun phrase, not a sentence.
@@ -161,5 +163,5 @@ Small = 1/6q (~2 weeks) | Medium = 2/6q (~1 month) | Large = 4/6q (~8 weeks)
 
 - **Don't re-derive what's already decided.** quarterly-priorities settled the structure. This skill only adds the temporal layer.
 - **Verbatim descriptions.** Copy from quarterly-priorities exactly — no paraphrasing.
-- **Honest confidence.** `Build` stage ≠ automatically Committed. Push back if something looks overstated.
+- **Honest confidence.** Pass Confidence through from quarterly-priorities verbatim. Push back if something looks overstated, but don't silently remap it.
 - **Propose, don't ask.** Come with a full draft and ask for corrections — don't interrogate row by row.
