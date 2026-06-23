@@ -12,6 +12,7 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 - [ ] Prepare product review for w/c 6 July: CKB fast findings from CZ research — for Mindy (added 2026-06-22)
 - [ ] Write note to Amanda + Dane sharing Enablement session plan post Enoch meeting (Miro: https://miro.com/app/board/uXjVHZtzsa4=/?share_link_id=192414456809) (added 2026-06-22)
 - [ ] Share plan with Jay + Ally — flag they need to attend the Enablement session (added 2026-06-22)
+- [ ] Set up a retrospective with Coach <-> Develop (Dipan suggestion) (added 2026-06-23)
 
 ## Active (no fixed deadline)
 
