@@ -85,11 +85,12 @@ A routing layer that:
 **Goal:** Ship routing to production across all Coach surfaces
 
 **Milestones:**
-- Orchestrator productionised and connected to all current agents (General, Engage, Perform)
+- Decision: which agents are wired up to the orchestrator — agree which agents the orchestrator can hand off to, and which are out of scope for this phase
+- Orchestrator productionised and connected to agreed agents
 - Latency validated — routing overhead within acceptable bounds
 - CZ testing: validate real-user routing behaviour
 
-**Exit Criteria:** All Coach agents reachable via orchestrator; routing accuracy evals passing; CZ validated
+**Exit Criteria:** All agreed agents reachable via orchestrator; routing accuracy evals passing; CZ validated
 
 ---
 
