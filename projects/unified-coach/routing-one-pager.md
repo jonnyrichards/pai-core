@@ -2,6 +2,9 @@
 title: Coach | Routing | One-pager
 created_date: 2026-06-23
 status: draft
+confluence_page_id: 6350110803
+confluence_url: "https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6350110803/Coach+Routing+One-pager"
+last_synced: "2026-06-24T02:35:38.681Z"
 ---
 
 # Description
@@ -36,7 +39,6 @@ We are building cross-agent routing so that a question asked in one Coach contex
 
 ### Primary
 - **Routing accuracy**: Orchestrator routes to the correct agent at X% accuracy (new eval)
-- **Cross-context query rate**: X% of sessions include a query that is routed to a different agent than the one the user started in (baseline: 0%)
 
 ### Secondary
 - **Latency**: Routing adds <Xms to median response time
