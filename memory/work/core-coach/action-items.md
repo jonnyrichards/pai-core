@@ -10,12 +10,14 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 - [ ] Roadmap: split Conversation Dashboard out from Improved Observability and place it in Q3 as its own initiative (added 2026-06-19)
 - [ ] Check the translation rules for Coach and remove it from translation list in the nav (added 2026-06-19)
 
-- [ ] Pull voice request waterfall timings (GC vs. MSI) for Paul — breakdown of what happens and when leading up to first token (added 2026-06-22)
-- [ ] Prepare product review for w/c 6 July: CKB fast findings from CZ research — for Mindy (added 2026-06-22)
-- [ ] Write note to Amanda + Dane sharing Enablement session plan post Enoch meeting (Miro: https://miro.com/app/board/uXjVHZtzsa4=/?share_link_id=192414456809) (added 2026-06-22)
-- [ ] Share plan with Jay + Ally — flag they need to attend the Enablement session (added 2026-06-22)
-- [ ] Set up a retrospective with Coach <-> Develop (Dipan suggestion) (added 2026-06-23)
-- [ ] Complete remaining one-pagers and add links to projects/core-coach/initiative-view.md (added 2026-06-23)
+- [ ] Schedule product review for w/c 6 July: CKB fast findings from CZ research — for Mindy (added 2026-06-22)
+- [ ] Prepare for product review: synth UXR learnings with one-pager recs (added 2026-06-24)
+- [ ] Review AI Accelerator week plan and nudge people to share external learnings (added 2026-06-24)
+- [x] Write note to Amanda + Dane sharing Enablement session plan post Enoch meeting (done 2026-06-24)
+- [x] Share plan with Jay + Ally — flag they need to attend the Enablement session (done 2026-06-24)
+- [x] Set up a retrospective with Coach <-> Develop (Dipan suggestion) (done 2026-06-24)
+- [x] Complete remaining one-pagers and add links to projects/core-coach/initiative-view.md (done 2026-06-24)
+- [x] Roadmap: split Conversation Dashboard out from Improved Observability and place it in Q3 as its own initiative (done 2026-06-24)
 
 ## Active (no fixed deadline)
 
