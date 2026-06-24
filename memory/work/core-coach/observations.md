@@ -2,7 +2,7 @@
 
 - 2026-06-24 [work, enablement]: Coach Playbook: https://cultureamp.atlassian.net/wiki/spaces/CP1/overview?homepageId=6273401498
 
-- 2026-06-24 [work, core-coach, demo-environments]: Listened to a detailed presentation by Unified Systems Team (UST) on new plans for how responsibility for updating Demo Environments (DEs) will shift to feature teams.
+- 2026-06-24 [work, core-coach, demo-environments]: Listened to a detailed presentation by Unified Systems Team (UST) on new plans for how responsibility for updating Demo Environments (DEs) will shift to feature teams. Deck: https://docs.google.com/presentation/d/1U0im_rgWWBfbiFQcIf2eO9CsUlPv9CCjjEVEP44sRlA/edit?slide=id.p1#slide=id.p1 | Confluence: https://cultureamp.atlassian.net/wiki/spaces/CSERV/pages/6339494011/Demo+Environment+-+Domain+Team+Enablement+Guide
 
 - 2026-06-23 [work, core-coach, prototyping, design, tooling]: Chat with Marcus Riggall about design prototyping / vibe-coding. Two key links: (1) **design-sandbox components** — https://github.com/cultureamp/design-sandbox/tree/main/apps/design-sandbox/components — Marcus confirmed this is the best available set of CA components to point Claude at for prototyping; Kaizen components were tried at hackAI but dependency management made them impractical. (2) **DESIGN.md in coach-monorepo** — https://github.com/cultureamp/coach-monorepo/blob/main/DESIGN.md — hot off the press at time of conversation; Marcus reacted with eyes-intensify, suggesting it's highly relevant for Coach-specific prototyping. Opportunity: use both as context when vibe-coding Coach UI prototypes — design-sandbox for CA design system components, DESIGN.md for Coach-specific patterns and conventions.
 
