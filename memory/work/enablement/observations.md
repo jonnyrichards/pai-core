@@ -5,7 +5,7 @@ Enablement = how Coach manifests across the platform; supporting market layer te
 
 ## 2026-06
 
-- 2026-06-24 [work, enablement, evals]: Dan shared a Miro board capturing early 'state of play' for evals in both AIP and Coach — handy reference. Danni (new PM in AIP) is looking at this space. Board: https://miro.com/app/board/uXjVIZI6J4o=/?moveToWidget=3458764675705124759&cot=14
+- 2026-06-24 [work, enablement, evals]: Meeting: Evaluation Requirements for Coach and the Eval Stack (Danni Garcia, Simon Dell'Oro, Utkarsh, Tabitha, Dan Fraser, Jonny). **Simon's framing:** "evals" is an overused, ill-defined term — reframe as 'AI features reliability and quality'. He tasked Danni with assembling a comprehensive backdrop: a system-wide view of existing eval definitions, capabilities, and reliability metrics across the whole platform (AIP + Coach), before any detailed planning begins. In-flight work continues but no grand designs until the picture is clear. **Danni's actions:** (1) assemble eval backdrop — all existing definitions, capabilities, reliability metrics; (2) draft summary doc covering scope, definitions, rationales, business requirements; (3) schedule a follow-up review with stakeholders. **Dan's Miro** (early state-of-play for evals in AIP + Coach, also relevant): https://miro.com/app/board/uXjVIZI6J4o=/?moveToWidget=3458764675705124759&cot=14
 
 
 
