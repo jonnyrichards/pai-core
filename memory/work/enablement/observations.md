@@ -5,6 +5,8 @@ Enablement = how Coach manifests across the platform; supporting market layer te
 
 ## 2026-06
 
+- 2026-06-24 [work, enablement, milestone]: **Coach Playbook AMA — session planned and invites sent.** Built out plan for first Enablement session (Enoch's Playbook Miro); liaised with Dane + Amanda on timing and 'should attend' lists; sent ~20 invites to Insights + Perform PMs and designers; shared note in #pract_pm; set up Coach ↔ Develop retro (aiming for a short slot in the AMA); added relevant Coach folks to the session. **Next:** schedule engineer-focused session (appetite confirmed; Jay to help identify Coach-side attendees); ensure Ally + Kristina are across it. [[work/core-coach/discuss]]
+
 - 2026-06-24 [work, enablement, evals]: Meeting: Evaluation Requirements for Coach and the Eval Stack (Danni Garcia, Simon Dell'Oro, Utkarsh, Tabitha, Dan Fraser, Jonny). **Simon's framing:** "evals" is an overused, ill-defined term — reframe as 'AI features reliability and quality'. He tasked Danni with assembling a comprehensive backdrop: a system-wide view of existing eval definitions, capabilities, and reliability metrics across the whole platform (AIP + Coach), before any detailed planning begins. In-flight work continues but no grand designs until the picture is clear. **Danni's actions:** (1) assemble eval backdrop — all existing definitions, capabilities, reliability metrics; (2) draft summary doc covering scope, definitions, rationales, business requirements; (3) schedule a follow-up review with stakeholders. **Dan's Miro** (early state-of-play for evals in AIP + Coach, also relevant): https://miro.com/app/board/uXjVIZI6J4o=/?moveToWidget=3458764675705124759&cot=14
 
 
