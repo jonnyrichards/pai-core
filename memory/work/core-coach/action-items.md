@@ -12,6 +12,7 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 - [ ] Schedule product review for w/c 6 July: CKB fast findings from CZ research — for Mindy (added 2026-06-22)
 - [ ] Prepare for product review: synth UXR learnings with one-pager recs (added 2026-06-24)
 - [ ] Review AI Accelerator week plan and nudge people to share external learnings (added 2026-06-24)
+- [ ] Read Dan's document about comms: https://docs.google.com/document/d/1M9XSs_uEhFEXE7BgbC4c13KgimVkEbnUPhEl_0sRpmk/edit?tab=t.0#heading=h.nzj9a8nad5hi (added 2026-06-24)
 - [x] Write note to Amanda + Dane sharing Enablement session plan post Enoch meeting (done 2026-06-24)
 - [x] Share plan with Jay + Ally — flag they need to attend the Enablement session (done 2026-06-24)
 - [x] Set up a retrospective with Coach <-> Develop (Dipan suggestion) (done 2026-06-24)
