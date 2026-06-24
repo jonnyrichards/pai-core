@@ -4,6 +4,8 @@
 
 ## Open
 
+- [ ] Coach in SR, DE session seeding — ask Ananda / Rachel if they've tackled this; note DE session running this week (run by UST) (with: Coach Foundations team | context: discuss seeding approach for DE sessions in Survey Results) (added 2026-06-25)
+
 - [ ] Voice request waterfall timings (GC vs. MSI) — breakdown of what happens leading up to first token; Paul wants this data (with: Coach Foundations team | context: raise in team meeting) (added 2026-06-24)
 
 - [ ] Engineering-focused Coach Playbook session (with: Jay | context: run a session for engineers on the Coach Playbook) (added 2026-06-24)
