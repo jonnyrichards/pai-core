@@ -4,6 +4,8 @@
 
 ## Open
 
+- [ ] Voice request waterfall timings (GC vs. MSI) — breakdown of what happens leading up to first token; Paul wants this data (with: Coach Foundations team | context: raise in team meeting) (added 2026-06-24)
+
 - [ ] Engineering-focused Coach Playbook session (with: Jay | context: run a session for engineers on the Coach Playbook) (added 2026-06-24)
 
 - [ ] AI features reliability & quality initiative — Simon has tasked Danni (AIP PM) with mapping a system-wide view of eval definitions/capabilities before any detailed planning; reframe from 'Evals' to 'AI reliability and quality'; Danni to produce backdrop doc + schedule follow-up. Share context so Jay is across it. (with: Jay | ref: [[work/enablement/observations]]) (added 2026-06-24)
