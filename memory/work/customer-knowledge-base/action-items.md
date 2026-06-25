@@ -4,6 +4,7 @@ Tasks for the Customer Knowledge Base project. Format: `- [ ] task (added YYYY-M
 
 ## Active (no fixed deadline)
 
+- [ ] Review CKB Fast Findings and write / draft PRD (added 2026-06-25)
 - [ ] Finalise CKB one-pager in light of UX research findings (added 2026-06-24)
 
 - [x] Review Rachael's CKB prototype: https://claude.ai/artifacts/latest/12fd067b-c8b8-4bb6-a93e-fbef04631ca0 (done 2026-06-10)
