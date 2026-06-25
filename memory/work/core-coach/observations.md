@@ -1,5 +1,7 @@
 # Observations: Core Coach
 
+- 2026-06-25 [work, core-coach, tooling]: Possibility of using Claude Tag to share a Foundations 'repo' with Jay — https://claude.com/docs/claude-tag/concepts/how-it-works [tags: work, core-coach, tooling]
+
 - 2026-06-25 [work, enablement, claude-code]: Had a session with Stephanie and shared a few techniques for using Claude Code as a document editor and manager. [tags: work, enablement, claude-code]
 
 - 2026-06-25 [work, core-coach, idea]: Potential experiment idea to propose in the technical channel: give Coach the ability to navigate users directly to pages within the Culture Amp site. Hypothesis: it takes too many clicks to reach deep pages (e.g. a manager review for a specific direct report). If Coach had knowledge of the site structure and permission-aware URLs, a user could prompt "take me to ENOC10's manager review page" and Coach would load it directly. Low-cost experiment — worth scoping as a focused engineer task for a week. [tags: work, core-coach, idea, experiment]
