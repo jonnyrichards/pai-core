@@ -4,6 +4,8 @@ Timestamped log of events, decisions, learnings. Append-only.
 
 ## 2026-06
 
+- 2026-06-25 [work, unified-sessions, planning]: Had two sessions with Darsh today beginning to plan a Unified Sessions workshop. Tentative timing: w/c 20 July. Plan to use w/c 6 July to map out the workshop — design sessions, define outcomes, confirm attendees. Action item: ask Enoch to confirm the date works and communicate to executives. [tags: work, unified-sessions, planning]
+
 - 2026-06-25 [work, unified-sessions, miro]: Unified Sessions Miro board started by Darsh — build on this: https://miro.com/app/board/uXjVHEAhczI=/?moveToWidget=3458764676273179467&cot=14 [tags: work, unified-sessions, miro]
 
 - 2026-06-25 [work, unified-sessions, research]: Unified Sessions next steps meeting (Jonny, Enoch, Darshana, Rachael, Nicha). UXR synthesis complete — users want Coach to feel unified but strongly resist data mixing across employees or product surfaces. Decision: informed consent (warning prompt) for employee switching within Performance; hard reset when crossing product surfaces (e.g. Performance → Engage). Enoch proposed a four-pillar decision framework (user mental models, technical realities, compliance, product needs) — adopted for all future logic. Discovery phase closed; moving to synthesis and strategic alignment. 2-day Melbourne workshop proposed to finalise Q3 strategy and onboard Nicha as Rachael transitions to a new role. Key assumption to document: "Coach everywhere ≠ access to every agent everywhere." [tags: work, unified-sessions, research, decision]
