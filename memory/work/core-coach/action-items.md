@@ -4,7 +4,7 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 
 ## Active (deadline)
 
-- [ ] quarterly-priorities + initiative-view updates: (1) add Q2 recap table — write separately and jam onto Confluence directly, don't add to .md; (2) connect 'Not in scope' from priorities .md to initiative-view — include Voice and CKB EAP; (3) add 'Support Market Layer Teams' as a new catch-all initiative (added 2026-06-24, do by 2026-06-25)
+- [x] quarterly-priorities + initiative-view updates: (1) add Q2 recap table; (2) connect 'Not in scope' from priorities .md to initiative-view; (3) Enablement row as catch-all for market layer team support (done 2026-06-25)
 
 - [ ] Make a sample HTML roadmap page for Nisha and figure out how to share it via Cowork (added 2026-06-19)
 - [ ] Check the translation rules for Coach and remove it from translation list in the nav (added 2026-06-19)
