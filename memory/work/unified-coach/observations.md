@@ -2,6 +2,8 @@
 
 Timestamped log of events, decisions, learnings. Append-only.
 
+- 2026-06-26 [work, unified-coach, uxr, research]: Unified Sessions UXR fast findings deck — https://docs.google.com/presentation/d/1OT35G-xzQGDJ1IeCde-Vbfn7bjO45TFtCkBYCBd6DbE/edit?slide=id.p1#slide=id.p1
+
 ## 2026-06
 
 - 2026-06-25 [work, unified-sessions, planning]: Had two sessions with Darsh today beginning to plan a Unified Sessions workshop. Tentative timing: w/c 20 July. Plan to use w/c 6 July to map out the workshop — design sessions, define outcomes, confirm attendees. Action item: ask Enoch to confirm the date works and communicate to executives. [tags: work, unified-sessions, planning]
