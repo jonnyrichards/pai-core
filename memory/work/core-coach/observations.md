@@ -1,5 +1,7 @@
 # Observations: Core Coach
 
+- 2026-06-26 [work, enablement, core-coach]: Enablement approach: ENG — Lisa's playbook, weekly Office Hours, #help_coach_playbook, Playbook itself; DESIGN + PRODUCT — opportunity-shaping + use case refinement, oversight throughout (design patterns etc.)
+
 - 2026-06-25 [work, core-coach, tooling]: Possibility of using Claude Tag to share a Foundations 'repo' with Jay — https://claude.com/docs/claude-tag/concepts/how-it-works [tags: work, core-coach, tooling]
 
 - 2026-06-25 [work, enablement, claude-code]: Had a session with Stephanie and shared a few techniques for using Claude Code as a document editor and manager. [tags: work, enablement, claude-code]
