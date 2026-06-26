@@ -1,5 +1,7 @@
 # Observations: Customer Knowledge Base
 
+- 2026-06-26 [work, ckb, uxr, research]: CKB UXR fast findings deck — https://docs.google.com/presentation/d/1CLVUAp4h6F1AotyJG1HauJsvQobNhy21H2ndEcZiqsI/edit?slide=id.p1#slide=id.p1
+
 - 2026-06-18 [work, ckb, uxr, personify-health, research]: Personify Health research session findings:
   - **Document naming**: re-add document name + description fields to the upload UI — they don't want Coach citing weird filenames when surfacing sources
   - **No edit needed**: fine with uploads being final/non-editable; "our documents would be final"
