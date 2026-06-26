@@ -3,6 +3,8 @@
 Tasks for the Unified Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [x] task (done YYYY-MM-DD)`
 
 ## Active
+
+- [ ] Come back to Unified Sessions workshop planning — tentative workshop date w/c 2026-07-20; prep doc at projects/unified-coach/unified-sessions-workshop-prep.md (added 2026-06-26)
 - [x] Propose timing for product review for Unified Sessions (done 2026-06-19)
 - [x] Speak to Dane and Amanda about 'business logic' re. Unified Sessions — what can/can't we display; take a user + business + tech approach to this research (done 2026-06-19)
 - [x] Recruit 5-10 CZ testers (w/c 8 Jun) and schedule interviews (w/c 15 Jun) for unified sessions mental model testing (done 2026-06-10)
