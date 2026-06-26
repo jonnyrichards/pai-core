@@ -11,8 +11,6 @@
 
 - 2026-06-16 [work, ckb, psx, docs]: PSX-authored guidance doc on how to assess documents uploaded to the CKB — https://cultureamp.atlassian.net/wiki/spaces/AIML/pages/6256165101/PSXAI+guidance+on+CKB
 
-- 2026-06-25 [work, ckb, dan, technical]: Dan's direct notes on CKB (technical perspective, early-mid Jun) — largely consistent with 2026-06-12 session below; key additions/emphases: (1) RAG handles many documents well — 'shove it all in', no partitioning; (2) multiple docs of same type is fine, don't enforce 'one values doc only'; (3) document name should default to filename, let them edit but don't sweat it; (4) auto-tag on upload + let user change; limit tag count. Core decisions confirmed: preserve exact doc (no summarisation), batch upload, non-editable, no per-document permissions, show summary (TBD if same as tags). [[work/customer-knowledge-base/observations#2026-06-12]]
-
 - 2026-06-12 [work, ckb, product, design, engineering]: Session with Enoch, Dan, Rachael — key CKB design/tech decisions:
   - **Upload latency**: processing will take time; UI needs an affordance for this
   - **Preserve exact document**: do not summarise on ingest
