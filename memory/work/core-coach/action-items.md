@@ -6,6 +6,7 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 
 - [x] quarterly-priorities + initiative-view updates: (1) add Q2 recap table; (2) connect 'Not in scope' from priorities .md to initiative-view; (3) Enablement row as catch-all for market layer team support (done 2026-06-25)
 
+- [ ] Review Dan's Coach language support proposal and form a POV — https://cultureamp.atlassian.net/wiki/spaces/coach/pages/6314917915/DACI+Extension+of+Coach+Language+Support (added 2026-06-29)
 - [ ] Check the translation rules for Coach and remove it from translation list in the nav (added 2026-06-19)
 - [x] Schedule product review for w/c 6 July: CKB fast findings — synth UXR learnings, update one-pager, draft PRD (for Mindy) (done 2026-06-26)
 - [x] Review AI Accelerator week plan and nudge people to share external learnings (done 2026-06-26)
