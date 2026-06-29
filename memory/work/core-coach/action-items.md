@@ -21,6 +21,9 @@ Tasks for the Core Coach project. Format: `- [ ] task (added YYYY-MM-DD)` / `- [
 ## Active (no fixed deadline)
 
 - [ ] Review Google's Open Knowledge Format and consider upgrading PAI — https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md (added 2026-06-19)
+- [ ] Accelerator Week: get better data out of Clozd — understand which competitor touchpoints are swaying deals (added 2026-06-29)
+- [ ] Accelerator Week: get better data out of Pendo — set up regular customer feedback loop (added 2026-06-29)
+- [ ] Accelerator Week: investigate Claude Code Routines — identify which market/competitive intel tasks could run as scheduled agents (added 2026-06-29)
 - [ ] Stretch: research Open Brain as alternative memory harness (added 2026-05-29)
 
 ## Completed
