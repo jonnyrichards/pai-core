@@ -1,1 +1,0 @@
-Coach is an AI coaching tool that helps managers and employees navigate workplace challenges through conversational guidance. It supports use cases like preparing for difficult 1:1s, workshopping how to deliver feedback, and practising performance review conversations before they happen.
