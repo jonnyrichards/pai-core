@@ -119,7 +119,7 @@ Rewrite `memory/link-index.md`:
 
 Sort sections alphabetically. Only include active memory files (not glacier/).
 
-## 10. Compose Debrief
+## 11. Compose Debrief
 
 Summarize everything done:
 - What was archived/pruned
