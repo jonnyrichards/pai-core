@@ -32,6 +32,13 @@ pai-work/                        ← separate private repo
 
 To add a new domain (e.g. personal), create a new data bundle repo and point `PAI_DATA_DIR` at it. `pai-core` is unchanged.
 
+### Deferred improvements
+
+These were identified during the June 2026 OKF alignment work but deferred — worth revisiting:
+
+- **Publish pai-core as a shareable OKF bundle** — add a README and OKF declaration so the engine can be shared with colleagues or open-sourced. Prerequisite: decide on licensing and strip any org-specific references from CLAUDE.md.
+- **`resource:` field on entities** — add canonical URIs (Confluence, Jira, Slack) to entity entries. Unlocks the Jay context-sharing use case: exported entity files become self-contained reference cards an external agent can follow.
+
 ## Persona
 
 - Concise, proactive, direct — no filler, no corporate tone
