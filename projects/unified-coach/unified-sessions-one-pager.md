@@ -4,29 +4,35 @@ created_date: 2026-03-18
 status: draft
 confluence_page_id: 6039667036
 confluence_url: "https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6039667036/Coach+Unified+Sessions+One-pager"
-last_synced: "2026-03-25T02:30:23.556Z"
+last_synced: "2026-06-23T00:00:00.000Z"
 ---
 
 # Description
 
-A unified session layer that lets users access and resume Coach conversations anywhere, while intelligently updating context when a user navigates in the main panel.
+A unified session layer that lets users access and resume Coach conversations anywhere across Culture Amp, and navigate between Coach-enabled pages without losing context — making Coach feel like one product.
 
 ## The Problem
 
 **User Problem:**
-- Session history is fragmented — eg. opening General Coach doesn't show Engage Coach sessions
-- Navigating in the main panel or the Coach panel (eg. loading a previous Coach session) leads to disconnects between main panel and Coach panel content
+- Session history is fragmented — opening General Coach doesn't show Engage or Perform Coach sessions
+- Navigating between pages in the main panel or loading a previous session breaks the connection between the main panel and Coach panel content
+- Coach feels like multiple disconnected tools, not one product
+
+**Business Problem:**
+- Fragmented sessions reduce return usage — users can't find previous conversations and start from scratch
+- Inconsistent experience across Coach surfaces undermines trust and engagement
 
 ---
 
-## Why
+## Why This Proposal
 
-**Customer Impact:**
+**User Benefit:**
 - **Continuity**: Users can pick up any Coach conversation from wherever they are in the platform
-- **Coherence**: Users can navigate freely across the platform and the main and side panels feel like they stay in sync
+- **Coherence**: Navigating freely across Culture Amp feels seamless — the main and Coach panels stay in sync
 
-**Business Impact:**
+**Business Benefit:**
 - **Engagement**: Accessible session history increases return usage of Coach
+- **50% MAU goal**: Reducing friction to repeat use is one of the highest-leverage moves toward the Q3 platform usage target
 
 ---
 
@@ -34,11 +40,10 @@ A unified session layer that lets users access and resume Coach conversations an
 
 ### Primary
 - **Cross-Coach session visibility**: 100% of Coach sessions (General, Engage, Perform) visible in a single history view
-- **Session history engagement**: X% of users resume previous sessions
+- **Session history engagement**: X% of users resume a previous session within 30 days
 
 ### Secondary
-- **Session Coherence**: X% of users report that sessions persist in a coherent, understandable way
-- **Session depth**: Average topics per session increases by X% (signals broader utility)
+- **Session coherence**: X% of users report that sessions persist in a coherent, understandable way
 
 ---
 
@@ -53,75 +58,57 @@ All users of Coach across General, Engage, and Perform use cases.
 A unified session layer that:
 1. Surfaces all Coach conversations — regardless of where they were started — in a single, accessible history view
 2. Allows users to resume any session from anywhere across the platform
-3. Preserves contextual integrity and prevents cross-topic contamination during navigation
+3. Preserves contextual integrity when navigating between pages — the Coach panel and active session survive site navigation
 
-[Link to designs when available]
+### What This Isn't
+- Not a cross-agent routing solution (handled separately by the Routing initiative)
+- Not a redesign of the Coach panel UI beyond session navigation
 
 ---
 
 ## How
 
-### Phase 1: Unified Session History
+### Phase 1: Unified Session History — GA release
 
 **Goal:** Consolidate all Coach sessions into a single, discoverable history; establish session management foundations
 
 **Milestones:**
-- **Milestone: Single session history view** — all Coach sessions visible from one place, regardless of where they originated
-
-**Exit Criteria:**
-- Users can see and navigate to all their Coach sessions (General, Engage, Perform) from a unified history view
-
----
-
-### Phase 2: Session Continuity (Discovery-led)
-
-**Goal:** Explore and implement the right solutions for session persistence, context coherence, and cross-context contamination prevention
-
-**Milestones:**
-- *(Optional)* **Milestone: Coach pane persists across site navigation** — the Coach side panel and active session survive navigating between pages
-
-**Exit Criteria:**
-- TBD based on Discovery outcomes
+- Single session history view live — all Coach sessions visible from one place, regardless of origin
+- CZ test: validate history completeness, identify UX friction, confirm users can navigate to any previous session
+- GA release
 
 ---
 
-## Testing
+### Phase 2: Session Continuity & Site Navigation — CZ release
 
-**Approach:** Phased rollout focused on validating session management behaviours before broad release
+**Goal:** Define and ship an initial approach to Coach persisting as users navigate across Coach-enabled pages.
 
-**Customer Zero (Internal Testing):**
-- Validate session history completeness across Coach entry points
-- Identify UX friction points in session navigation and discovery
-- Test session continuity behaviours across page navigation (Phase 2)
+Q2 research established a mental model for session continuity — this phase moves from discovery into incremental delivery, building alignment with other Camps as we go. Navigation behaviour won't be a Coach decision alone: it depends heavily on what consuming pages support and how the emerging Unified Navigation initiative shapes platform-wide nav behaviour.
 
-**Limited Beta (AI-curious customers / Beta group):**
-- Gather qualitative feedback on unified session experience
-- Monitor engagement with session history and return usage
-- Track session depth
+Two slices to work through:
+- **Slice 1:** What happens when a user navigates to a page where Coach is also available?
+- **Slice 2:** What happens when a user navigates to a page where Coach is not available?
 
-**Key Questions:**
-- Is it clear how to revisit a previous session?
-- Are previous sessions displayed clearly?
-- How satisfied are you with the experience of shifting topics / pages (ie. in the main site) mid session?
-- How satisfied are you overall with the session management experience?
+**Release approach:** CZ only at this stage. The goal is to test a hypothesis and build alignment before proposing a wider rollout — the right answer here depends on open questions across Camps and Unified Navigation.
+
+*Full milestones and exit criteria TBC pending alignment on the open questions below.*
 
 ---
 
 ## Open Questions
 
-1. **Session resume behaviour:** When a user resumes a session, does Coach re-navigate the main panel automatically, or prompt the user first?
-2. **Cross-context contamination:** How do we ensure the context updates consistently and transparently during navigation? What are the guard rails — hard stops, warnings, or soft nudges we want to introduce?
-3. **Performance at scale:** What is the upper bound on session history depth before performance degrades?
-4. **Dependency on LangGraph migration:** Does Phase 1 require the LangGraph migration to be complete, or can it proceed independently?
+1. **Unified Navigation alignment:** How does Coach's navigation behaviour align with the emerging Unified Navigation initiative? What sequencing is needed?
+2. **Camp alignment:** How do we build consensus with Camps that own consuming pages on what Coach persistence should look like in their context?
+3. **Partial platform coverage:** Coach is not yet available everywhere. How do we handle the navigation experience in a world where some pages have Coach and others don't?
 
 ---
 
 ## Dependencies & Risks
 
 **Dependencies:**
-- Session management design decisions must be resolved before Phase 2 implementation
+- Phase 2 is dependent on Unified Navigation initiative and alignment with consuming Camps — Coach cannot ship navigation behaviour unilaterally
+- Routing initiative is a parallel dependency — session history must surface sessions from all agents
 
 **Risks:**
-- Session restoration UX requires significant discovery
-- Cross-context contamination edge cases may be hard to enumerate
-- Performance implications of unified sessions at scale are unknown
+- Phase 2 scope and timeline are contingent on the open questions above — there is a real risk of stalling without cross-Camp alignment
+- Partial Coach coverage across the platform creates edge cases that are hard to handle gracefully

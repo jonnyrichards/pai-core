@@ -16,7 +16,7 @@ This skill adds:
 - **Deliverables** — 2–4 `>`-separated milestones shown on the card face (Work Item names, `>`-separated)
 - **WorkItems** — `;;`-separated `Work Item: Description` pairs copied directly from `quarterly-priorities.md` — shown as a bulleted tooltip on hover. Never paraphrase; copy verbatim. Use `;;` not `|` (pipes break markdown table parsing).
 - **Drives** — Reach / Engagement / Foundation
-- **People** — optional comma-separated list of 2–3 names shown on the card (first names or initials)
+- **People** — assembled from the People column in `quarterly-priorities.md`. For each initiative, take the union of all work item People values, deduped, comma-separated. Pass `—` if all work items have `—`.
 
 Confidence is passed through directly from `quarterly-priorities.md` — do not rederive it.
 
@@ -72,11 +72,7 @@ For each Initiative, pull the Work Items directly from `quarterly-priorities.md`
 
 Do this silently — no need to ask the user to confirm Deliverables or WorkItems unless something looks ambiguous (e.g. an Initiative with 6+ Work Items that should be pruned for the card face).
 
-Once Deliverables are confirmed, ask once:
-
-> "Any initiatives you'd like to tag with people? (Optional — first names or initials, 2–3 max per card. Hit enter to skip.)"
-
-Accept a free-form response like "Unified Sessions: Alice, Bob / Routing: Carol" and map it. Leave `—` for anything not mentioned.
+People are assembled automatically from `quarterly-priorities.md` — no need to ask. If the user wants to override people for a specific card, accept a free-form correction like "Unified Sessions: Alice, Bob" and apply it.
 
 ---
 

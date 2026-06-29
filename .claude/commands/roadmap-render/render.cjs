@@ -251,9 +251,16 @@ function renderHtml({ title, subtitle, lanes, notH2 }) {
 
     const ticksHtml = '';
 
-    const desc = item.Description && item.Description !== '—' ? escapeHtml(item.Description) : '';
-    const tooltipHtml = desc
-      ? `<div class="tooltip">${desc}</div>`
+    const workItems = item.WorkItems && item.WorkItems !== '—'
+      ? item.WorkItems.split(';;').map(s => s.trim()).filter(Boolean)
+      : [];
+    const tooltipHtml = workItems.length
+      ? `<div class="tooltip"><ul style="margin:0;padding:0 0 0 14px;">${workItems.map(wi => {
+          const colonIdx = wi.indexOf(':');
+          const name = colonIdx !== -1 ? wi.slice(0, colonIdx).trim() : wi.trim();
+          const desc = colonIdx !== -1 ? wi.slice(colonIdx + 1).trim() : '';
+          return `<li style="margin-bottom:6px;"><strong>${escapeHtml(name)}</strong>${desc ? ` — ${escapeHtml(desc)}` : ''}</li>`;
+        }).join('')}</ul></div>`
       : '';
 
     return `<div class="card-wrap" style="position:absolute;left:${x.toFixed(1)}px;top:${y.toFixed(1)}px;width:${w.toFixed(1)}px;height:${CARD_H.toFixed(1)}px;z-index:10;">

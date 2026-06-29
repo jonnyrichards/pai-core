@@ -33,8 +33,8 @@ This file is the source of truth. It should be Confluence-pasteable as-is, and i
 
 ## Table Schema
 
-| Stream | Initiative | Work Item | Description | Confidence | When? | Estimate |
-|---|---|---|---|---|---|---|
+| Stream | Initiative | Work Item | Description | Confidence | When? | Estimate | People |
+|---|---|---|---|---|---|---|---|
 
 **Column definitions:**
 
@@ -45,6 +45,7 @@ This file is the source of truth. It should be Confluence-pasteable as-is, and i
 - **Confidence** — one of: `Committed` (scoped, resourced, in delivery), `High confidence` (strong intent, clear path), `Discovery` (planned but not yet scoped or resourced). Use `Committed` for work in active build; `High confidence` for work with a clear plan but not yet started; `Discovery` for work still being defined.
 - **When?** — timing expressed as `[Early|Mid|Late] Q{N}` (e.g. `Early Q3`, `Late Q3`, `Early Q4`). Use the quarter being planned as the reference. `Early` = in-flight or starting in the first third; `Mid` = middle third; `Late` = final third or likely slipping to next quarter (use next quarter label in that case).
 - **Estimate** — rough effort (e.g. `Small`, `Medium`, `Large`). Use `?` if unknown. Don't fabricate.
+- **People** — comma-separated first names of people working on this work item (e.g. `Alice, Bob`). Use `—` if unknown. This is the authoritative source for people — downstream skills (roadmap, initiative-export) assemble initiative-level people by taking the union of all work item people for that initiative, deduped.
 
 ---
 
@@ -69,7 +70,7 @@ Show the draft table grouped by Stream. For each Stream:
 2. Ask one focused question: *"Does this grouping feel right? Anything missing, miscategorised, or that should be split/merged?"*
 
 Work through Streams one at a time. Only flag:
-- Items where Stage is ambiguous
+- Items where Confidence is ambiguous
 - Items that feel too large or too small relative to other rows (row-weight problem)
 - Items present in only one source (may be stale or missing context)
 
@@ -129,8 +130,8 @@ Rows should feel roughly equal in scope. Rules:
 
 ## Priorities
 
-| Stream | Initiative | Work Item | Description | Confidence | When? | Estimate |
-|---|---|---|---|---|---|---|
+| Stream | Initiative | Work Item | Description | Confidence | When? | Estimate | People |
+|---|---|---|---|---|---|---|---|
 [rows grouped by Stream, with a blank row between each Stream block]
 
 ---

@@ -87,7 +87,7 @@ The renderer re-parses from scratch on every run — no state between runs.
 Lane tables use this column format:
 
 ```markdown
-| Initiative | Start | Confidence | Effort | Drives | Deliverables | People | Description |
+| Initiative | Start | Confidence | Effort | Drives | Deliverables | WorkItems | People |
 ```
 
 **`Start`** values: `Q3.0` through `Q3.5`, `Q4.0` through `Q4.5` (or `TBD`)
@@ -102,6 +102,8 @@ Lane tables use this column format:
 **`Effort`** values: `Small` (~2 weeks, 1/6q), `Medium` (~1 month, 2/6q), `Large` (~8 weeks, 4/6q)
 
 **`Deliverables`** (optional): `>`-separated milestones shown below the card title, e.g. `First milestone > Second milestone`. Use `—` to leave blank. (Pipes can't be used inside markdown table cells.)
+
+**`WorkItems`** (optional): `;;`-separated `Work Item: Description` pairs pulled from `quarterly-priorities.md`. Shown as a bulleted list in the hover tooltip, e.g. `Cross-agent routing: Removes the seam between Coach contexts ;; Full agent handoff: Completes the handoff UX`. Use `—` to leave blank. Note: use `;;` not `|` — pipes are reserved as markdown table column separators.
 
 **`People`** (optional): comma-separated names shown on the card below deliverables, e.g. `Alice, Bob`. Use `—` to leave blank. 2–3 names max.
 

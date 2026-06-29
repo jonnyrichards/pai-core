@@ -1,10 +1,10 @@
 ---
 title: Voice — Next Stage Plan
 status: draft
-last_updated: 2026-06-18
+last_updated: 2026-06-22
 confluence_page_id: 6335890058
 confluence_url: "https://cultureamp.atlassian.net/wiki/spaces/COACHCAMP/pages/6335890058/Voice+Next+Stage+Plan"
-last_synced: "2026-06-18T07:11:05.786Z"
+last_synced: "2026-06-22T01:52:34.289Z"
 ---
 
 # Voice — Next Stage Plan
@@ -58,9 +58,9 @@ last_synced: "2026-06-18T07:11:05.786Z"
 
 The current architecture works by maintaining a **separate, lightweight voice prompt per agent** (e.g. the Haiku-based General Coach voice prompt). This is what delivers the 1–2s TTFT. It's fast because it is deterministic agent choice, uses a small model, makes no tool calls, and is optimised for voice-friendly responses.
 
-That approach breaks down as soon as multiple agents share a surface. When a user taps the microphone on the Coach page post-MSI launch, the system faces a routing problem: is this query for General Coach or MSI? Today's answer: conversation mode is is blocked on MSI-ready pages entirely. [Check with Michael]: The user sees the voice button but their query silently never routes to MSI.
+That approach breaks down as soon as multiple agents share a surface. When a user taps the microphone on the Coach page post-MSI launch, the system faces a routing problem: is this query for General Coach or MSI? Proposed approach for now: if we're showing the Insights tile, we hide the voice button to protect against a poor UX. (This hasn't been implemented; thinking is: the impact of removing voice on MSI surface will be minimal given number of admins using MSI in EAP.)
 
-The deeper issue: routing between agents is inherently non-deterministic (it's what LangGraph's routing layer handles). We've been solving a non-deterministic problem with a deterministic shortcut, and the shortcut is running out of road. MSI is the first pressure point, but it's not the last. Within a few months, virtually every surface will have multiple agents. The question isn't "how do we fix conversation mode for MSI"; it's "what is the right architecture for conversation mode in a unified, multi-agent Coach?"
+The deeper issue: routing between agents is inherently non-deterministic (it's what LangGraph's routing layer handles). We've been solving a non-deterministic problem with a deterministic shortcut, and the solve won't last. MSI is the first pressure point, but it's not the last. Within a few months, virtually every surface will have multiple agents. The question isn't "how do we fix conversation mode for MSI"; it's "what is the right architecture for conversation mode in a unified, multi-agent Coach?"
 
 ---
 
@@ -82,15 +82,15 @@ In roughly this order:
 | Option | Description | Tradeoff |
 |---|---|---|
 | **A. Extend current pattern** | Maintain a separate voice prompt per agent; route non-deterministically (via an orchestrator) to the right voice prompt | Fragile — breaks as surfaces gain more agents; huge prompt upkeep load on PSX, doesn't scale to unified Coach |
-| **B. Route through main agent** | Remove separate voice prompts; inject voice-specific instructions as snippets; let the main agent route conversation mode queries to regular, non-voice agents | Solves routing correctly; but TTFT will increase |
+| **B. Route through main agent** | Remove separate voice prompts; inject voice-specific instructions as snippets; let the main agent route conversation mode in the normal way; use preliminary streamed responses to explain why response is taking longer [_Note: to ensire MSI EAP is not compromised while we implement this option, we should temporarily disable conversation mode on the MSI surfaces (via FF)_] | Solves routing correctly; but TTFT will increase; it is very hard to make a very smart system very fast - the solve is to accept latency and explain to the user what is happenning |
 | **C. Deprecate conversation mode** | Invest only in dictation mode going forward; remove conversation mode | Clean technically, and CZ data suggests users prefer dictation anyway — but a significant product retreat, and a sunk cost (EL) |
-
 ### Latency reduction options (Option B)
 
 If pursuing Option B, these are the levers available to bring TTFT closer to acceptable:
 
 | Option | Description | Tradeoff |
 |---|---|---|
+| **Streaming reasoning narration** | Prompt the main agent to emit 1–2 sentences of plain-English narration _before_ each tool call (e.g. "Let me pull your recent survey results…"), then stream that narration to TTS while tool calls execute in the background. A lightweight secondary model translates the agent's reasoning into natural speech. The streaming layer identifies narration via a response prefix (e.g. `[NARRATION]`), so it can be spoken immediately without waiting for the full response. | Directly addresses perceived latency — the user hears something within ~1s even when full TTFT is 9–12s. Requires prompt engineering + evals to keep narration natural; secondary model adds some complexity. High UX potential if well-tuned. Proposed by Jakub Riedl. |
 | Smaller model (e.g. Haiku) | As done for General Coach — worked well there | Requires rigorous evals for MSI and other agents; unlikely to work with large payloads |
 | UI 'thinking' indicator | Visual step to reduce *perceived* latency — no actual improvement | Low effort, buys goodwill but doesn't fix the problem |
 | Prompt-based guidance | Instruct the agent via the voice snippet to a) see if tool calls are enabled for the agent (this will be a guide to whether response times are likely to be long) b) suggest the user ends the voice sessions and continues in text | Essentially says: 'this mode doesn't work'; but it's low friction for the user |
@@ -104,6 +104,5 @@ MSI slice 1 launches **7 July** — we need a direction before then. Concretely:
 
 - Decision on conversation mode + MSI
 - Option B? -> Engineering scoping begins
-- Option C? -> Consider internal + any user-facing implications
 
 ---
