@@ -10,6 +10,7 @@ function resolveUserPath(p: string): string {
 
 export interface Config {
   model: string;
+  dataDir: string;
   credentialsDir: string;
   journalDir: string;
   claudeBin: string;
@@ -29,6 +30,9 @@ export interface Config {
 
 export function loadConfig(): Config {
   const model = process.env.PAI_MODEL ?? "sonnet";
+  const dataDir = process.env.PAI_DATA_DIR
+    ? resolveUserPath(process.env.PAI_DATA_DIR)
+    : resolve(process.cwd());
   const credentialsDir = resolveUserPath(
     process.env.PAI_CREDENTIALS_DIR ?? "~/.pai/credentials/whatsapp"
   );
@@ -56,6 +60,7 @@ export function loadConfig(): Config {
     : undefined;
   return {
     model,
+    dataDir,
     credentialsDir,
     journalDir,
     claudeBin,

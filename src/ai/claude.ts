@@ -19,7 +19,10 @@ import { sendToOwner } from "../whatsapp/outbound.js";
 export type ProgressCallback = (message: string) => void;
 
 const PROJECT_ROOT = resolve(import.meta.dirname, "../..");
-const MEMORY_DIR = resolve(PROJECT_ROOT, "memory");
+const DATA_DIR = process.env.PAI_DATA_DIR
+  ? resolve(process.env.PAI_DATA_DIR)
+  : resolve(PROJECT_ROOT);
+const MEMORY_DIR = resolve(DATA_DIR, "memory");
 const MEMORY_FILE = resolve(MEMORY_DIR, "hot-memory.md");
 const PATTERNS_FILE = resolve(MEMORY_DIR, "pai-meta", "patterns.md");
 const BRIEFING_BRIDGE_FILE = resolve(MEMORY_DIR, "pai-meta", "briefing-bridge.md");
