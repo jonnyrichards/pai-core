@@ -27,13 +27,21 @@ Move excess detail to the appropriate observations.md files.
 Scan all warm-tier memory files for claims that may have been contradicted or superseded by newer entries. This is a semantic check, not a format check.
 
 **Process:**
-- Read all `observations.md` and `patterns.md` files
+- Read all `observations.md` and `brief.md` files
 - Read all `shipped.md` files (ground truth for what has actually happened)
-- Flag any observation or pattern that contradicts a newer entry — e.g. "Voice is pre-launch" when shipped.md shows a launch date
-- Flag any pattern that references a project or initiative no longer active (check action-items.md for closure signals)
+- Flag any brief section whose `<!-- last verified: YYYY-MM-DD -->` date is >90 days ago
+- Flag any brief entry that contradicts a newer observation or shipped entry
 - Flag any hot-memory item that appears to be resolved based on newer observations
 
-**Output:** A short list of flagged items with the contradiction noted. Do not auto-delete — surface for the owner to review. Stale items confirmed as resolved should be removed from hot-memory and patterns, and noted in self-observations.
+**Output:** A short list of flagged items with the contradiction or stale date noted. Do not auto-delete — surface for the owner to review. Stale items confirmed as resolved should be removed from hot-memory/brief, and noted in self-observations.
+
+## 3a. Brief Check
+
+For each domain in `memory/work/`, check whether a `brief.md` exists.
+
+- **If brief exists:** covered by lint step above.
+- **If no brief exists and observations.md has ≥10 entries:** draft a `brief.md` for that domain by distilling the observations into stable themes. Use the same format as existing briefs (sections with `<!-- last verified -->` dates). Notify the owner that a draft brief was created.
+- **If no brief exists and observations.md has <10 entries:** skip — not enough signal yet.
 
 ## 4. Run Condensation Check
 

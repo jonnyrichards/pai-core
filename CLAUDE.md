@@ -140,12 +140,12 @@ memory/
    - When writing to memory, add `[[links]]` where cross-references add value
 9. **Progressive condensation**: Information flows upward through tiers:
    - Raw events → `observations.md` (append, timestamped)
-   - 3+ observations on same theme → distill into `patterns.md` (edit in place)
-   - Active/urgent patterns → `hot-memory.md` (rewrite freely)
-   - Resolved/historical patterns → remove from hot-memory, keep in patterns
+   - 3+ observations on same theme → distill into `brief.md` (edit in place)
+   - Active/urgent items → `hot-memory.md` (rewrite freely)
+   - Resolved/historical items → remove from hot-memory, keep in brief
    - Old observations (>50) → archive to glacier by tag
-   During /reflect: check if any observation clusters should promote to patterns.
-   During /housekeeping: check if any patterns should promote/demote from hot-memory.
+   During /reflect: check if any observation clusters should promote to brief.
+   During /housekeeping: check if any brief items should promote/demote from hot-memory.
 
 ### Memory Retrieval Protocol
 
@@ -163,7 +163,7 @@ All warm-tier files carry YAML frontmatter for OKF conformance. When creating a 
 
 ```yaml
 ---
-type: hot-memory | observations | action-items | discuss | entities | patterns | improvements | shipped | other
+type: hot-memory | observations | action-items | discuss | entities | brief | improvements | shipped | other
 title: Human-readable title
 description: One-line summary of what this file contains
 domain: pai-meta | work | work/voice | work/core-coach | work/unified-coach | work/customer-knowledge-base | work/enablement | work/craft | work/prompts
@@ -185,6 +185,7 @@ When writing to an existing file, update the `updated` field to today's date. Do
 | `calendar.md` | Edit in place |
 | `health.md` | Edit `## Current State`, append to `## History` |
 | `pai-meta/self-observations.md` | Append only |
+| `brief.md` | Edit in place; each section has `<!-- last verified: YYYY-MM-DD -->` comment — update when verifying a section is still accurate |
 | `pai-meta/patterns.md` | Edit in place, distill from self-observations |
 | `pai-meta/improvements.md` | Edit in place by section |
 | `log.md` | Append new dated entries — written for external consumers, not PAI's internal voice |
